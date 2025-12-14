@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="donvi_array">
+        <item>gram</item>
+        <item>ml</item>
+        <item>cái</item>
+        <item>kg</item>
+        <item>lít</item>
+    </string-array>
+</resources>

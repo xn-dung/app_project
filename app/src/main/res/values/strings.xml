@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Cook By Ingredients</string>
+    <string name="username_hint">Type your username</string>
+    <string name="apptitle">Welcome</string>
+    <string name="hi">Let\'s cook, </string>
+    <string name="fullname">Username</string>
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="add">Add</string>
+    <string name="reels">Reels</string>
+    <string name="profile">Profile</string>
+    <string name="let_s_share">Let\'s share, </string>
+    <string name="back">Back</string>
+    <string name="backend_url">https://mobilenodejs.onrender.com/</string>"
+</resources>

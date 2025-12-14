@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/textTen"
+        android:hint="Tên"
+        android:inputType="textCapSentences"
+        android:padding="8dp" />
+
+    <EditText
+        android:id="@+id/editDinhLuong"
+        android:hint="Số lượng"
+        android:inputType="numberDecimal"
+        android:padding="8dp" />
+
+    <Spinner
+        android:id="@+id/spinnerDonVi"
+        android:entries="@array/donvi_array"
+        android:padding="8dp" />
+</TableRow>
