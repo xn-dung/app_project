@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,6 +33,7 @@ public class ForgotPasswordFragment extends Fragment {
     private Button sendCode;
 
     private TextView errorMessage;
+    private ImageButton btnBack;
 
     @Nullable
     @Override
@@ -45,6 +47,7 @@ public class ForgotPasswordFragment extends Fragment {
         myEmail = view.findViewById(R.id.edtEmail);
         sendCode = view.findViewById(R.id.btnSubmit);
         errorMessage = view.findViewById(R.id.errorMessage);
+        btnBack = view.findViewById(R.id.btnBack);
 
         sendCode.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,6 +61,13 @@ public class ForgotPasswordFragment extends Fragment {
                 }
             }
         });
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), LoginFragment.class);
+                startActivity(intent);
+            }
+        });
     }
     private void displayError(String message){
         if(errorMessage != null){
@@ -66,7 +76,7 @@ public class ForgotPasswordFragment extends Fragment {
         }
     }
     private void sendCodewithAPI(String email){
-        String url = R.string.backend_url+ "api/nguoidung/forgotpassword";
+        String url = getString(R.string.backend_url) + "api/nguoidung/forgotpassword";
         RequestQueue requestQueue = Volley.newRequestQueue(requireContext());
         HashMap<String,String> params = new HashMap<>();
         params.put("email",email);

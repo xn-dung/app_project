@@ -127,7 +127,7 @@ public class AddFoodFragment extends AppCompatActivity {
 
     }
     private void addfoodpost(BaiDang bd){
-        String url = R.string.backend_url +"api/nguoidung/add/" + user.getId();
+        String url = getString(R.string.backend_url) +"api/nguoidung/add/" + user.getId();
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         JSONObject jsonBody = new JSONObject();
         try{

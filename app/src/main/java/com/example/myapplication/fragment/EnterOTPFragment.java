@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,6 +33,8 @@ public class EnterOTPFragment extends Fragment {
     private TextView errorMessage;
     private String email;
 
+    private ImageButton btnBack;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -48,6 +51,7 @@ public class EnterOTPFragment extends Fragment {
         myOTP = view.findViewById(R.id.edtOTP);
         btnSubmit = view.findViewById(R.id.btnSubmit);
         errorMessage = view.findViewById(R.id.errorMessage);
+        btnBack = view.findViewById(R.id.btnBack);
 
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,7 +75,7 @@ public class EnterOTPFragment extends Fragment {
     }
 
     private void checkOTPwithAPI(String otp) {
-        String url = R.string.backend_url + "api/nguoidung/checkOTP";
+        String url = getString(R.string.backend_url)+ "api/nguoidung/checkOTP";
         RequestQueue requestQueue = Volley.newRequestQueue(requireContext());
         HashMap<String,String> params = new HashMap<>();
 

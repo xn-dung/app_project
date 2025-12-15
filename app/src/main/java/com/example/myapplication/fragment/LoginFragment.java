@@ -101,7 +101,7 @@ public class LoginFragment extends Fragment {
     }
 
     private void loginWithAPI(String username, String password){
-        String url = R.string.backend_url+ "api/nguoidung/login";
+        String url = getString(R.string.backend_url) + "api/nguoidung/login";
         RequestQueue requestQueue = Volley.newRequestQueue(requireContext());
         HashMap<String,String> params = new HashMap<>();
         params.put("username",username);

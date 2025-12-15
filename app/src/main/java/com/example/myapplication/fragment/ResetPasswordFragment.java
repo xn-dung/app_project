@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,6 +32,7 @@ public class ResetPasswordFragment extends Fragment{
     private EditText rePassword;
     private Button btnSave;
     private TextView errorMessage;
+    private ImageButton btnBack;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -48,6 +50,15 @@ public class ResetPasswordFragment extends Fragment{
         rePassword = view.findViewById(R.id.edtRePassword);
         btnSave = view.findViewById(R.id.btnSubmit);
         errorMessage = view.findViewById(R.id.errorMessage);
+        btnBack = view.findViewById(R.id.btnBack);
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), ForgotPasswordFragment.class);
+                startActivity(intent);
+            }
+        });
 
 
         btnSave.setOnClickListener(new View.OnClickListener() {
@@ -73,7 +84,7 @@ public class ResetPasswordFragment extends Fragment{
         }
     }
     private void resetPasswordwithAPI(String password){
-        String url = R.string.backend_url + "api/nguoidung/resetpassword";
+        String url = getString(R.string.backend_url) + "api/nguoidung/resetpassword";
         RequestQueue requestQueue = Volley.newRequestQueue(requireContext());
         HashMap<String,String> params = new HashMap<>();
         params.put("email",email);

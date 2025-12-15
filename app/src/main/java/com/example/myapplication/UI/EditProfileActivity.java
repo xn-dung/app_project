@@ -101,7 +101,7 @@ public class EditProfileActivity extends AppCompatActivity{
 
     }
     private void changeProfile(User user2){
-        String url = R.string.backend_url + "api/nguoidung/patch";
+        String url =getString(R.string.backend_url) + "api/nguoidung/patch";
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         HashMap<String,String> params = new HashMap<>();
         params.put("_id",user2.getId());

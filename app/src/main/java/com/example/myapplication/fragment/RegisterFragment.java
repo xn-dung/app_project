@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -38,7 +39,7 @@ public class RegisterFragment extends Fragment {
     private EditText tel;
     private EditText confirmPassword;
     private Button btnRegister;
-    private Button btnBack;
+    private ImageButton btnBack;
 
     @Nullable
     @Override
@@ -58,7 +59,7 @@ public class RegisterFragment extends Fragment {
         tel = view.findViewById(R.id.editRegisterPhone);
         btnRegister = view.findViewById(R.id.button2);
         confirmPassword = view.findViewById(R.id.editConfirmPassword);
-        btnBack = view.findViewById(R.id.buttonBack);
+        btnBack = view.findViewById(R.id.btnBack);
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -109,7 +110,7 @@ public class RegisterFragment extends Fragment {
     }
 
     private void RegisterWithAPI(User user){
-        String url = R.string.backend_url + "api/nguoidung/register";
+        String url = getString(R.string.backend_url) + "api/nguoidung/register";
         RequestQueue requestQueue = Volley.newRequestQueue(requireContext());
         HashMap<String,String> params = new HashMap<>();
         params.put("username",user.getUsername());

@@ -167,7 +167,7 @@ public class SearchFragment extends Fragment {
     }
 
     private void searchFood(ArrayList<NguyenLieu> a) {
-        String url = R.string.backend_url + "api/baidang/search/ingredient";
+        String url = getString(R.string.backend_url) + "api/baidang/search/ingredient";
         RequestQueue queue = Volley.newRequestQueue(requireContext());
         try {
             JSONArray nguyenLieuArray = new JSONArray();

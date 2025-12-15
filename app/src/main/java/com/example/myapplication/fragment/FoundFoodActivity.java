@@ -97,7 +97,7 @@ public class FoundFoodActivity extends AppCompatActivity{
     }
 
     private void searchFood(String foodName) {
-        String url = R.string.backend_url + "api/baidang/search";
+        String url = getString(R.string.backend_url) + "api/baidang/search";
         RequestQueue queue = Volley.newRequestQueue(this);
         try {
             JSONObject jsonBody = new JSONObject();

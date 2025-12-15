@@ -165,7 +165,7 @@ public class HomeFragment extends Fragment {
         if (user == null) {
             return;
         }
-        String url = R.string.backend_url + "api/nguoidung/fav/" + user.getId();
+        String url = getString(R.string.backend_url) + "api/nguoidung/fav/" + user.getId();
         RequestQueue queue = Volley.newRequestQueue(requireContext());
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(
                 Request.Method.GET, url, null,
