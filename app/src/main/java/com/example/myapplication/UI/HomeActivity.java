@@ -27,7 +27,7 @@ public class HomeActivity extends AppCompatActivity implements HomeFragment.OnFo
 
     private static final String TAG_HOME = "HomeFragment";
     private static final String TAG_SEARCH = "SearchFragment";
-    //    private static final String TAG_ADD = "AddFoodFragment";
+    private static final String TAG_ADD = "AddFoodFragment";
     private static final String TAG_PROFILE = "ProfileFragment";
 
     private BottomNavigationView bottomNav;
@@ -93,18 +93,19 @@ public class HomeActivity extends AppCompatActivity implements HomeFragment.OnFo
         FragmentManager fm = getSupportFragmentManager();
         homeFragment = fm.findFragmentByTag(TAG_HOME);
         searchFragment = fm.findFragmentByTag(TAG_SEARCH);
-//        addFragment = fm.findFragmentByTag(TAG_ADD);
+        addFragment = fm.findFragmentByTag(TAG_ADD);
         profileFragment = fm.findFragmentByTag(TAG_PROFILE);
 
         if (homeFragment == null) homeFragment = HomeFragment.newInstance(user);
         if (searchFragment == null) searchFragment = SearchFragment.newInstance(user);
-//        if (addFragment == null) addFragment = AddFoodFragment.newInstance(user);
+        if (addFragment == null) addFragment = AddFoodFragment.newInstance(user);
         if (profileFragment == null) profileFragment = ProfileFragment.newInstance(user);
 
         fm.beginTransaction()
                 .add(R.id.fragment_container, homeFragment, TAG_HOME)
                 .add(R.id.fragment_container, searchFragment, TAG_SEARCH).hide(searchFragment)
-//                .add(R.id.fragment_container, addFragment, TAG_ADD).hide(addFragment)
+
+                .add(R.id.fragment_container, addFragment, TAG_ADD).hide(addFragment)
                 .add(R.id.fragment_container, profileFragment, TAG_PROFILE).hide(profileFragment)
                 .commit();
 
@@ -127,8 +128,8 @@ public class HomeActivity extends AppCompatActivity implements HomeFragment.OnFo
             return homeFragment;
         } else if (tabId == R.id.menuSearch) {
             return searchFragment;
-//        } else if (tabId == R.id.menuAdd) {
-//            return addFragment;
+        } else if (tabId == R.id.menuAdd) {
+            return addFragment;
         } else if (tabId == R.id.menuProfile) {
             return profileFragment;
         }
