@@ -64,6 +64,13 @@ public class HomeActivity extends AppCompatActivity implements HomeFragment.OnFo
         getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
             @Override
             public void handleOnBackPressed() {
+                // 1. Pop fragments from the internal back stack first (e.g., DetailFoodFragment, SearchFoodByNameFragment)
+                if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
+                    getSupportFragmentManager().popBackStack();
+                    return;
+                }
+
+                // 2. Navigate through the tab history
                 Integer previousTab = tabHistory.pollFirst();
                 if (previousTab != null) {
                     bottomNav.setSelectedItemId(previousTab);
@@ -72,18 +79,9 @@ public class HomeActivity extends AppCompatActivity implements HomeFragment.OnFo
                     return;
                 }
 
-                if (currentTabId != R.id.menuHome) {
-                    bottomNav.setSelectedItemId(R.id.menuHome);
-                    switchFragment(R.id.menuHome, false);
-                    currentTabId = R.id.menuHome;
-                    return;
-                }
-
-                if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
-                    getSupportFragmentManager().popBackStack();
-                    return;
-                }
-
+                // 3. If no internal fragments and no tab history, finish the activity directly.
+                //    This means the app will exit from any bottom navigation tab
+                //    once all navigation within that tab and the tab history are exhausted.
                 finish();
             }
         });
@@ -117,8 +115,13 @@ public class HomeActivity extends AppCompatActivity implements HomeFragment.OnFo
         Fragment target = getFragmentByTabId(tabId);
         if (target == null || target == activeFragment) return;
 
-        FragmentTransaction tx = getSupportFragmentManager().beginTransaction();
-        if (animate) tx.setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out);
+        FragmentManager fm = getSupportFragmentManager();
+        // Clear back stack before switching to a new root tab fragment
+        if (fm.getBackStackEntryCount() > 0) {
+            fm.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+        }
+
+        FragmentTransaction tx = fm.beginTransaction();
         tx.hide(activeFragment).show(target).commit();
         activeFragment = target;
     }
@@ -146,19 +149,16 @@ public class HomeActivity extends AppCompatActivity implements HomeFragment.OnFo
                 .hide(activeFragment)
                 .addToBackStack(DetailFoodFragment.TAG)
                 .commit();
-        activeFragment = detailFragment;
     }
     @Override
     public void onSearchByNameClicked(User user) {
-        SearchFoodByNameFragment searchFragment = SearchFoodByNameFragment.newInstance(user);
+        SearchFoodByNameFragment searchFoodByNameFragment = SearchFoodByNameFragment.newInstance(user);
+        FragmentTransaction tx = getSupportFragmentManager().beginTransaction();
 
-        getSupportFragmentManager()
-                .beginTransaction()
-                .add(R.id.fragment_container, searchFragment, SearchFoodByNameFragment.TAG)
-                .hide(activeFragment)
+        tx.hide(activeFragment)
+                .add(R.id.fragment_container, searchFoodByNameFragment, SearchFoodByNameFragment.TAG)
+                .show(searchFoodByNameFragment) // Explicitly show the new fragment
                 .addToBackStack(SearchFoodByNameFragment.TAG)
                 .commit();
-
-        activeFragment = searchFragment;
     }
 }

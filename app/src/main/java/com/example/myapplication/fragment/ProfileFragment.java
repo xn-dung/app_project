@@ -3,6 +3,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.content.Intent;
@@ -27,6 +28,7 @@ public class ProfileFragment extends Fragment {
     private TextView userFullname;
     private TextView userEmail;
     private LinearLayout textSettings;
+    private ImageButton btnBack;
     // private LinearLayout viewPosts;
     private User user;
 
@@ -63,6 +65,8 @@ public class ProfileFragment extends Fragment {
         userFullname = view.findViewById(R.id.userFullName);
         userEmail = view.findViewById(R.id.userEmail);
         textSettings = view.findViewById(R.id.editProfileBtn);
+        btnBack = view.findViewById(R.id.btnBack);
+        btnBack.setOnClickListener(v -> getParentFragmentManager().popBackStack());
         // viewPosts = view.findViewById(R.id.postsBtn);
 
         if (user != null) {

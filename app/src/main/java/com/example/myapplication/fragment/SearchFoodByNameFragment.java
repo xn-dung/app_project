@@ -18,7 +18,7 @@ public class SearchFoodByNameFragment extends Fragment{
 
     private User user;
     private Button btn;
-    public static final String TAG = "SeacrchFoodByNameFragment";
+    public static final String TAG = "SearchFoodByNameFragment";
     public static SearchFoodByNameFragment newInstance(User user) {
         SearchFoodByNameFragment fragment = new SearchFoodByNameFragment();
         Bundle args = new Bundle();

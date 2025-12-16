@@ -31,6 +31,7 @@ drawable dinner
 drawable edit_text_background
 drawable food_card_bg
 drawable gradient_background
+drawable gradient_main_bg
 drawable grey_bg
 drawable header_background
 drawable ic_account_circle
@@ -169,6 +170,7 @@ id textViewNguyenLieu
 id textViewTen
 id titleText
 id tvCachLam
+id tvEmptyState
 id tvHuongDanTitle
 id tvTitle
 id txtDinhLuong

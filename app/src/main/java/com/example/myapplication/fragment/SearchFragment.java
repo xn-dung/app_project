@@ -210,10 +210,14 @@ public class SearchFragment extends Fragment {
                             }
 
                             if (bd.size() > 0) {
-                                Intent intent = new Intent(requireContext(), FoundFoodActivity.class);
-                                intent.putExtra("type", 1);
-                                intent.putExtra("data", bd);
-                                startActivity(intent);
+                                FoundFoodFragment foundFragment = FoundFoodFragment.newInstance(1, bd, user);
+
+                                requireActivity().getSupportFragmentManager()
+                                        .beginTransaction()
+                                        .hide(SearchFragment.this)
+                                        .add(R.id.fragment_container, foundFragment, FoundFoodFragment.TAG)
+                                        .addToBackStack(FoundFoodFragment.TAG)
+                                        .commit();
                             } else {
                                 Toast.makeText(requireContext(), "Không tìm thấy món ăn nào phù hợp!", Toast.LENGTH_SHORT).show();
                             }

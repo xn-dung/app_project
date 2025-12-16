@@ -5,7 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="fragment.SearchFragment">
+    tools:context="fragment.SearchFragment"
+    android:background="@drawable/gradient_main_bg">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/layoutHeader"
@@ -76,13 +77,15 @@
                     android:id="@+id/editTen1"
                     android:hint="Tên"
                     android:inputType="textCapSentences"
-                    android:padding="8dp" />
+                    android:padding="8dp"
+                    android:textColor="@color/white"/>
 
                 <EditText
                     android:id="@+id/editSoLuong1"
                     android:hint="Số lượng"
                     android:inputType="numberDecimal"
-                    android:padding="8dp" />
+                    android:padding="8dp"
+                    android:textColor="@color/white"/>
 
                 <Spinner
                     android:id="@+id/spinnerDonVi1"

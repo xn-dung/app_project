@@ -22,10 +22,9 @@ public class FoundFoodAdapter extends ArrayAdapter<BaiDang>{
     int idlayout;
     ArrayList<BaiDang> myList;
 
-    public FoundFoodAdapter( int idlayout, Activity context, ArrayList<BaiDang> myList) {
+    public FoundFoodAdapter( int idlayout, Context context, ArrayList<BaiDang> myList) {
         super(context, idlayout, myList);
         this.idlayout = idlayout;
-        this.context = context;
         this.myList = myList;
     }
 

@@ -15,17 +15,18 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:orientation="vertical"
-        android:gravity="center"
+        android:gravity="center_horizontal"
         android:padding="15dp"
         android:layout_margin="8dp"
         android:background="@drawable/back_rectangle_background">
 
         <ImageView
             android:id="@+id/imageFood"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:contentDescription="@string/app_name"
-            android:layout_marginBottom="0dp"/>
+            android:layout_marginBottom="0dp"
+            android:scaleType="centerCrop"/>
 
         <TextView
             android:id="@+id/textFoodName"
@@ -34,7 +35,9 @@
             android:gravity="center"
             android:text="Tên món"
             android:textSize="20sp"
-            android:textColor="@color/colorWhite" />
+            android:textColor="@color/colorWhite"
+            android:maxLines="2"
+            android:ellipsize="end"/>
 
     </LinearLayout>
 </androidx.cardview.widget.CardView>

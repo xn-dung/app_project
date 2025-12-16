@@ -39,6 +39,7 @@ public class HomeFragment extends Fragment {
     private User user;
     private TextView fullname;
     private GridView gv;
+    private TextView tvEmptyState;
     private ArrayList<BaiDang> listBD;
     private MyArrayAdapter myAdapter;
     private MaterialButton btnFavorite;
@@ -85,6 +86,7 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         gv = view.findViewById(R.id.gridFoods);
+        tvEmptyState = view.findViewById(R.id.tvEmptyState);
         listBD = new ArrayList<>();
         btnFavorite = view.findViewById(R.id.btnFavorite);
         btnRecommend = view.findViewById(R.id.btnRecommend);
@@ -105,6 +107,10 @@ public class HomeFragment extends Fragment {
             v.setSelected(true);
             currentSltBtn = (MaterialButton) v;
 
+            listBD.clear();
+            myAdapter.notifyDataSetChanged();
+            checkEmptyState();
+
             if (v.getId() == R.id.btnRecommend) {
                 takeBD();
             } else if (v.getId() == R.id.btnFavorite) {
@@ -123,6 +129,17 @@ public class HomeFragment extends Fragment {
                 listener.onFoodItemSelected(chonBD);
             }
         });
+    }
+
+    private void checkEmptyState(){
+        if (listBD.isEmpty()) {
+            gv.setVisibility(View.GONE);
+            tvEmptyState.setVisibility(View.VISIBLE);
+            tvEmptyState.setText("Không có kết quả được tìm thấy");
+        } else {
+            gv.setVisibility(View.VISIBLE);
+            tvEmptyState.setVisibility(View.GONE);
+        }
     }
 
     private void takeBD() {
@@ -152,11 +169,15 @@ public class HomeFragment extends Fragment {
                             listBD.add(baiDang);
                         }
                         myAdapter.notifyDataSetChanged();
+                        checkEmptyState();
                     } catch (Exception e) {
                         Toast.makeText(requireContext(), "Lỗi xử lý dữ liệu: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 },
-                error -> Toast.makeText(requireContext(), "Lỗi kết nối: " + error.toString(), Toast.LENGTH_SHORT).show()
+                error -> {
+                    Toast.makeText(requireContext(), "Lỗi kết nối: " + error.toString(), Toast.LENGTH_SHORT).show();
+                    checkEmptyState();
+                }
         );
         queue.add(jsonArrayRequest);
     }
@@ -191,6 +212,7 @@ public class HomeFragment extends Fragment {
                             listBD.add(baiDang);
                         }
                         myAdapter.notifyDataSetChanged();
+                        checkEmptyState();
                     } catch (Exception e) {
                         Toast.makeText(requireContext(), "Lỗi xử lý dữ liệu: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                     }

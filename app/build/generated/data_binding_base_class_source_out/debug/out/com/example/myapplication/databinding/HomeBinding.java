@@ -54,11 +54,15 @@ public final class HomeBinding implements ViewBinding {
   @NonNull
   public final TextView textHello;
 
+  @NonNull
+  public final TextView tvEmptyState;
+
   private HomeBinding(@NonNull ConstraintLayout rootView, @NonNull LinearLayout ButtonsLayout,
       @NonNull MaterialButton btnFavorite, @NonNull MaterialButton btnRecent,
       @NonNull MaterialButton btnRecommend, @NonNull GridView gridFoods,
       @NonNull ImageView imageAvatar, @NonNull CardView layoutHeader,
-      @NonNull ConstraintLayout main, @NonNull TextView textFullName, @NonNull TextView textHello) {
+      @NonNull ConstraintLayout main, @NonNull TextView textFullName, @NonNull TextView textHello,
+      @NonNull TextView tvEmptyState) {
     this.rootView = rootView;
     this.ButtonsLayout = ButtonsLayout;
     this.btnFavorite = btnFavorite;
@@ -70,6 +74,7 @@ public final class HomeBinding implements ViewBinding {
     this.main = main;
     this.textFullName = textFullName;
     this.textHello = textHello;
+    this.tvEmptyState = tvEmptyState;
   }
 
   @Override
@@ -155,8 +160,15 @@ public final class HomeBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.tvEmptyState;
+      TextView tvEmptyState = ViewBindings.findChildViewById(rootView, id);
+      if (tvEmptyState == null) {
+        break missingId;
+      }
+
       return new HomeBinding((ConstraintLayout) rootView, ButtonsLayout, btnFavorite, btnRecent,
-          btnRecommend, gridFoods, imageAvatar, layoutHeader, main, textFullName, textHello);
+          btnRecommend, gridFoods, imageAvatar, layoutHeader, main, textFullName, textHello,
+          tvEmptyState);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
