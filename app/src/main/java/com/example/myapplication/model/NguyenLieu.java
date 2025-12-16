@@ -16,7 +16,9 @@ public class NguyenLieu implements Serializable {
         this.id = id;
         this.ten = ten;
     }
-
+    public NguyenLieu(String ten){
+        this.ten = ten;
+    }
 
     public String getId() {
         return id;

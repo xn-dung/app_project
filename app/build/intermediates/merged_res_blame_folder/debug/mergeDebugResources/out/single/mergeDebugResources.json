@@ -140,10 +140,6 @@
         "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-40:\\drawable\\top_bckgr.xml"
     },
     {
-        "merged": "com.example.myapplication.app-debug-38:/layout_add_food_post.xml.flat",
-        "source": "com.example.myapplication.app-main-40:/layout/add_food_post.xml"
-    },
-    {
         "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-38:\\layout_search_food_byname.xml.flat",
         "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-40:\\layout\\search_food_byname.xml"
     },
@@ -200,6 +196,10 @@
         "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-40:\\drawable\\gradient_background.xml"
     },
     {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-38:\\drawable_gradient_main_bg.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-40:\\drawable\\gradient_main_bg.xml"
+    },
+    {
         "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-38:\\layout_user_profile.xml.flat",
         "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-40:\\layout\\user_profile.xml"
     },
@@ -236,6 +236,10 @@
         "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-40:\\drawable\\ic_search.xml"
     },
     {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-38:\\layout_edit_profile.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-40:\\layout\\edit_profile.xml"
+    },
+    {
         "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-38:\\drawable_button_background.xml.flat",
         "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-40:\\drawable\\button_background.xml"
     },
@@ -244,12 +248,12 @@
         "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-40:\\mipmap-xhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-38:\\layout_edit_profile.xml.flat",
-        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-40:\\layout\\edit_profile.xml"
-    },
-    {
         "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-38:\\drawable_play.png.flat",
         "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-40:\\drawable\\play.png"
+    },
+    {
+        "merged": "com.example.myapplication.app-debug-38:/layout_search_food_by_ingredient.xml.flat",
+        "source": "com.example.myapplication.app-main-40:/layout/search_food_by_ingredient.xml"
     },
     {
         "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-38:\\drawable_tab_bar_bg.xml.flat",

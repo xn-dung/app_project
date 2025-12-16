@@ -5,7 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="fragment.SearchFragment">
+    tools:context="fragment.SearchFragment"
+    android:background="@drawable/gradient_main_bg">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/layoutHeader"
@@ -76,65 +77,85 @@
                     android:id="@+id/editTen1"
                     android:hint="Tên"
                     android:inputType="textCapSentences"
-                    android:padding="8dp" />
+                    android:padding="8dp"
+                    android:textColor="@color/white"/>
 
                 <EditText
                     android:id="@+id/editSoLuong1"
                     android:hint="Số lượng"
                     android:inputType="numberDecimal"
-                    android:padding="8dp" />
+                    android:padding="8dp"
+                    android:textColor="@color/white"/>
 
                 <Spinner
                     android:id="@+id/spinnerDonVi1"
                     android:entries="@array/donvi_array"
                     android:padding="8dp" />
+
+                <!-- NÚT TRỪ THEO DÒNG -->
+                <Button
+                    android:id="@+id/btnRemoveRow"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:text="−"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"
+                    android:backgroundTint="@color/colorPrimaryLight" />
             </TableRow>
         </TableLayout>
 
+        <!-- ADD / REMOVE -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="right"
+            android:layout_marginTop="8dp"
+            android:gravity="end"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/button2"
-                android:layout_width="55dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:backgroundTint="@color/colorPrimary"
-                android:text="+" />
+                android:layout_width="48dp"
+                android:layout_height="40dp"
+                android:text="+"
+                android:backgroundTint="@color/colorPrimary" />
 
             <Button
                 android:id="@+id/buttonTru"
-                android:layout_width="62dp"
-                android:layout_height="match_parent"
-                android:backgroundTint="@color/colorPrimaryLight"
+                android:layout_width="48dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="8dp"
                 android:text="-"
-                android:textColor="@color/colorPrimary" />
+                android:textColor="@color/colorPrimary"
+                android:backgroundTint="@color/colorPrimaryLight" />
         </LinearLayout>
-        <!-- Nút Search & Picture -->
+
+        <!-- ACTION BUTTONS -->
         <LinearLayout
             android:id="@+id/hehe"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:gravity="center"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/button3"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:layout_weight="1"
-                android:backgroundTint="@color/colorPrimary"
-                android:text="Search" />
+                android:text="Search"
+                android:backgroundTint="@color/colorPrimary" />
 
+            <Button
+                android:id="@+id/buttonPhotos"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:text="Pictures"
+                android:textColor="@android:color/white"
+                android:backgroundTint="@color/colorPrimary" />
         </LinearLayout>
 
     </LinearLayout>
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

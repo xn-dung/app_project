@@ -29,10 +29,16 @@ public final class SearchFoodByIngredientBinding implements ViewBinding {
   public final LinearLayout barSearch;
 
   @NonNull
+  public final Button btnRemoveRow;
+
+  @NonNull
   public final Button button2;
 
   @NonNull
   public final Button button3;
+
+  @NonNull
+  public final Button buttonPhotos;
 
   @NonNull
   public final Button buttonTru;
@@ -62,14 +68,17 @@ public final class SearchFoodByIngredientBinding implements ViewBinding {
   public final TableLayout tablet;
 
   private SearchFoodByIngredientBinding(@NonNull ConstraintLayout rootView,
-      @NonNull LinearLayout barSearch, @NonNull Button button2, @NonNull Button button3,
-      @NonNull Button buttonTru, @NonNull EditText editSoLuong1, @NonNull EditText editTen1,
-      @NonNull LinearLayout hehe, @NonNull CardView layoutHeader, @NonNull ConstraintLayout main,
+      @NonNull LinearLayout barSearch, @NonNull Button btnRemoveRow, @NonNull Button button2,
+      @NonNull Button button3, @NonNull Button buttonPhotos, @NonNull Button buttonTru,
+      @NonNull EditText editSoLuong1, @NonNull EditText editTen1, @NonNull LinearLayout hehe,
+      @NonNull CardView layoutHeader, @NonNull ConstraintLayout main,
       @NonNull Spinner spinnerDonVi1, @NonNull TableRow tableRowItem, @NonNull TableLayout tablet) {
     this.rootView = rootView;
     this.barSearch = barSearch;
+    this.btnRemoveRow = btnRemoveRow;
     this.button2 = button2;
     this.button3 = button3;
+    this.buttonPhotos = buttonPhotos;
     this.buttonTru = buttonTru;
     this.editSoLuong1 = editSoLuong1;
     this.editTen1 = editTen1;
@@ -114,6 +123,12 @@ public final class SearchFoodByIngredientBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.btnRemoveRow;
+      Button btnRemoveRow = ViewBindings.findChildViewById(rootView, id);
+      if (btnRemoveRow == null) {
+        break missingId;
+      }
+
       id = R.id.button2;
       Button button2 = ViewBindings.findChildViewById(rootView, id);
       if (button2 == null) {
@@ -123,6 +138,12 @@ public final class SearchFoodByIngredientBinding implements ViewBinding {
       id = R.id.button3;
       Button button3 = ViewBindings.findChildViewById(rootView, id);
       if (button3 == null) {
+        break missingId;
+      }
+
+      id = R.id.buttonPhotos;
+      Button buttonPhotos = ViewBindings.findChildViewById(rootView, id);
+      if (buttonPhotos == null) {
         break missingId;
       }
 
@@ -176,9 +197,9 @@ public final class SearchFoodByIngredientBinding implements ViewBinding {
         break missingId;
       }
 
-      return new SearchFoodByIngredientBinding((ConstraintLayout) rootView, barSearch, button2,
-          button3, buttonTru, editSoLuong1, editTen1, hehe, layoutHeader, main, spinnerDonVi1,
-          tableRowItem, tablet);
+      return new SearchFoodByIngredientBinding((ConstraintLayout) rootView, barSearch, btnRemoveRow,
+          button2, button3, buttonPhotos, buttonTru, editSoLuong1, editTen1, hehe, layoutHeader,
+          main, spinnerDonVi1, tableRowItem, tablet);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

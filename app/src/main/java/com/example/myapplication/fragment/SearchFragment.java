@@ -1,7 +1,14 @@
 package com.example.myapplication.fragment;
 
+import android.Manifest;
+import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,24 +19,39 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.view.menu.MenuBuilder;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.myapplication.R;
+import com.example.myapplication.UI.HomeActivity;
+import com.example.myapplication.interfaces.NavigationHost;
 import com.example.myapplication.model.BaiDang;
 import com.example.myapplication.model.NguyenLieu;
 import com.example.myapplication.model.User;
+import com.example.myapplication.services.VolleyMultipartRequest;
+
 import android.content.Context;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class SearchFragment extends Fragment {
     public interface OnSearchByNameClickedListener {
@@ -37,12 +59,16 @@ public class SearchFragment extends Fragment {
     }
 
     private LinearLayout btnSearch;
-    private Button button, buttonTru, buttonBa;
+    private Button button, buttonTru, buttonBa, photos, buttonRow;
     private TableLayout tableLayout;
     private ArrayList<BaiDang> bd;
     private User user;
     private ArrayList<NguyenLieu> al;
     private OnSearchByNameClickedListener mListener;
+    private ActivityResultLauncher<Intent> cameraLauncher;
+    private Uri imageUri;
+
+
 
     public static SearchFragment newInstance(User user) {
         SearchFragment fragment = new SearchFragment();
@@ -86,53 +112,88 @@ public class SearchFragment extends Fragment {
         tableLayout = view.findViewById(R.id.tablet);
         button = view.findViewById(R.id.button2);
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int emptyRowCount = 0;
-                for (int i = 0; i < tableLayout.getChildCount(); i++) {
-                    View child = tableLayout.getChildAt(i);
-                    if (child instanceof TableRow) {
-                        TableRow row = (TableRow) child;
-                        EditText etTen = row.findViewById(R.id.textTen);
-                        EditText etDinhLuong = row.findViewById(R.id.editDinhLuong);
-
-                        if (etTen != null && etDinhLuong != null) {
-                            boolean isTenEmpty = etTen.getText().toString().trim().isEmpty();
-                            boolean isDinhLuongEmpty = etDinhLuong.getText().toString().trim().isEmpty();
-                            if (isTenEmpty && isDinhLuongEmpty) {
-                                emptyRowCount++;
-                            }
+        cameraLauncher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                result -> {
+                    if (result.getResultCode() == Activity.RESULT_OK) {
+                        try {
+                            uploadImageToBackend(imageUri);
+                        } catch (Exception e) {
+                            throw new RuntimeException(e);
                         }
+                    } else {
+                        Toast.makeText(requireContext(), "Chụp ảnh thất bại", Toast.LENGTH_SHORT).show();
                     }
                 }
-
-                if (emptyRowCount >= 4) {
-                    Toast.makeText(requireContext(), "Đã có 4 dòng trống. Vui lòng điền thông tin trước!", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                TableRow newRow = (TableRow) LayoutInflater.from(requireContext())
-                        .inflate(R.layout.table_layout, tableLayout, false);
-
-                EditText tv = newRow.findViewById(R.id.textTen);
-                EditText et = newRow.findViewById(R.id.editDinhLuong);
-                tv.setText("");
-                et.setText("");
-
-                tableLayout.addView(newRow);
+        );
+        photos = view.findViewById(R.id.buttonPhotos);
+        photos.setOnClickListener(v -> {
+            if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.CAMERA)
+                    != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(requireActivity(), new String[]{Manifest.permission.CAMERA}, 100);
+            } else {
+                openCamera();
             }
         });
 
-        buttonTru = view.findViewById(R.id.buttonTru);
-        buttonTru.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int rowCount = tableLayout.getChildCount();
-                if (rowCount > 1) {
-                    tableLayout.removeViewAt(rowCount - 1);
-                } else {
-                    Toast.makeText(requireContext(), "Không thể xóa hết các dòng!", Toast.LENGTH_SHORT).show();
+        button.setOnClickListener(v -> {
+            int emptyRowCount = 0;
+
+            for (int i = 0; i < tableLayout.getChildCount(); i++) {
+                View child = tableLayout.getChildAt(i);
+                if (child instanceof TableRow) {
+                    TableRow row = (TableRow) child;
+                    EditText etTen = row.findViewById(R.id.textTen);
+                    EditText etSoLuong = row.findViewById(R.id.editDinhLuong);
+
+                    if (etTen != null && etSoLuong != null) {
+                        if (etTen.getText().toString().trim().isEmpty()
+                                && etSoLuong.getText().toString().trim().isEmpty()) {
+                            emptyRowCount++;
+                        }
+                    }
                 }
+            }
+
+            if (emptyRowCount >= 4) {
+                Toast.makeText(requireContext(),
+                        "Đã có 4 dòng trống. Vui lòng điền thông tin trước!",
+                        Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            TableRow newRow = (TableRow) LayoutInflater.from(requireContext())
+                    .inflate(R.layout.table_layout, tableLayout, false);
+
+            EditText etTen = newRow.findViewById(R.id.textTen);
+            EditText etSoLuong = newRow.findViewById(R.id.editDinhLuong);
+            Button btnRemove = newRow.findViewById(R.id.btnRemoveRow1);
+
+            etTen.setText("");
+            etSoLuong.setText("");
+
+            btnRemove.setOnClickListener(v2 -> {
+                if (tableLayout.getChildCount() > 1) {
+                    tableLayout.removeView((View) v2.getParent());
+                } else {
+                    Toast.makeText(requireContext(),
+                            "Không thể xóa hết các dòng!",
+                            Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            tableLayout.addView(newRow);
+        });
+
+        buttonTru = view.findViewById(R.id.buttonTru);
+        buttonTru.setOnClickListener(v -> {
+            int rowCount = tableLayout.getChildCount();
+            if (rowCount > 1) {
+                tableLayout.removeViewAt(rowCount - 1);
+            } else {
+                Toast.makeText(requireContext(),
+                        "Không thể xóa hết các dòng!",
+                        Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -148,12 +209,28 @@ public class SearchFragment extends Fragment {
                 tmp.setTen(ten.getText().toString());
                 al.add(tmp);
                 for (int i = 1; i < rowCount; i++) {
-                    TableRow hehe = (TableRow) tableLayout.getChildAt(i);
-                    EditText tv = hehe.findViewById(R.id.textTen);
-                    NguyenLieu tmp1 = new NguyenLieu();
-                    tmp1.setTen(tv.getText().toString());
-                    al.add(tmp1);
+                    View child = tableLayout.getChildAt(i);
+
+                    if (child instanceof TableRow) {
+                        TableRow row = (TableRow) child;
+                        EditText etTen = row.findViewById(R.id.textTen);
+
+                        if (etTen != null) {
+                            String tenNL = etTen.getText().toString().trim();
+                            if (!tenNL.isEmpty()) {
+                                NguyenLieu nl = new NguyenLieu();
+                                nl.setTen(tenNL);
+                                al.add(nl);
+                            }
+                        }
+                    }
                 }
+
+                if (al.isEmpty()) {
+                    Toast.makeText(requireContext(), "Vui lòng nhập nguyên liệu!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 searchFood(al);
             }
         });
@@ -192,7 +269,6 @@ public class SearchFragment extends Fragment {
 
                                 BaiDang baiDang = new BaiDang();
                                 baiDang.setId(obj.getString("_id"));
-                                // ... (toàn bộ code parse JSON của bạn)
                                 baiDang.setTenMon(obj.getString("tenMon"));
                                 baiDang.setCachLam(obj.getString("cachLam"));
                                 baiDang.setNguyenLieuDinhLuong(obj.optString("nguyenLieuDinhLuong", ""));
@@ -203,17 +279,13 @@ public class SearchFragment extends Fragment {
                                 JSONArray nlArray = obj.getJSONArray("nguyenLieu");
                                 ArrayList<NguyenLieu> nguyenLieu = new ArrayList<>();
                                 for(int j = 0; j < nlArray.length(); j++){
-                                    nguyenLieu.add(new NguyenLieu(nlArray.getJSONObject(j).getString("_id"), nlArray.getJSONObject(j).getString("ten")));
+                                    nguyenLieu.add(new NguyenLieu(nlArray.getJSONObject(j).getString("ten")));
                                 }
                                 baiDang.setNguyenLieu(nguyenLieu);
                                 bd.add(baiDang);
                             }
-
                             if (bd.size() > 0) {
-                                Intent intent = new Intent(requireContext(), FoundFoodActivity.class);
-                                intent.putExtra("type", 1);
-                                intent.putExtra("data", bd);
-                                startActivity(intent);
+                                ((HomeActivity) requireActivity()).openFoundFoodFragment(bd, user, 1);
                             } else {
                                 Toast.makeText(requireContext(), "Không tìm thấy món ăn nào phù hợp!", Toast.LENGTH_SHORT).show();
                             }
@@ -238,9 +310,112 @@ public class SearchFragment extends Fragment {
             Toast.makeText(requireContext(), "Lỗi tạo request", Toast.LENGTH_SHORT).show();
         }
     }
+    private void openCamera() {
+        File photoFile = new File(
+                requireContext().getExternalFilesDir(Environment.DIRECTORY_PICTURES),
+                "photo_" + System.currentTimeMillis() + ".jpg"
+        );
+
+        imageUri = FileProvider.getUriForFile(
+                requireContext(),
+                requireContext().getPackageName() + ".provider",
+                photoFile
+        );
+
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        intent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri);
+        intent.addFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+
+        cameraLauncher.launch(intent);
+    }
     @Override
     public void onDetach() {
         super.onDetach();
         mListener = null;
     }
+    private byte[] getBytesFromUri(Uri uri) throws Exception {
+        Bitmap bitmap = MediaStore.Images.Media.getBitmap(
+                requireContext().getContentResolver(), uri);
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 90, baos);
+        return baos.toByteArray();
+    }
+    private void uploadImageToBackend(Uri imageUri) {
+        try {
+            Map<String, VolleyMultipartRequest.DataPart> byteData = new HashMap<>();
+            byteData.put("image", new VolleyMultipartRequest.DataPart(
+                    "photo.jpg",
+                    getBytesFromUri(imageUri),
+                    "image/jpeg"
+            ));
+
+            String url = getString(R.string.backend_url) + "/api/image/detect";
+
+            VolleyMultipartRequest request = new VolleyMultipartRequest(
+                    Request.Method.POST,
+                    url,
+                    byteData,
+                    response -> {
+                        try {
+                            JSONArray nguyenLieuArray = response.optJSONArray("nguyenLieu");
+                            if (nguyenLieuArray == null || nguyenLieuArray.length() == 0) {
+                                Toast.makeText(requireContext(), "Không tìm thấy món ăn nào phù hợp!", Toast.LENGTH_SHORT).show();
+                                return;
+                            }
+                            ArrayList<NguyenLieu> list = new ArrayList<>();
+                            for (int i = 0; i < nguyenLieuArray.length(); i++) {
+                                JSONObject obj = nguyenLieuArray.getJSONObject(i);
+                                NguyenLieu nl = new NguyenLieu();
+                                nl.setTen(obj.getString("ten"));
+                                list.add(nl);
+                            }
+                            fillTableWithNguyenLieu(list);
+                        } catch (Exception e) {
+                            Toast.makeText(requireContext(), "Lỗi xử lý dữ liệu", Toast.LENGTH_SHORT).show();
+                        }
+                    },
+                    error -> Toast.makeText(requireContext(), "Lỗi kết nối", Toast.LENGTH_SHORT).show()
+            );
+
+            Volley.newRequestQueue(requireContext()).add(request);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            Toast.makeText(requireContext(), "Lỗi đọc file ảnh", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+    private void fillTableWithNguyenLieu(ArrayList<NguyenLieu> list) {
+        int ingredientIndex = 0;
+
+        while (ingredientIndex < list.size()) {
+            TableRow newRow = (TableRow) LayoutInflater.from(requireContext())
+                    .inflate(R.layout.table_layout, tableLayout, false);
+
+            EditText etTen = newRow.findViewById(R.id.textTen);
+            EditText etSoLuong = newRow.findViewById(R.id.editDinhLuong);
+            Button btnXoa = newRow.findViewById(R.id.btnRemoveRow1);
+
+            etTen.setText(list.get(ingredientIndex).getTen());
+            etSoLuong.setText("");
+
+            btnXoa.setOnClickListener(v -> {
+                if (tableLayout.getChildCount() > 1) {
+                    tableLayout.removeView(newRow);
+                } else {
+                    Toast.makeText(requireContext(),
+                            "Không thể xóa hết các dòng!",
+                            Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            tableLayout.addView(newRow);
+            ingredientIndex++;
+        }
+    }
+
+
+
 }

@@ -4,6 +4,7 @@ package com.example.myapplication.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TableRow;
@@ -21,19 +22,23 @@ public final class TableLayoutBinding implements ViewBinding {
   private final TableRow rootView;
 
   @NonNull
+  public final Button btnRemoveRow1;
+
+  @NonNull
   public final EditText editDinhLuong;
 
   @NonNull
-  public final Spinner spinnerDonVi;
+  public final Spinner spinnerDonVi1;
 
   @NonNull
   public final EditText textTen;
 
-  private TableLayoutBinding(@NonNull TableRow rootView, @NonNull EditText editDinhLuong,
-      @NonNull Spinner spinnerDonVi, @NonNull EditText textTen) {
+  private TableLayoutBinding(@NonNull TableRow rootView, @NonNull Button btnRemoveRow1,
+      @NonNull EditText editDinhLuong, @NonNull Spinner spinnerDonVi1, @NonNull EditText textTen) {
     this.rootView = rootView;
+    this.btnRemoveRow1 = btnRemoveRow1;
     this.editDinhLuong = editDinhLuong;
-    this.spinnerDonVi = spinnerDonVi;
+    this.spinnerDonVi1 = spinnerDonVi1;
     this.textTen = textTen;
   }
 
@@ -64,15 +69,21 @@ public final class TableLayoutBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btnRemoveRow1;
+      Button btnRemoveRow1 = ViewBindings.findChildViewById(rootView, id);
+      if (btnRemoveRow1 == null) {
+        break missingId;
+      }
+
       id = R.id.editDinhLuong;
       EditText editDinhLuong = ViewBindings.findChildViewById(rootView, id);
       if (editDinhLuong == null) {
         break missingId;
       }
 
-      id = R.id.spinnerDonVi;
-      Spinner spinnerDonVi = ViewBindings.findChildViewById(rootView, id);
-      if (spinnerDonVi == null) {
+      id = R.id.spinnerDonVi1;
+      Spinner spinnerDonVi1 = ViewBindings.findChildViewById(rootView, id);
+      if (spinnerDonVi1 == null) {
         break missingId;
       }
 
@@ -82,7 +93,8 @@ public final class TableLayoutBinding implements ViewBinding {
         break missingId;
       }
 
-      return new TableLayoutBinding((TableRow) rootView, editDinhLuong, spinnerDonVi, textTen);
+      return new TableLayoutBinding((TableRow) rootView, btnRemoveRow1, editDinhLuong,
+          spinnerDonVi1, textTen);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

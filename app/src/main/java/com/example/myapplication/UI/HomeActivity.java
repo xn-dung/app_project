@@ -11,19 +11,22 @@ import androidx.fragment.app.FragmentTransaction;
 import com.example.myapplication.R;
 import com.example.myapplication.fragment.AddFoodFragment;
 import com.example.myapplication.fragment.DetailFoodFragment;
+import com.example.myapplication.fragment.FoundFoodFragment;
 import com.example.myapplication.fragment.HomeFragment;
 import com.example.myapplication.fragment.ProfileFragment;
 import com.example.myapplication.fragment.SearchFoodByNameFragment;
 import com.example.myapplication.fragment.SearchFragment;
+import com.example.myapplication.interfaces.NavigationHost;
 import com.example.myapplication.model.BaiDang;
 import com.example.myapplication.model.User;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayDeque;
+import java.util.ArrayList;
 import java.util.Deque;
 
 public class HomeActivity extends AppCompatActivity implements HomeFragment.OnFoodItemSelectedListener,
-        SearchFragment.OnSearchByNameClickedListener {
+        SearchFragment.OnSearchByNameClickedListener, NavigationHost {
 
     private static final String TAG_HOME = "HomeFragment";
     private static final String TAG_SEARCH = "SearchFragment";
@@ -161,4 +164,30 @@ public class HomeActivity extends AppCompatActivity implements HomeFragment.OnFo
 
         activeFragment = searchFragment;
     }
+    public void navigateTo(Fragment fragment, boolean addToBackstack) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        if (addToBackstack) {
+            fragmentTransaction.replace(R.id.fragment_container, fragment).addToBackStack(null);
+        } else {
+            fragmentTransaction.replace(R.id.fragment_container, fragment);
+        }
+        fragmentTransaction.commit();
+    }
+
+    public void openFoundFoodFragment(ArrayList<BaiDang> bd, User user,int type) {
+        FoundFoodFragment fragment = FoundFoodFragment.newInstance(bd, user,type);
+
+        getSupportFragmentManager()
+                .beginTransaction()
+                .add(R.id.fragment_container, fragment, "FoundFood")
+                .hide(activeFragment)
+                .addToBackStack("FoundFood")
+                .commit();
+
+        activeFragment = fragment;
+    }
+
+
 }

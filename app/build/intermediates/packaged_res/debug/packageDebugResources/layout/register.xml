@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:background="@drawable/gradient_main_bg">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -45,7 +46,8 @@
             app:layout_constraintTop_toBottomOf="@id/logoImage"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="16dp" />
+            android:layout_marginTop="16dp"
+            android:textColor="@color/white"/>
 
         <!-- Name -->
         <TextView
@@ -56,7 +58,8 @@
             android:textSize="16sp"
             app:layout_constraintTop_toBottomOf="@id/textView3"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="24dp" />
+            android:layout_marginTop="24dp"
+            android:textColor="@color/white"/>
 
         <EditText
             android:id="@+id/editRegisterName"
@@ -79,7 +82,8 @@
             android:textSize="16sp"
             app:layout_constraintTop_toBottomOf="@id/textRegisterName"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="24dp" />
+            android:layout_marginTop="24dp"
+            android:textColor="@color/white"/>
 
         <EditText
             android:id="@+id/editRegisterEmail"
@@ -102,7 +106,8 @@
             android:textSize="16sp"
             app:layout_constraintTop_toBottomOf="@id/textRegisterEmail"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="24dp" />
+            android:layout_marginTop="24dp"
+            android:textColor="@color/white"/>
 
         <EditText
             android:id="@+id/editRegisterPhone"
@@ -114,7 +119,8 @@
             app:layout_constraintStart_toEndOf="@id/textRegisterPhone"
             app:layout_constraintTop_toTopOf="@id/textRegisterPhone"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginStart="12dp" />
+            android:layout_marginStart="12dp"
+            android:textColor="@color/white"/>
 
         <!-- Address -->
         <TextView
@@ -125,7 +131,8 @@
             android:textSize="16sp"
             app:layout_constraintTop_toBottomOf="@id/textRegisterPhone"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="24dp" />
+            android:layout_marginTop="24dp"
+            android:textColor="@color/white"/>
 
         <EditText
             android:id="@+id/editRegisterAddress"
@@ -147,7 +154,8 @@
             android:textSize="16sp"
             app:layout_constraintTop_toBottomOf="@id/textRegisterAddress"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="24dp" />
+            android:layout_marginTop="24dp"
+            android:textColor="@color/white"/>
 
         <EditText
             android:id="@+id/editRegisterUsername"
@@ -158,7 +166,8 @@
             app:layout_constraintStart_toEndOf="@id/textRegisterUsername"
             app:layout_constraintTop_toTopOf="@id/textRegisterUsername"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginStart="12dp" />
+            android:layout_marginStart="12dp"
+            android:textColor="@color/white"/>
 
         <!-- Password -->
         <TextView
@@ -169,7 +178,8 @@
             android:textSize="16sp"
             app:layout_constraintTop_toBottomOf="@id/textRegisterUsername"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="24dp" />
+            android:layout_marginTop="24dp"
+            android:textColor="@color/white"/>
 
         <EditText
             android:id="@+id/editRegisterPassword"
@@ -192,7 +202,8 @@
             android:textSize="16sp"
             app:layout_constraintTop_toBottomOf="@id/textRegisterPassword"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="24dp" />
+            android:layout_marginTop="24dp"
+            android:textColor="@color/white"/>
 
         <EditText
             android:id="@+id/editConfirmPassword"
@@ -216,7 +227,8 @@
             app:layout_constraintTop_toBottomOf="@id/textConfirmPassword"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="32dp" />
+            android:layout_marginTop="32dp"
+            android:backgroundTint="@color/colorPrimaryLight"/>
 
         <!-- Error message -->
         <TextView

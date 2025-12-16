@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 
 import com.example.myapplication.R;
 import com.example.myapplication.model.BaiDang;
@@ -18,11 +19,11 @@ import java.util.ArrayList;
 import com.bumptech.glide.Glide;
 
 public class FoundFoodAdapter extends ArrayAdapter<BaiDang>{
-    Activity context;
+    Context context;
     int idlayout;
     ArrayList<BaiDang> myList;
 
-    public FoundFoodAdapter( int idlayout, Activity context, ArrayList<BaiDang> myList) {
+    public FoundFoodAdapter( int idlayout, Context context, ArrayList<BaiDang> myList) {
         super(context, idlayout, myList);
         this.idlayout = idlayout;
         this.context = context;
@@ -33,7 +34,7 @@ public class FoundFoodAdapter extends ArrayAdapter<BaiDang>{
     @NonNull
     @Override
     public View getView(int position, @NonNull View convertView, @NonNull ViewGroup parent) {
-        LayoutInflater myFlacter = context.getLayoutInflater();
+        LayoutInflater myFlacter = LayoutInflater.from(context);
         convertView = myFlacter.inflate(idlayout, null);
         BaiDang myBaiDang = myList.get(position);
         TextView txt_title = convertView.findViewById(R.id.textViewTen);

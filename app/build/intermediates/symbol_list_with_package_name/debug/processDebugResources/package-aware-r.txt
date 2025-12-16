@@ -3066,6 +3066,7 @@ drawable dinner
 drawable edit_text_background
 drawable food_card_bg
 drawable gradient_background
+drawable gradient_main_bg
 drawable grey_bg
 drawable header_background
 drawable ic_account_circle
@@ -3296,12 +3297,15 @@ id btnLogout
 id btnPlayYtb
 id btnRecent
 id btnRecommend
+id btnRemoveRow
+id btnRemoveRow1
 id btnSave
 id btnSubmit
 id button2
 id button3
 id buttonCo
 id buttonPanel
+id buttonPhotos
 id buttonTru
 id cache_measures
 id callMeasure
@@ -3689,7 +3693,6 @@ id snapMargins
 id south
 id spacer
 id special_effects_controller_view_tag
-id spinnerDonVi
 id spinnerDonVi1
 id spline
 id split_action_bar
@@ -3791,6 +3794,7 @@ id transition_scene_layoutid_cache
 id transition_transform
 id triangle
 id tvCachLam
+id tvEmptyState
 id tvHuongDanTitle
 id tvTitle
 id txtDinhLuong

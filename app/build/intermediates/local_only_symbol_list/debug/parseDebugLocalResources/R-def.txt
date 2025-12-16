@@ -31,6 +31,7 @@ drawable dinner
 drawable edit_text_background
 drawable food_card_bg
 drawable gradient_background
+drawable gradient_main_bg
 drawable grey_bg
 drawable header_background
 drawable ic_account_circle
@@ -66,11 +67,14 @@ id btnLogout
 id btnPlayYtb
 id btnRecent
 id btnRecommend
+id btnRemoveRow
+id btnRemoveRow1
 id btnSave
 id btnSubmit
 id button2
 id button3
 id buttonCo
+id buttonPhotos
 id buttonTru
 id constraintLayout
 id editConfirmPassword
@@ -136,7 +140,6 @@ id rateNum
 id scrollView
 id scrollViewContent
 id searchname
-id spinnerDonVi
 id spinnerDonVi1
 id start
 id startsearchbyname
@@ -169,6 +172,7 @@ id textViewNguyenLieu
 id textViewTen
 id titleText
 id tvCachLam
+id tvEmptyState
 id tvHuongDanTitle
 id tvTitle
 id txtDinhLuong

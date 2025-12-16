@@ -12,13 +12,12 @@ import androidx.fragment.app.Fragment;
 import com.example.myapplication.model.User;
 
 import com.example.myapplication.R;
-import com.example.myapplication.fragment.FoundFoodActivity;
+
 public class SearchFoodByNameFragment extends Fragment{
     private SearchView sv;
-
+    public static final String TAG = "SeacrchFoodByNameFragment";
     private User user;
     private Button btn;
-    public static final String TAG = "SeacrchFoodByNameFragment";
     public static SearchFoodByNameFragment newInstance(User user) {
         SearchFoodByNameFragment fragment = new SearchFoodByNameFragment();
         Bundle args = new Bundle();
@@ -52,7 +51,7 @@ public class SearchFoodByNameFragment extends Fragment{
             public void onClick(View v) {
                 String search = sv.getQuery().toString();
                 if (!search.isEmpty()) {
-                    Intent intent = new Intent(requireActivity(), FoundFoodActivity.class);
+                    Intent intent = new Intent(requireActivity(), FoundFoodFragment.class);
                     intent.putExtra("type", 2);
                     intent.putExtra("search", search);
                     startActivity(intent);
@@ -60,4 +59,6 @@ public class SearchFoodByNameFragment extends Fragment{
             }
         });
     }
+
+
 }

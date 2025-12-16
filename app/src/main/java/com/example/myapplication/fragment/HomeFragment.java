@@ -126,7 +126,7 @@ public class HomeFragment extends Fragment {
     }
 
     private void takeBD() {
-        String url = "https://mobilenodejs.onrender.com/api/baidang";
+        String url = getString(R.string.backend_url) + "api/baidang";
         RequestQueue queue = Volley.newRequestQueue(requireContext());
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(
                 Request.Method.GET, url, null,
