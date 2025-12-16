@@ -87,6 +87,18 @@ public class AddFoodFragment extends Fragment {
 
                 EditText tv = newRow.findViewById(R.id.textTen);
                 EditText et = newRow.findViewById(R.id.editDinhLuong);
+                Button btnRemove = newRow.findViewById(R.id.btnRemoveRow1);
+
+
+                btnRemove.setOnClickListener(v2 -> {
+                    if (tableLayout.getChildCount() > 1) {
+                        tableLayout.removeView((View) v2.getParent());
+                    } else {
+                        Toast.makeText(requireContext(),
+                                "Không thể xóa hết các dòng!",
+                                Toast.LENGTH_SHORT).show();
+                    }
+                });
 
                 tv.setText("");
                 et.setText("");
