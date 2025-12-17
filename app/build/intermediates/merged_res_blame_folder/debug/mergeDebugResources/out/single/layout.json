@@ -4,6 +4,10 @@
         "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-40:\\layout\\search_food_byname.xml"
     },
     {
+        "merged": "com.example.myapplication.app-mergeDebugResources-37:/layout/search_food_byname.xml",
+        "source": "com.example.myapplication.app-main-40:/layout/search_food_byname.xml"
+    },
+    {
         "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-mergeDebugResources-37:\\layout\\edit_profile.xml",
         "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-40:\\layout\\edit_profile.xml"
     },
@@ -18,10 +22,6 @@
     {
         "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-mergeDebugResources-37:\\layout\\layout_itemnl.xml",
         "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-40:\\layout\\layout_itemnl.xml"
-    },
-    {
-        "merged": "com.example.myapplication.app-mergeDebugResources-37:/layout/search_food_by_ingredient.xml",
-        "source": "com.example.myapplication.app-main-40:/layout/search_food_by_ingredient.xml"
     },
     {
         "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-mergeDebugResources-37:\\layout\\found_food.xml",

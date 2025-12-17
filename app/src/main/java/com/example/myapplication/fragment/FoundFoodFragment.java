@@ -34,7 +34,7 @@ public class FoundFoodFragment extends Fragment {
     private ArrayList<NguyenLieu> nguyenLieu;
     private ListView lv;
     private FoundFoodAdapter myadapter;
-    private TextView texname;
+    private TextView textname;
     private User user;
     private int type;
     public static FoundFoodFragment newInstance(ArrayList<BaiDang> bd,User user,int type) {
@@ -42,6 +42,15 @@ public class FoundFoodFragment extends Fragment {
         Bundle args = new Bundle();
         args.putSerializable("user", user);
         args.putSerializable("data",bd);
+        args.putInt("type",type);
+        fragment.setArguments(args);
+        return fragment;
+    }
+    public static FoundFoodFragment newInstance2(String search,User user,int type) {
+        FoundFoodFragment fragment = new FoundFoodFragment();
+        Bundle args = new Bundle();
+        args.putSerializable("user", user);
+        args.putString("search",search);
         args.putInt("type",type);
         fragment.setArguments(args);
         return fragment;
@@ -65,9 +74,14 @@ public class FoundFoodFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         lv = view.findViewById(R.id.outfood);
-        texname = view.findViewById(R.id.textFullName);
+        textname = view.findViewById(R.id.textFullName);
+
+        textname.setText(user.getFullname());
+
 
         bd = new ArrayList<>();
+        myadapter = new FoundFoodAdapter(R.layout.food_card_home, requireContext(), bd);
+        lv.setAdapter(myadapter);
 
         Bundle args = getArguments();
         if (args == null) return;
@@ -75,20 +89,16 @@ public class FoundFoodFragment extends Fragment {
         if (type == 1) {
             ArrayList<BaiDang> temp =
                     (ArrayList<BaiDang>) args.getSerializable("data");
-            if (temp != null) bd.addAll(temp);
+            if (temp != null && !temp.isEmpty()) {
+                bd.addAll(temp);
+            }
+            setupAdapter();
         } else {
             String foodName = args.getString("search");
             if (foodName != null && !foodName.isEmpty()) {
                 searchFood(foodName);
             }
         }
-
-        myadapter = new FoundFoodAdapter(
-                R.layout.food_card_home,
-                requireContext(),
-                bd
-        );
-        lv.setAdapter(myadapter);
 
         lv.setOnItemClickListener((parent, v, position, id) -> {
             BaiDang chonBD = bd.get(position);
@@ -104,9 +114,16 @@ public class FoundFoodFragment extends Fragment {
         });
         myadapter.notifyDataSetChanged();
     }
-
+    private void setupAdapter() {
+        if (myadapter == null) {
+            myadapter = new FoundFoodAdapter(R.layout.food_card_home, requireContext(), bd);
+            lv.setAdapter(myadapter);
+        } else {
+            myadapter.notifyDataSetChanged();
+        }
+    }
     private void searchFood(String foodName) {
-        String url = getString(R.string.backend_url) + "api/baidang/search/ingredient";
+        String url = getString(R.string.backend_url) + "api/baidang/search";
         RequestQueue queue = Volley.newRequestQueue(requireContext());
 
         try {
@@ -149,7 +166,7 @@ public class FoundFoodFragment extends Fragment {
                                 bd.add(baiDang);
                             }
 
-                            myadapter.notifyDataSetChanged();
+                            setupAdapter();
                             Toast.makeText(
                                     requireContext(),
                                     "Tìm thấy " + bd.size() + " món",

@@ -114,13 +114,12 @@ public class LoginFragment extends Fragment {
                 jsonBody,
                 response -> {
                     try {
-                        JSONObject userObj = response.getJSONObject("user");
-                        String id = userObj.getString("_id");
-                        String name = userObj.getString("name");
-                        String address = userObj.getString("address");
-                        String email = userObj.getString("email");
-                        String phone = userObj.getString("phone");
-                        String userName = userObj.getString("username");
+                        String id = response.getString("_id");
+                        String name = response.getString("name");
+                        String address = response.getString("address");
+                        String email = response.getString("email");
+                        String phone = response.getString("phone");
+                        String userName = response.getString("username");
 //                        String passWord = response.getString("password");
                         User logginUser= new User(id, userName,password,name,address,email,phone);
 

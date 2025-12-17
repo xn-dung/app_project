@@ -5,17 +5,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
+
 import androidx.appcompat.widget.SearchView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import com.example.myapplication.UI.HomeActivity;
 import com.example.myapplication.model.User;
 
 import com.example.myapplication.R;
 
 public class SearchFoodByNameFragment extends Fragment{
     private SearchView sv;
-    public static final String TAG = "SeacrchFoodByNameFragment";
+    public static final String TAG = "SearchFoodByNameFragment";
     private User user;
     private Button btn;
     public static SearchFoodByNameFragment newInstance(User user) {
@@ -26,17 +30,12 @@ public class SearchFoodByNameFragment extends Fragment{
         return fragment;
     }
 
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            user = (User) getArguments().getSerializable("user");
-        }
-    }
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        if (getArguments() != null) {
+            user = (User) getArguments().getSerializable("user");
+        }
         return inflater.inflate(R.layout.search_food_byname, container, false);
     }
 
@@ -50,11 +49,10 @@ public class SearchFoodByNameFragment extends Fragment{
             @Override
             public void onClick(View v) {
                 String search = sv.getQuery().toString();
-                if (!search.isEmpty()) {
-                    Intent intent = new Intent(requireActivity(), FoundFoodFragment.class);
-                    intent.putExtra("type", 2);
-                    intent.putExtra("search", search);
-                    startActivity(intent);
+                if (!search.isEmpty() && user != null) {
+                    ((HomeActivity) requireActivity()).linkFoundFoodFragment(search, user, 2);
+                } else if (user == null) {
+                    Toast.makeText(getContext(), "User null", Toast.LENGTH_SHORT).show();
                 }
             }
         });

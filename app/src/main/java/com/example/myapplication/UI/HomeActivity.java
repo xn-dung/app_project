@@ -153,16 +153,16 @@ public class HomeActivity extends AppCompatActivity implements HomeFragment.OnFo
     }
     @Override
     public void onSearchByNameClicked(User user) {
-        SearchFoodByNameFragment searchFragment = SearchFoodByNameFragment.newInstance(user);
+        SearchFoodByNameFragment fragment = SearchFoodByNameFragment.newInstance(user);
 
         getSupportFragmentManager()
                 .beginTransaction()
-                .add(R.id.fragment_container, searchFragment, SearchFoodByNameFragment.TAG)
+                .add(R.id.fragment_container, fragment, SearchFoodByNameFragment.TAG)
                 .hide(activeFragment)
                 .addToBackStack(SearchFoodByNameFragment.TAG)
                 .commit();
 
-        activeFragment = searchFragment;
+        activeFragment = fragment;
     }
     public void navigateTo(Fragment fragment, boolean addToBackstack) {
         FragmentManager fragmentManager = getSupportFragmentManager();
@@ -187,6 +187,18 @@ public class HomeActivity extends AppCompatActivity implements HomeFragment.OnFo
                 .commit();
 
         activeFragment = fragment;
+    }
+    public void linkFoundFoodFragment(String search, User user, int type){
+        FoundFoodFragment fragment = FoundFoodFragment.newInstance2(search, user,type);
+        getSupportFragmentManager()
+                .beginTransaction()
+                .add(R.id.fragment_container, fragment, "FoundFood")
+                .hide(activeFragment)
+                .addToBackStack("FoundFood")
+                .commit();
+
+        activeFragment = fragment;
+
     }
 
 

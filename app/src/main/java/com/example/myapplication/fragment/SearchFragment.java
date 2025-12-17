@@ -237,9 +237,7 @@ public class SearchFragment extends Fragment {
 
         btnSearch = view.findViewById(R.id.barSearch);
         btnSearch.setOnClickListener(v -> {
-            if (mListener != null) {
-                mListener.onSearchByNameClicked(user);
-            }
+            ((HomeActivity) requireActivity()).onSearchByNameClicked(user);
         });
     }
 
