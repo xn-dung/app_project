@@ -16,6 +16,7 @@ import com.example.myapplication.fragment.HomeFragment;
 import com.example.myapplication.fragment.ProfileFragment;
 import com.example.myapplication.fragment.SearchFoodByNameFragment;
 import com.example.myapplication.fragment.SearchFragment;
+import com.example.myapplication.interfaces.NavigationHost;
 import com.example.myapplication.model.BaiDang;
 import com.example.myapplication.model.User;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -25,7 +26,7 @@ import java.util.ArrayList;
 import java.util.Deque;
 
 public class HomeActivity extends AppCompatActivity implements HomeFragment.OnFoodItemSelectedListener,
-        SearchFragment.OnSearchByNameClickedListener {
+        SearchFragment.OnSearchByNameClickedListener, NavigationHost {
 
     private static final String TAG_HOME = "HomeFragment";
     private static final String TAG_SEARCH = "SearchFragment";
@@ -199,4 +200,5 @@ public class HomeActivity extends AppCompatActivity implements HomeFragment.OnFo
         activeFragment = fragment;
 
     }
+
 }

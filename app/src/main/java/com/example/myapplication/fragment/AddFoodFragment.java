@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ScrollView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -14,6 +15,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
 import com.android.volley.Request;
@@ -24,6 +26,7 @@ import com.example.myapplication.R;
 import com.example.myapplication.model.User;
 import com.example.myapplication.model.BaiDang;
 import com.example.myapplication.model.NguyenLieu;
+import com.google.android.material.tabs.TabLayout;
 
 
 import java.util.ArrayList;
@@ -41,7 +44,9 @@ public class AddFoodFragment extends Fragment {
     private EditText edtCachLam;
     private EditText edtLinkYtb;
     private TableLayout tableLayout;
-    private TextView userFullname;
+    private TabLayout changeTab;
+    private ScrollView layoutRecipe;
+    private ConstraintLayout layoutReels;
     public static AddFoodFragment newInstance(User user) {
         AddFoodFragment fragment = new AddFoodFragment();
         Bundle args = new Bundle();
@@ -67,6 +72,9 @@ public class AddFoodFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         al = new ArrayList<>();
+        changeTab = view.findViewById(R.id.tabLayout);
+        layoutRecipe = view.findViewById(R.id.scrollViewContent);
+        layoutReels = view.findViewById(R.id.layoutReelsForm);
         tableLayout = view.findViewById(R.id.tablet);
         btnCong = view.findViewById(R.id.buttonCo);
         btnTru = view.findViewById(R.id.buttonTru);
@@ -74,9 +82,24 @@ public class AddFoodFragment extends Fragment {
         edtTenMon = view.findViewById(R.id.edtTenMon);
         edtCachLam = view.findViewById(R.id.edtCachLam);
         edtLinkYtb = view.findViewById(R.id.edtLinkYtb);
-        userFullname = view.findViewById(R.id.textFullName);
 
-        userFullname.setText(user.getFullname());
+        changeTab.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                if(tab.getPosition() == 0) {
+                    layoutRecipe.setVisibility(View.VISIBLE);
+                    layoutReels.setVisibility(View.GONE);
+                }
+                else {
+                    layoutRecipe.setVisibility(View.GONE);
+                    layoutReels.setVisibility(View.VISIBLE);
+                }
+            }
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {}
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {}
+        });
         btnCong.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

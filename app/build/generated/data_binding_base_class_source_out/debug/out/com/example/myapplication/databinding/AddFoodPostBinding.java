@@ -6,11 +6,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.VideoView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
@@ -18,6 +21,9 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.myapplication.R;
+import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -27,13 +33,22 @@ public final class AddFoodPostBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final Button btnPostReel;
+
+  @NonNull
   public final Button btnSave;
+
+  @NonNull
+  public final LinearLayout btnSelectVideo;
 
   @NonNull
   public final Button buttonCo;
 
   @NonNull
   public final Button buttonTru;
+
+  @NonNull
+  public final CardView cardVideoPreview;
 
   @NonNull
   public final EditText editSoLuong1;
@@ -48,10 +63,22 @@ public final class AddFoodPostBinding implements ViewBinding {
   public final EditText edtLinkYtb;
 
   @NonNull
+  public final TextInputEditText edtReelCaption;
+
+  @NonNull
   public final EditText edtTenMon;
 
   @NonNull
+  public final ImageView imageAvatar;
+
+  @NonNull
+  public final TextInputLayout inputLayoutCaption;
+
+  @NonNull
   public final CardView layoutHeader;
+
+  @NonNull
+  public final ConstraintLayout layoutReelsForm;
 
   @NonNull
   public final ConstraintLayout main;
@@ -63,41 +90,55 @@ public final class AddFoodPostBinding implements ViewBinding {
   public final Spinner spinnerDonVi1;
 
   @NonNull
+  public final TabLayout tabLayout;
+
+  @NonNull
   public final TableRow tableRowItem;
 
   @NonNull
   public final TableLayout tablet;
 
   @NonNull
-  public final TextView textFullName;
-
-  @NonNull
   public final TextView textHello;
 
-  private AddFoodPostBinding(@NonNull ConstraintLayout rootView, @NonNull Button btnSave,
-      @NonNull Button buttonCo, @NonNull Button buttonTru, @NonNull EditText editSoLuong1,
+  @NonNull
+  public final VideoView videoPreview;
+
+  private AddFoodPostBinding(@NonNull ConstraintLayout rootView, @NonNull Button btnPostReel,
+      @NonNull Button btnSave, @NonNull LinearLayout btnSelectVideo, @NonNull Button buttonCo,
+      @NonNull Button buttonTru, @NonNull CardView cardVideoPreview, @NonNull EditText editSoLuong1,
       @NonNull EditText editTen1, @NonNull EditText edtCachLam, @NonNull EditText edtLinkYtb,
-      @NonNull EditText edtTenMon, @NonNull CardView layoutHeader, @NonNull ConstraintLayout main,
-      @NonNull ScrollView scrollViewContent, @NonNull Spinner spinnerDonVi1,
-      @NonNull TableRow tableRowItem, @NonNull TableLayout tablet, @NonNull TextView textFullName,
-      @NonNull TextView textHello) {
+      @NonNull TextInputEditText edtReelCaption, @NonNull EditText edtTenMon,
+      @NonNull ImageView imageAvatar, @NonNull TextInputLayout inputLayoutCaption,
+      @NonNull CardView layoutHeader, @NonNull ConstraintLayout layoutReelsForm,
+      @NonNull ConstraintLayout main, @NonNull ScrollView scrollViewContent,
+      @NonNull Spinner spinnerDonVi1, @NonNull TabLayout tabLayout, @NonNull TableRow tableRowItem,
+      @NonNull TableLayout tablet, @NonNull TextView textHello, @NonNull VideoView videoPreview) {
     this.rootView = rootView;
+    this.btnPostReel = btnPostReel;
     this.btnSave = btnSave;
+    this.btnSelectVideo = btnSelectVideo;
     this.buttonCo = buttonCo;
     this.buttonTru = buttonTru;
+    this.cardVideoPreview = cardVideoPreview;
     this.editSoLuong1 = editSoLuong1;
     this.editTen1 = editTen1;
     this.edtCachLam = edtCachLam;
     this.edtLinkYtb = edtLinkYtb;
+    this.edtReelCaption = edtReelCaption;
     this.edtTenMon = edtTenMon;
+    this.imageAvatar = imageAvatar;
+    this.inputLayoutCaption = inputLayoutCaption;
     this.layoutHeader = layoutHeader;
+    this.layoutReelsForm = layoutReelsForm;
     this.main = main;
     this.scrollViewContent = scrollViewContent;
     this.spinnerDonVi1 = spinnerDonVi1;
+    this.tabLayout = tabLayout;
     this.tableRowItem = tableRowItem;
     this.tablet = tablet;
-    this.textFullName = textFullName;
     this.textHello = textHello;
+    this.videoPreview = videoPreview;
   }
 
   @Override
@@ -127,9 +168,21 @@ public final class AddFoodPostBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btnPostReel;
+      Button btnPostReel = ViewBindings.findChildViewById(rootView, id);
+      if (btnPostReel == null) {
+        break missingId;
+      }
+
       id = R.id.btnSave;
       Button btnSave = ViewBindings.findChildViewById(rootView, id);
       if (btnSave == null) {
+        break missingId;
+      }
+
+      id = R.id.btnSelectVideo;
+      LinearLayout btnSelectVideo = ViewBindings.findChildViewById(rootView, id);
+      if (btnSelectVideo == null) {
         break missingId;
       }
 
@@ -142,6 +195,12 @@ public final class AddFoodPostBinding implements ViewBinding {
       id = R.id.buttonTru;
       Button buttonTru = ViewBindings.findChildViewById(rootView, id);
       if (buttonTru == null) {
+        break missingId;
+      }
+
+      id = R.id.cardVideoPreview;
+      CardView cardVideoPreview = ViewBindings.findChildViewById(rootView, id);
+      if (cardVideoPreview == null) {
         break missingId;
       }
 
@@ -169,15 +228,39 @@ public final class AddFoodPostBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.edtReelCaption;
+      TextInputEditText edtReelCaption = ViewBindings.findChildViewById(rootView, id);
+      if (edtReelCaption == null) {
+        break missingId;
+      }
+
       id = R.id.edtTenMon;
       EditText edtTenMon = ViewBindings.findChildViewById(rootView, id);
       if (edtTenMon == null) {
         break missingId;
       }
 
+      id = R.id.imageAvatar;
+      ImageView imageAvatar = ViewBindings.findChildViewById(rootView, id);
+      if (imageAvatar == null) {
+        break missingId;
+      }
+
+      id = R.id.inputLayoutCaption;
+      TextInputLayout inputLayoutCaption = ViewBindings.findChildViewById(rootView, id);
+      if (inputLayoutCaption == null) {
+        break missingId;
+      }
+
       id = R.id.layoutHeader;
       CardView layoutHeader = ViewBindings.findChildViewById(rootView, id);
       if (layoutHeader == null) {
+        break missingId;
+      }
+
+      id = R.id.layoutReelsForm;
+      ConstraintLayout layoutReelsForm = ViewBindings.findChildViewById(rootView, id);
+      if (layoutReelsForm == null) {
         break missingId;
       }
 
@@ -195,6 +278,12 @@ public final class AddFoodPostBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.tabLayout;
+      TabLayout tabLayout = ViewBindings.findChildViewById(rootView, id);
+      if (tabLayout == null) {
+        break missingId;
+      }
+
       id = R.id.table_row_item;
       TableRow tableRowItem = ViewBindings.findChildViewById(rootView, id);
       if (tableRowItem == null) {
@@ -207,21 +296,23 @@ public final class AddFoodPostBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.textFullName;
-      TextView textFullName = ViewBindings.findChildViewById(rootView, id);
-      if (textFullName == null) {
-        break missingId;
-      }
-
       id = R.id.textHello;
       TextView textHello = ViewBindings.findChildViewById(rootView, id);
       if (textHello == null) {
         break missingId;
       }
 
-      return new AddFoodPostBinding((ConstraintLayout) rootView, btnSave, buttonCo, buttonTru,
-          editSoLuong1, editTen1, edtCachLam, edtLinkYtb, edtTenMon, layoutHeader, main,
-          scrollViewContent, spinnerDonVi1, tableRowItem, tablet, textFullName, textHello);
+      id = R.id.videoPreview;
+      VideoView videoPreview = ViewBindings.findChildViewById(rootView, id);
+      if (videoPreview == null) {
+        break missingId;
+      }
+
+      return new AddFoodPostBinding((ConstraintLayout) rootView, btnPostReel, btnSave,
+          btnSelectVideo, buttonCo, buttonTru, cardVideoPreview, editSoLuong1, editTen1, edtCachLam,
+          edtLinkYtb, edtReelCaption, edtTenMon, imageAvatar, inputLayoutCaption, layoutHeader,
+          layoutReelsForm, main, scrollViewContent, spinnerDonVi1, tabLayout, tableRowItem, tablet,
+          textHello, videoPreview);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

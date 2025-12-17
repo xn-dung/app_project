@@ -3297,11 +3297,13 @@ id btnFavorite
 id btnLogin
 id btnLogout
 id btnPlayYtb
+id btnPostReel
 id btnRecent
 id btnRecommend
 id btnRemoveRow
 id btnRemoveRow1
 id btnSave
+id btnSelectVideo
 id btnSubmit
 id button2
 id button3
@@ -3312,6 +3314,7 @@ id buttonTru
 id cache_measures
 id callMeasure
 id cancel_button
+id cardVideoPreview
 id carryVelocity
 id center
 id centerCrop
@@ -3406,6 +3409,7 @@ id edtLinkYtb
 id edtOTP
 id edtPassword
 id edtRePassword
+id edtReelCaption
 id edtTenMon
 id elastic
 id embed
@@ -3428,7 +3432,6 @@ id expanded_menu
 id extra_views_container
 id fade
 id favNum
-id favorsBtn
 id fill
 id fill_horizontal
 id fill_vertical
@@ -3474,7 +3477,6 @@ id ignore
 id ignoreRequest
 id image
 id imageAvatar
-id imageFav
 id imageFood
 id imagePost
 id imageSettings
@@ -3486,6 +3488,7 @@ id immediateStop
 id included
 id indeterminate
 id info
+id inputLayoutCaption
 id invisible
 id inward
 id italic
@@ -3499,6 +3502,7 @@ id layout
 id layoutHD
 id layoutHeader
 id layoutNL
+id layoutReelsForm
 id left
 id leftToRight
 id legacy
@@ -3722,6 +3726,7 @@ id supportScrollUp
 id tab1
 id tab2
 id tabBD
+id tabLayout
 id tabMode
 id table_row_item
 id tablet
@@ -3742,7 +3747,6 @@ id text
 id text2
 id textConfirmPassword
 id textEnd
-id textFav
 id textFoodName
 id textForgotPassword
 id textFullName
@@ -3814,6 +3818,7 @@ id username
 id vertical
 id vertical_only
 id videoContainer
+id videoPreview
 id video_title
 id view
 id view2

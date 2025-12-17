@@ -9,7 +9,7 @@
     <string name="add">Add</string>
     <string name="reels">Reels</string>
     <string name="profile">Profile</string>
-    <string name="let_s_share">Let\'s share, </string>
+    <string name="let_s_share">Let\'s share </string>
     <string name="back">Back</string>
     <string name="backend_url">https://mobilenodejs.onrender.com/</string>
 </resources>

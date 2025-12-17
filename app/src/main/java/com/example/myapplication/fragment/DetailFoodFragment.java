@@ -28,6 +28,7 @@ import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
 import com.example.myapplication.Adapter.ArrayNLAdapter;
 import com.example.myapplication.R;
+import com.example.myapplication.UI.HomeActivity;
 import com.example.myapplication.model.BaiDang;
 import com.example.myapplication.model.NguyenLieu;
 import com.example.myapplication.model.User;
@@ -41,6 +42,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
+import java.util.HashMap;
 import java.util.List;
 
 public class DetailFoodFragment extends Fragment {
@@ -65,8 +67,11 @@ public class DetailFoodFragment extends Fragment {
         super.onPause();
         long endTime = System.currentTimeMillis();
         long elapsedTime = endTime - startTime;
-        if (elapsedTime > 3000) {
-            sendRecommendation(baiDang, elapsedTime);
+        if(elapsedTime < 3000){
+            sendIgnore(baiDang);
+        }
+        if (elapsedTime >= 3000) {
+            sendRecommend(baiDang);
         }
     }
     public static DetailFoodFragment newInstance(BaiDang baiDang, User user) {
@@ -84,6 +89,7 @@ public class DetailFoodFragment extends Fragment {
         if (getArguments() != null) {
             baiDang = (BaiDang) getArguments().getSerializable("baiDang");
             user = (User) getArguments().getSerializable("user");
+            updatePostRecent(baiDang);
         }
     }
 
@@ -289,7 +295,58 @@ public class DetailFoodFragment extends Fragment {
             youtubePlayerView.release();
         }
     }
-    public void sendRecommendation(BaiDang baiDang, long elapsedTime){
+    public void updatePostRecent(BaiDang baiDang){
 
     }
+    public void sendRecommend(BaiDang baiDang) {
+        String url = getString(R.string.backend_url) + "api/recommend/trackView";
+        RequestQueue queue = Volley.newRequestQueue(requireContext());
+        HashMap<String, String> params = new HashMap<>();
+        params.put("userId", user.getId());
+        params.put("postId", baiDang.getId());
+        JSONObject jsonBody = new JSONObject(params);
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
+                Request.Method.POST,
+                url,
+                jsonBody,
+                response -> {
+                    try {
+                        if (!response.getBoolean("success")) {
+                            Toast.makeText(getContext(), "Không thể thêm recent", Toast.LENGTH_SHORT).show();
+                        }
+
+                    } catch (Exception e) {
+                        Toast.makeText(getContext(), "Lỗi parse JSON: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                },
+                error -> Toast.makeText(getContext(), "Lỗi kết nối", Toast.LENGTH_SHORT).show()
+        );
+        queue.add(jsonObjectRequest);
+    }
+    public void sendIgnore(BaiDang baiDang){
+        String url = getString(R.string.backend_url) + "api/recommend/trackIgnore";
+        RequestQueue queue = Volley.newRequestQueue(requireContext());
+        HashMap<String, String> params = new HashMap<>();
+        params.put("userId", user.getId());
+        params.put("postId", baiDang.getId());
+        JSONObject jsonBody = new JSONObject(params);
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
+                Request.Method.POST,
+                url,
+                jsonBody,
+                response -> {
+                    try {
+                        if (!response.getBoolean("success")) {
+                            Toast.makeText(getContext(), "Không thể thêm recent", Toast.LENGTH_SHORT).show();
+                        }
+
+                    } catch (Exception e) {
+                        Toast.makeText(getContext(), "Lỗi parse JSON: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                },
+                error -> Toast.makeText(getContext(), "Lỗi kết nối", Toast.LENGTH_SHORT).show()
+        );
+        queue.add(jsonObjectRequest);
+    }
+
 }

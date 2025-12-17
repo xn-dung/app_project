@@ -56,7 +56,8 @@ public class HomeFragment extends Fragment {
         return fragment;
     }
 
-    public HomeFragment() {}
+    public HomeFragment() {
+    }
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -115,8 +116,7 @@ public class HomeFragment extends Fragment {
                 takeBD();
             } else if (v.getId() == R.id.btnFavorite) {
                 takeFAV();
-            }
-            else{
+            } else {
                 takeRecent();
             }
         };
@@ -134,7 +134,7 @@ public class HomeFragment extends Fragment {
         });
     }
 
-    private void checkEmptyState(){
+    private void checkEmptyState() {
         if (listBD.isEmpty()) {
             gv.setVisibility(View.GONE);
             tvEmptyState.setVisibility(View.VISIBLE);
@@ -184,8 +184,9 @@ public class HomeFragment extends Fragment {
         );
         queue.add(jsonArrayRequest);
     }
-    private void takeRecent(){
-        String url = getString(R.string.backend_url) + "api/nguoidung/recent/";
+
+    private void takeRecent() {
+        String url = getString(R.string.backend_url) + "api/nguoidung/recent";
         RequestQueue queue = Volley.newRequestQueue(requireContext());
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(
                 Request.Method.GET, url, null,
@@ -219,6 +220,7 @@ public class HomeFragment extends Fragment {
         );
         queue.add(jsonArrayRequest);
     }
+
     private void takeFAV() {
         if (user == null) {
             return;
@@ -266,17 +268,16 @@ public class HomeFragment extends Fragment {
     }
 
     @Override
-    public void onHiddenChanged(boolean hidden){
+    public void onHiddenChanged(boolean hidden) {
         super.onHiddenChanged(hidden);
-        if(!hidden){
-            if(currentSltBtn != null && currentSltBtn.getId() == R.id.btnFavorite){
+        if (!hidden) {
+            if (currentSltBtn != null && currentSltBtn.getId() == R.id.btnFavorite) {
                 listBD.clear();
                 myAdapter.notifyDataSetChanged();
                 takeFAV();
             }
         }
     }
-
 }
 
 
