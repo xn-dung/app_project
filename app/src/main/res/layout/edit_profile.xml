@@ -57,7 +57,8 @@
                     android:layout_weight="1"
                     android:gravity="center_vertical"
                     android:text="Full Name"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    android:textColor="@color/black"/>
 
                 <EditText
                     android:id="@+id/etFullName"
@@ -81,7 +82,8 @@
                     android:layout_weight="1"
                     android:gravity="center_vertical"
                     android:text="Phone"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    android:textColor="@color/black"/>
 
                 <EditText
                     android:id="@+id/etPhone"
@@ -106,7 +108,8 @@
                     android:layout_weight="1"
                     android:gravity="center_vertical"
                     android:text="Email"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    android:textColor="@color/black"/>
 
                 <EditText
                     android:id="@+id/etEmail"
@@ -131,7 +134,8 @@
                     android:layout_weight="1"
                     android:gravity="center_vertical"
                     android:text="Address"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    android:textColor="@color/black"/>
 
                 <EditText
                     android:id="@+id/etAddress"
@@ -155,7 +159,8 @@
                     android:layout_weight="1"
                     android:gravity="center_vertical"
                     android:text="Username"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    android:textColor="@color/black"/>
 
                 <EditText
                     android:id="@+id/etUsername"
@@ -180,7 +185,8 @@
                     android:layout_weight="1"
                     android:gravity="center_vertical"
                     android:text="Password"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    android:textColor="@color/black"/>
 
                 <EditText
                     android:id="@+id/etPassword"
@@ -206,7 +212,8 @@
                     android:layout_weight="1"
                     android:gravity="center_vertical"
                     android:text="Confirm Password"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    android:textColor="@color/black"/>
 
                 <EditText
                     android:id="@+id/etConfirmPassword"

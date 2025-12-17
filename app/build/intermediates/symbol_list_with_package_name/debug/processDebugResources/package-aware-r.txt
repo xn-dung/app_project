@@ -3066,6 +3066,7 @@ drawable dinner
 drawable edit_text_background
 drawable food_card_bg
 drawable gradient_background
+drawable gradient_bottom
 drawable gradient_main_bg
 drawable grey_bg
 drawable header_background
@@ -3098,6 +3099,7 @@ drawable ic_play_circle
 drawable ic_search
 drawable ic_search_black_24
 drawable ic_time
+drawable ic_upload
 drawable img
 drawable indeterminate_static
 drawable logo_app
@@ -3180,6 +3182,7 @@ drawable rounded_button_bg
 drawable rounded_top_khung
 drawable settings
 drawable tab_bar_bg
+drawable tab_divider
 drawable tabhost_bg_slt
 drawable tabhost_bg_unslt
 drawable test_level_drawable
@@ -3294,12 +3297,15 @@ id bounceStart
 id btnBack
 id btnBackF
 id btnFavorite
+id btnLike
 id btnLogin
 id btnLogout
 id btnPlayYtb
+id btnPostReel
 id btnRecent
 id btnRecommend
 id btnSave
+id btnSelectVideo
 id btnSubmit
 id button2
 id button3
@@ -3309,6 +3315,7 @@ id buttonTru
 id cache_measures
 id callMeasure
 id cancel_button
+id cardVideoPreview
 id carryVelocity
 id center
 id centerCrop
@@ -3403,6 +3410,7 @@ id edtLinkYtb
 id edtOTP
 id edtPassword
 id edtRePassword
+id edtReelCaption
 id edtTenMon
 id elastic
 id embed
@@ -3425,7 +3433,6 @@ id expanded_menu
 id extra_views_container
 id fade
 id favNum
-id favorsBtn
 id fill
 id fill_horizontal
 id fill_vertical
@@ -3471,18 +3478,19 @@ id ignore
 id ignoreRequest
 id image
 id imageAvatar
-id imageFav
 id imageFood
 id imagePost
 id imageSettings
 id imageView5
 id imageView6
 id imgFood
+id imgUserAvatar
 id imgYtbThumb
 id immediateStop
 id included
 id indeterminate
 id info
+id inputLayoutCaption
 id invisible
 id inward
 id italic
@@ -3496,6 +3504,7 @@ id layout
 id layoutHD
 id layoutHeader
 id layoutNL
+id layoutReelsForm
 id left
 id leftToRight
 id legacy
@@ -3636,6 +3645,7 @@ id postNum
 id postsBtn
 id pressed
 id progress
+id progressBar
 id progress_circular
 id progress_horizontal
 id radio
@@ -3646,6 +3656,7 @@ id recycler_view
 id report_drawn
 id reverseSawtooth
 id right
+id rightPanel
 id rightToLeft
 id right_icon
 id right_side
@@ -3720,6 +3731,7 @@ id supportScrollUp
 id tab1
 id tab2
 id tabBD
+id tabLayout
 id tabMode
 id table_row_item
 id tablet
@@ -3740,7 +3752,6 @@ id text
 id text2
 id textConfirmPassword
 id textEnd
-id textFav
 id textFoodName
 id textForgotPassword
 id textFullName
@@ -3795,9 +3806,13 @@ id transition_scene_layoutid_cache
 id transition_transform
 id triangle
 id tvCachLam
+id tvCaption
 id tvEmptyState
 id tvHuongDanTitle
+id tvLikeCount
+id tvMusic
 id tvTitle
+id tvUsername
 id txtDinhLuong
 id txtFoodName
 id txtTenNguyenLieu
@@ -3812,6 +3827,8 @@ id username
 id vertical
 id vertical_only
 id videoContainer
+id videoPreview
+id videoView
 id video_title
 id view
 id view2
@@ -3983,6 +4000,7 @@ layout home
 layout home_host
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
+layout item_reels
 layout layout_huongdan
 layout layout_item
 layout layout_itemnl

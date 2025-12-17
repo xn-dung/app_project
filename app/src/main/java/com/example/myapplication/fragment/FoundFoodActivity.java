@@ -106,7 +106,7 @@ public class FoundFoodActivity extends AppCompatActivity{
             JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(
                     Request.Method.POST,
                     url,
-                    null, // Đặt null ở đây, vì ta sẽ override body
+                    null,
                     response -> {
                         try {
                             bd.clear();

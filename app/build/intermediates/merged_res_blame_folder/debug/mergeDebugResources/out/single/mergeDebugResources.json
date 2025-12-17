@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-38:/drawable_tab_divider.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-40:/drawable/tab_divider.xml"
+    },
+    {
         "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-38:/drawable_ic_home.xml.flat",
         "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-40:/drawable/ic_home.xml"
     },
@@ -44,12 +48,12 @@
         "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-40:/layout/layout_item.xml"
     },
     {
-        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-38:/color_selectable_button_text_color_selector.xml.flat",
-        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-40:/color/selectable_button_text_color_selector.xml"
-    },
-    {
         "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-38:/mipmap-mdpi_ic_launcher.webp.flat",
         "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-40:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-38:/color_selectable_button_text_color_selector.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-40:/color/selectable_button_text_color_selector.xml"
     },
     {
         "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-38:/drawable_ic_play_circle.png.flat",
@@ -114,6 +118,10 @@
     {
         "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-38:/drawable_ic_search.xml.flat",
         "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-40:/drawable/ic_search.xml"
+    },
+    {
+        "merged": "com.example.myapplication.app-debug-38:/layout_add_food_post.xml.flat",
+        "source": "com.example.myapplication.app-main-40:/layout/add_food_post.xml"
     },
     {
         "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-38:/drawable_ic_favorite.xml.flat",
@@ -224,6 +232,10 @@
         "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-40:/drawable/gradient_main_bg.xml"
     },
     {
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-38:/drawable_gradient_bottom.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-40:/drawable/gradient_bottom.xml"
+    },
+    {
         "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-38:/layout_layout_itemnl.xml.flat",
         "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-40:/layout/layout_itemnl.xml"
     },
@@ -256,10 +268,6 @@
         "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-40:/layout/register.xml"
     },
     {
-        "merged": "com.example.myapplication.app-debug-38:/layout_activity_food_detail.xml.flat",
-        "source": "com.example.myapplication.app-main-40:/layout/activity_food_detail.xml"
-    },
-    {
         "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-38:/layout_edit_profile.xml.flat",
         "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-40:/layout/edit_profile.xml"
     },
@@ -270,6 +278,10 @@
     {
         "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-38:/drawable_rounded_button_bg.xml.flat",
         "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-40:/drawable/rounded_button_bg.xml"
+    },
+    {
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-38:/layout_item_reels.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-40:/layout/item_reels.xml"
     },
     {
         "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-38:/layout_add_food_post.xml.flat",
@@ -302,6 +314,10 @@
     {
         "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-38:/layout_user_profile.xml.flat",
         "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-40:/layout/user_profile.xml"
+    },
+    {
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-38:/drawable_ic_upload.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-40:/drawable/ic_upload.xml"
     },
     {
         "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-38:/drawable_ic_account_circle.xml.flat",

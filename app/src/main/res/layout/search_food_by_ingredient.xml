@@ -78,14 +78,14 @@
                     android:hint="Tên"
                     android:inputType="textCapSentences"
                     android:padding="8dp"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/black"/>
 
                 <EditText
                     android:id="@+id/editSoLuong1"
                     android:hint="Số lượng"
                     android:inputType="numberDecimal"
                     android:padding="8dp"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/black"/>
 
                 <Spinner
                     android:id="@+id/spinnerDonVi1"

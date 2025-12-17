@@ -12,16 +12,20 @@
         "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-40:/layout/found_food.xml"
     },
     {
+        "merged": "com.example.myapplication.app-mergeDebugResources-37:/layout/add_food_post.xml",
+        "source": "com.example.myapplication.app-main-40:/layout/add_food_post.xml"
+    },
+    {
         "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-mergeDebugResources-37:/layout/search_food_byname.xml",
         "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-40:/layout/search_food_byname.xml"
     },
     {
-        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-mergeDebugResources-37:/layout/edit_profile.xml",
-        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-40:/layout/edit_profile.xml"
-    },
-    {
         "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-mergeDebugResources-37:/layout/activity_host.xml",
         "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-40:/layout/activity_host.xml"
+    },
+    {
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-mergeDebugResources-37:/layout/edit_profile.xml",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-40:/layout/edit_profile.xml"
     },
     {
         "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-mergeDebugResources-37:/layout/layout_itemnl.xml",
@@ -60,10 +64,6 @@
         "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-40:/layout/food_card_home.xml"
     },
     {
-        "merged": "com.example.myapplication.app-mergeDebugResources-37:/layout/activity_food_detail.xml",
-        "source": "com.example.myapplication.app-main-40:/layout/activity_food_detail.xml"
-    },
-    {
         "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-mergeDebugResources-37:/layout/add_food_post.xml",
         "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-40:/layout/add_food_post.xml"
     },
@@ -74,6 +74,10 @@
     {
         "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-mergeDebugResources-37:/layout/reset_password.xml",
         "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-40:/layout/reset_password.xml"
+    },
+    {
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-mergeDebugResources-37:/layout/item_reels.xml",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-40:/layout/item_reels.xml"
     },
     {
         "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-mergeDebugResources-37:/layout/search_food_by_ingredient.xml",
