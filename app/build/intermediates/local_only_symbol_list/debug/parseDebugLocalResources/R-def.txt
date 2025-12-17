@@ -45,11 +45,13 @@ drawable ic_play_24
 drawable ic_play_circle
 drawable ic_search
 drawable ic_time
+drawable img
 drawable logo_app
 drawable love
 drawable play
 drawable play_button
 drawable rounded_button_bg
+drawable rounded_top_khung
 drawable settings
 drawable tab_bar_bg
 drawable tabhost_bg_slt
@@ -105,6 +107,7 @@ id favNum
 id favorsBtn
 id fragment_container
 id gridFoods
+id headerFoodInfo
 id hehe
 id imageAvatar
 id imageFav
@@ -183,7 +186,6 @@ id videoContainer
 id view
 id view2
 id viewDivider
-id viewDivider1
 layout activity_food_detail
 layout activity_host
 layout activity_main

@@ -32,6 +32,9 @@ public final class ActivityFoodDetailBinding implements ViewBinding {
   public final ImageButton btnFavorite;
 
   @NonNull
+  public final LinearLayout headerFoodInfo;
+
+  @NonNull
   public final ImageView imgFood;
 
   @NonNull
@@ -61,18 +64,17 @@ public final class ActivityFoodDetailBinding implements ViewBinding {
   @NonNull
   public final TextView txtFoodName;
 
-  @NonNull
-  public final View viewDivider1;
-
   private ActivityFoodDetailBinding(@NonNull ConstraintLayout rootView,
-      @NonNull ImageButton btnBackF, @NonNull ImageButton btnFavorite, @NonNull ImageView imgFood,
+      @NonNull ImageButton btnBackF, @NonNull ImageButton btnFavorite,
+      @NonNull LinearLayout headerFoodInfo, @NonNull ImageView imgFood,
       @NonNull LayoutHuongdanBinding layoutHD, @NonNull LayoutNlBinding layoutNL,
       @NonNull LinearLayout scrollView, @NonNull LinearLayout tab1, @NonNull LinearLayout tab2,
       @NonNull TabHost tabBD, @NonNull FrameLayout tabcontent, @NonNull TabWidget tabs,
-      @NonNull TextView txtFoodName, @NonNull View viewDivider1) {
+      @NonNull TextView txtFoodName) {
     this.rootView = rootView;
     this.btnBackF = btnBackF;
     this.btnFavorite = btnFavorite;
+    this.headerFoodInfo = headerFoodInfo;
     this.imgFood = imgFood;
     this.layoutHD = layoutHD;
     this.layoutNL = layoutNL;
@@ -83,7 +85,6 @@ public final class ActivityFoodDetailBinding implements ViewBinding {
     this.tabcontent = tabcontent;
     this.tabs = tabs;
     this.txtFoodName = txtFoodName;
-    this.viewDivider1 = viewDivider1;
   }
 
   @Override
@@ -122,6 +123,12 @@ public final class ActivityFoodDetailBinding implements ViewBinding {
       id = R.id.btnFavorite;
       ImageButton btnFavorite = ViewBindings.findChildViewById(rootView, id);
       if (btnFavorite == null) {
+        break missingId;
+      }
+
+      id = R.id.headerFoodInfo;
+      LinearLayout headerFoodInfo = ViewBindings.findChildViewById(rootView, id);
+      if (headerFoodInfo == null) {
         break missingId;
       }
 
@@ -187,15 +194,9 @@ public final class ActivityFoodDetailBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.viewDivider1;
-      View viewDivider1 = ViewBindings.findChildViewById(rootView, id);
-      if (viewDivider1 == null) {
-        break missingId;
-      }
-
       return new ActivityFoodDetailBinding((ConstraintLayout) rootView, btnBackF, btnFavorite,
-          imgFood, binding_layoutHD, binding_layoutNL, scrollView, tab1, tab2, tabBD, tabcontent,
-          tabs, txtFoodName, viewDivider1);
+          headerFoodInfo, imgFood, binding_layoutHD, binding_layoutNL, scrollView, tab1, tab2,
+          tabBD, tabcontent, tabs, txtFoodName);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

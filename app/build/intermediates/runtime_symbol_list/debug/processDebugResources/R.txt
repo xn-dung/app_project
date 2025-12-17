@@ -3097,6 +3097,7 @@ int drawable ic_play_circle 0x7f0800b6
 int drawable ic_search 0x7f0800b7
 int drawable ic_search_black_24 0x7f0800b8
 int drawable ic_time 0x7f0800b9
+int drawable img 0x7f080112
 int drawable indeterminate_static 0x7f0800ba
 int drawable logo_app 0x7f0800bb
 int drawable love 0x7f0800bc
@@ -3175,6 +3176,7 @@ int drawable notify_panel_notification_icon_bg 0x7f080104
 int drawable play 0x7f080105
 int drawable play_button 0x7f080106
 int drawable rounded_button_bg 0x7f080107
+int drawable rounded_top_khung 0x7f080113
 int drawable settings 0x7f080108
 int drawable tab_bar_bg 0x7f080109
 int drawable tabhost_bg_slt 0x7f08010a
@@ -3451,6 +3453,7 @@ int id gridFoods 0x7f090107
 int id group_divider 0x7f090108
 int id grouping 0x7f090109
 int id groups 0x7f09010a
+int id headerFoodInfo 0x7f09028a
 int id header_title 0x7f09010b
 int id hehe 0x7f09010c
 int id hide_ime_id 0x7f09010d
@@ -3812,7 +3815,6 @@ int id video_title 0x7f09026f
 int id view 0x7f090270
 int id view2 0x7f090271
 int id viewDivider 0x7f090272
-int id viewDivider1 0x7f090273
 int id view_offset_helper 0x7f090274
 int id view_transition 0x7f090275
 int id view_tree_disjoint_parent 0x7f090276

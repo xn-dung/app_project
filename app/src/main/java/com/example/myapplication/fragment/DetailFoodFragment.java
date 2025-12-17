@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +20,11 @@ import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
 import com.example.myapplication.Adapter.ArrayNLAdapter;
 import com.example.myapplication.R;
@@ -30,7 +36,11 @@ import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.Abs
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
 
 import org.jetbrains.annotations.NotNull;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 public class DetailFoodFragment extends Fragment {
@@ -42,6 +52,8 @@ public class DetailFoodFragment extends Fragment {
     private YouTubePlayerView youtubePlayerView;
     private TabHost tabHost;
     ImageButton btnBack;
+    ImageButton btnFavorite;
+    private boolean isFav = false;
 
     public static DetailFoodFragment newInstance(BaiDang baiDang, User user) {
         DetailFoodFragment fragment = new DetailFoodFragment();
@@ -119,6 +131,82 @@ public class DetailFoodFragment extends Fragment {
         });
         btnBack = view.findViewById(R.id.btnBackF);
         btnBack.setOnClickListener(v -> getParentFragmentManager().popBackStack());
+
+        btnFavorite = view.findViewById(R.id.btnFavorite);
+        if(user != null){
+            checkFav();
+        }
+
+        btnFavorite.setOnClickListener(v -> {
+            if (user != null && baiDang != null) {
+                goiFavAPI();
+            } else {
+                Toast.makeText(requireContext(), "lỗi thông in", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void goiFavAPI() {
+        String url = getString(R.string.backend_url) + "api/nguoidung/patch/addFav";
+        RequestQueue queue = Volley.newRequestQueue(requireContext());
+
+        try {
+            JSONObject jsonBody = new JSONObject();
+            jsonBody.put("nguoidungId", user.getId());
+            jsonBody.put("baidangId", baiDang.getId());
+
+            JsonObjectRequest request = new JsonObjectRequest(Request.Method.PATCH, url, jsonBody,
+                    response -> {
+                        isFav = !isFav;
+
+                        updateFav();
+                        if (isFav) {
+                            Toast.makeText(requireContext(), "Đã thêm vào yêu thích", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(requireContext(), "Đã bỏ yêu thích", Toast.LENGTH_SHORT).show();
+                        }
+                    },
+                    error -> {
+                        Toast.makeText(requireContext(), "Thao tác thất bại", Toast.LENGTH_SHORT).show();
+                        Log.e("DetailFood", "Lỗi Toggle Fav: " + error.toString());
+                    }
+            );
+            queue.add(request);
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void checkFav(){
+        String url = getString(R.string.backend_url) + "api/nguoidung/fav/" + user.getId();
+        RequestQueue queue = Volley.newRequestQueue(requireContext());
+
+        JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null,
+                response -> {
+            isFav = false;
+            try{
+                for(int i = 0; i < response.length(); i++){
+                    JSONObject fav = response.getJSONObject(i);
+                    if(fav.getString("_id").equals(baiDang.getId())){
+                        isFav = true;
+                        break;
+                    }
+                }
+                updateFav();
+            } catch (JSONException e){
+                e.printStackTrace();
+            }
+            },error -> Log.e("DetailFood", "Lỗi check fav: " + error.toString()));
+        queue.add(request);
+    }
+
+    private void updateFav(){
+        if(isFav){
+            btnFavorite.setColorFilter(ContextCompat.getColor(requireContext(), R.color.colorLogoutDark));
+        }else{
+            btnFavorite.clearColorFilter();
+        }
     }
 
     private void addControl(View view) {
@@ -178,6 +266,7 @@ public class DetailFoodFragment extends Fragment {
 
         return url;
     }
+
 
     @Override
     public void onDestroyView() {

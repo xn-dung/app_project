@@ -78,10 +78,6 @@ public class HomeActivity extends AppCompatActivity implements HomeFragment.OnFo
                     currentTabId = previousTab;
                     return;
                 }
-
-                // 3. If no internal fragments and no tab history, finish the activity directly.
-                //    This means the app will exit from any bottom navigation tab
-                //    once all navigation within that tab and the tab history are exhausted.
                 finish();
             }
         });
@@ -157,7 +153,7 @@ public class HomeActivity extends AppCompatActivity implements HomeFragment.OnFo
 
         tx.hide(activeFragment)
                 .add(R.id.fragment_container, searchFoodByNameFragment, SearchFoodByNameFragment.TAG)
-                .show(searchFoodByNameFragment) // Explicitly show the new fragment
+                .show(searchFoodByNameFragment)
                 .addToBackStack(SearchFoodByNameFragment.TAG)
                 .commit();
     }

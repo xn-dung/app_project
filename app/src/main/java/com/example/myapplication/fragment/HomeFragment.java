@@ -227,4 +227,17 @@ public class HomeFragment extends Fragment {
         super.onDetach();
         listener = null;
     }
+
+    @Override
+    public void onHiddenChanged(boolean hidden){
+        super.onHiddenChanged(hidden);
+        if(!hidden){
+            if(currentSltBtn != null && currentSltBtn.getId() == R.id.btnFavorite){
+                listBD.clear();
+                myAdapter.notifyDataSetChanged();
+                takeFAV();
+            }
+        }
+    }
+
 }

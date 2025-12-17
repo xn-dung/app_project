@@ -60,7 +60,7 @@
                 android:id="@+id/imageAvatar"
                 android:layout_width="124dp"
                 android:layout_height="72dp"
-                android:src="@drawable/chef"
+                android:src="@drawable/img"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
