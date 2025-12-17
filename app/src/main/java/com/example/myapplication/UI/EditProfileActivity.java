@@ -121,8 +121,9 @@ public class EditProfileActivity extends AppCompatActivity{
                         String status = response.optString("status","");
                         if (status.equals("success")) {
                             Toast.makeText(EditProfileActivity.this, "Cập nhật thành công", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(EditProfileActivity.this, ProfileFragment.class);
+                            Intent intent = new Intent(EditProfileActivity.this, HomeActivity.class);
                             intent.putExtra("user",user2);
+                            intent.putExtra("tab", "profile");
                             startActivity(intent);
                         }
                         else{

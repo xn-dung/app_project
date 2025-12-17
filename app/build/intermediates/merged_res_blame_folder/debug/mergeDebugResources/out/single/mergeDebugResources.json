@@ -60,6 +60,10 @@
         "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-40:\\layout\\home_host.xml"
     },
     {
+        "merged": "com.example.myapplication.app-debug-38:/layout_user_profile.xml.flat",
+        "source": "com.example.myapplication.app-main-40:/layout/user_profile.xml"
+    },
+    {
         "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-38:\\layout_food_card_home.xml.flat",
         "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-40:\\layout\\food_card_home.xml"
     },
@@ -112,6 +116,10 @@
         "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-40:\\xml\\network_security_config.xml"
     },
     {
+        "merged": "com.example.myapplication.app-debug-38:/layout_home.xml.flat",
+        "source": "com.example.myapplication.app-main-40:/layout/home.xml"
+    },
+    {
         "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-38:\\xml_file_paths.xml.flat",
         "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-40:\\xml\\file_paths.xml"
     },
@@ -160,6 +168,10 @@
         "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-40:\\layout\\enter_otp.xml"
     },
     {
+        "merged": "com.example.myapplication.app-debug-38:/drawable_rounded_top_khung.xml.flat",
+        "source": "com.example.myapplication.app-main-40:/drawable/rounded_top_khung.xml"
+    },
+    {
         "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-38:\\color_bottom_nav_icon_color_selector.xml.flat",
         "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-40:\\color\\bottom_nav_icon_color_selector.xml"
     },
@@ -192,8 +204,8 @@
         "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-40:\\color\\selectable_button_text_color_selector.xml"
     },
     {
-        "merged": "com.example.myapplication.app-debug-38:/layout_search_food_byname.xml.flat",
-        "source": "com.example.myapplication.app-main-40:/layout/search_food_byname.xml"
+        "merged": "com.example.myapplication.app-debug-38:/drawable_top_bckgr.xml.flat",
+        "source": "com.example.myapplication.app-main-40:/drawable/top_bckgr.xml"
     },
     {
         "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-38:\\drawable_gradient_background.xml.flat",
@@ -234,6 +246,10 @@
     {
         "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-38:\\layout_layout_itemnl.xml.flat",
         "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-40:\\layout\\layout_itemnl.xml"
+    },
+    {
+        "merged": "com.example.myapplication.app-debug-38:/drawable_img.png.flat",
+        "source": "com.example.myapplication.app-main-40:/drawable/img.png"
     },
     {
         "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-38:\\drawable_ic_search.xml.flat",
@@ -278,6 +294,10 @@
     {
         "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-38:\\drawable_ic_launcher_foreground.xml.flat",
         "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-40:\\drawable\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.example.myapplication.app-debug-38:/layout_activity_food_detail.xml.flat",
+        "source": "com.example.myapplication.app-main-40:/layout/activity_food_detail.xml"
     },
     {
         "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-38:\\layout_add_food_post.xml.flat",

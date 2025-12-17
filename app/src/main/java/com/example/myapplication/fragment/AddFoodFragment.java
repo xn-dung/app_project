@@ -9,12 +9,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TableLayout;
 import android.widget.TableRow;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.android.volley.Request;
@@ -22,9 +21,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.myapplication.R;
-import com.example.myapplication.interfaces.NavigationHost;
 import com.example.myapplication.model.User;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.example.myapplication.model.BaiDang;
 import com.example.myapplication.model.NguyenLieu;
 
@@ -44,6 +41,7 @@ public class AddFoodFragment extends Fragment {
     private EditText edtCachLam;
     private EditText edtLinkYtb;
     private TableLayout tableLayout;
+    private TextView userFullname;
     public static AddFoodFragment newInstance(User user) {
         AddFoodFragment fragment = new AddFoodFragment();
         Bundle args = new Bundle();
@@ -76,8 +74,9 @@ public class AddFoodFragment extends Fragment {
         edtTenMon = view.findViewById(R.id.edtTenMon);
         edtCachLam = view.findViewById(R.id.edtCachLam);
         edtLinkYtb = view.findViewById(R.id.edtLinkYtb);
+        userFullname = view.findViewById(R.id.textFullName);
 
-
+        userFullname.setText(user.getFullname());
         btnCong.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

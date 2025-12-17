@@ -64,8 +64,7 @@ public class ForgotPasswordFragment extends Fragment {
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getContext(), LoginFragment.class);
-                startActivity(intent);
+                ((NavigationHost) requireActivity()).navigateTo(new LoginFragment(), true);
             }
         });
     }
