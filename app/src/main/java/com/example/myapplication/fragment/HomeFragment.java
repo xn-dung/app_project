@@ -146,7 +146,7 @@ public class HomeFragment extends Fragment {
     }
 
     private void takeBD() {
-        String url = "https://mobilenodejs.onrender.com/api/baidang";
+        String url = getString(R.string.backend_url) + "api/baidang";
         RequestQueue queue = Volley.newRequestQueue(requireContext());
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(
                 Request.Method.GET, url, null,
@@ -186,7 +186,10 @@ public class HomeFragment extends Fragment {
     }
 
     private void takeRecent() {
-        String url = getString(R.string.backend_url) + "api/nguoidung/recent";
+        if (user == null) {
+            return;
+        }
+        String url = getString(R.string.backend_url) + "api/baidang/getRecent/" + user.getId();
         RequestQueue queue = Volley.newRequestQueue(requireContext());
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(
                 Request.Method.GET, url, null,
@@ -194,7 +197,7 @@ public class HomeFragment extends Fragment {
                     try {
                         listBD.clear();
                         for (int i = 0; i < response.length(); i++) {
-                            JSONObject obj = response.getJSONObject(i);
+                            JSONObject obj = response.getJSONObject(i).getJSONObject("post");
                             BaiDang baiDang = new BaiDang();
                             baiDang.setId(obj.getString("_id"));
                             baiDang.setTenMon(obj.getString("tenMon"));
@@ -212,6 +215,7 @@ public class HomeFragment extends Fragment {
                             listBD.add(baiDang);
                         }
                         myAdapter.notifyDataSetChanged();
+                        checkEmptyState();
                     } catch (Exception e) {
                         Toast.makeText(requireContext(), "Lỗi xử lý dữ liệu: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                     }

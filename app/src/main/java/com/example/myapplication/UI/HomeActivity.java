@@ -14,6 +14,7 @@ import com.example.myapplication.fragment.DetailFoodFragment;
 import com.example.myapplication.fragment.FoundFoodFragment;
 import com.example.myapplication.fragment.HomeFragment;
 import com.example.myapplication.fragment.ProfileFragment;
+import com.example.myapplication.fragment.ReelFragment;
 import com.example.myapplication.fragment.SearchFoodByNameFragment;
 import com.example.myapplication.fragment.SearchFragment;
 import com.example.myapplication.interfaces.NavigationHost;
@@ -32,9 +33,11 @@ public class HomeActivity extends AppCompatActivity implements HomeFragment.OnFo
     private static final String TAG_SEARCH = "SearchFragment";
     private static final String TAG_ADD = "AddFoodFragment";
     private static final String TAG_PROFILE = "ProfileFragment";
+    private static final String TAG_REEL = "ReelFragment";
+
 
     private BottomNavigationView bottomNav;
-    private Fragment homeFragment, searchFragment, addFragment, profileFragment;
+    private Fragment homeFragment, searchFragment, addFragment, profileFragment, reelFragment;
     private Fragment activeFragment;
     private final Deque<Integer> tabHistory = new ArrayDeque<>();
     private int currentTabId = R.id.menuHome;
@@ -95,18 +98,21 @@ public class HomeActivity extends AppCompatActivity implements HomeFragment.OnFo
         searchFragment = fm.findFragmentByTag(TAG_SEARCH);
         addFragment = fm.findFragmentByTag(TAG_ADD);
         profileFragment = fm.findFragmentByTag(TAG_PROFILE);
+        reelFragment = fm.findFragmentByTag(TAG_REEL);
+
 
         if (homeFragment == null) homeFragment = HomeFragment.newInstance(user);
         if (searchFragment == null) searchFragment = SearchFragment.newInstance(user);
         if (addFragment == null) addFragment = AddFoodFragment.newInstance(user);
         if (profileFragment == null) profileFragment = ProfileFragment.newInstance(user);
+        if (reelFragment == null) reelFragment = ReelFragment.newInstance(user);
 
         fm.beginTransaction()
                 .add(R.id.fragment_container, homeFragment, TAG_HOME)
                 .add(R.id.fragment_container, searchFragment, TAG_SEARCH).hide(searchFragment)
-
                 .add(R.id.fragment_container, addFragment, TAG_ADD).hide(addFragment)
                 .add(R.id.fragment_container, profileFragment, TAG_PROFILE).hide(profileFragment)
+                .add(R.id.fragment_container,reelFragment,TAG_REEL).hide(reelFragment)
                 .commit();
 
         activeFragment = homeFragment;
@@ -137,6 +143,9 @@ public class HomeActivity extends AppCompatActivity implements HomeFragment.OnFo
             return addFragment;
         } else if (tabId == R.id.menuProfile) {
             return profileFragment;
+        }
+        else if (tabId == R.id.menuReels) {
+            return reelFragment;
         }
         return null;
     }

@@ -26,7 +26,7 @@ public final class ActivityFoodDetailBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final ImageButton btnBackF;
+  public final ImageButton btnBack;
 
   @NonNull
   public final ImageButton btnFavorite;
@@ -65,14 +65,14 @@ public final class ActivityFoodDetailBinding implements ViewBinding {
   public final TextView txtFoodName;
 
   private ActivityFoodDetailBinding(@NonNull ConstraintLayout rootView,
-      @NonNull ImageButton btnBackF, @NonNull ImageButton btnFavorite,
+      @NonNull ImageButton btnBack, @NonNull ImageButton btnFavorite,
       @NonNull LinearLayout headerFoodInfo, @NonNull ImageView imgFood,
       @NonNull LayoutHuongdanBinding layoutHD, @NonNull LayoutNlBinding layoutNL,
       @NonNull LinearLayout scrollView, @NonNull LinearLayout tab1, @NonNull LinearLayout tab2,
       @NonNull TabHost tabBD, @NonNull FrameLayout tabcontent, @NonNull TabWidget tabs,
       @NonNull TextView txtFoodName) {
     this.rootView = rootView;
-    this.btnBackF = btnBackF;
+    this.btnBack = btnBack;
     this.btnFavorite = btnFavorite;
     this.headerFoodInfo = headerFoodInfo;
     this.imgFood = imgFood;
@@ -114,9 +114,9 @@ public final class ActivityFoodDetailBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.btnBackF;
-      ImageButton btnBackF = ViewBindings.findChildViewById(rootView, id);
-      if (btnBackF == null) {
+      id = R.id.btnBack;
+      ImageButton btnBack = ViewBindings.findChildViewById(rootView, id);
+      if (btnBack == null) {
         break missingId;
       }
 
@@ -194,7 +194,7 @@ public final class ActivityFoodDetailBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityFoodDetailBinding((ConstraintLayout) rootView, btnBackF, btnFavorite,
+      return new ActivityFoodDetailBinding((ConstraintLayout) rootView, btnBack, btnFavorite,
           headerFoodInfo, imgFood, binding_layoutHD, binding_layoutNL, scrollView, tab1, tab2,
           tabBD, tabcontent, tabs, txtFoodName);
     }

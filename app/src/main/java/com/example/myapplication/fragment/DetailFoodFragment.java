@@ -28,20 +28,17 @@ import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
 import com.example.myapplication.Adapter.ArrayNLAdapter;
 import com.example.myapplication.R;
-import com.example.myapplication.UI.HomeActivity;
 import com.example.myapplication.model.BaiDang;
 import com.example.myapplication.model.NguyenLieu;
 import com.example.myapplication.model.User;
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer;
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener;
+
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
 
-import org.jetbrains.annotations.NotNull;
-import org.json.JSONArray;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.UnsupportedEncodingException;
+
 import java.util.HashMap;
 import java.util.List;
 
@@ -57,22 +54,28 @@ public class DetailFoodFragment extends Fragment {
     ImageButton btnFavorite;
     private boolean isFav = false;
     private long startTime;
+    private boolean hasTracked;
     @Override
     public void onResume() {
         super.onResume();
         startTime = System.currentTimeMillis();
+        hasTracked = false;
     }
     @Override
     public void onPause() {
         super.onPause();
-        long endTime = System.currentTimeMillis();
-        long elapsedTime = endTime - startTime;
-        if(elapsedTime < 3000){
+
+        if (hasTracked || baiDang == null || user == null) return;
+
+        long elapsed = System.currentTimeMillis() - startTime;
+
+        if (elapsed >= 3000) {
+            sendRecommend(baiDang);
+        } else {
             sendIgnore(baiDang);
         }
-        if (elapsedTime >= 3000) {
-            sendRecommend(baiDang);
-        }
+
+        hasTracked = true;
     }
     public static DetailFoodFragment newInstance(BaiDang baiDang, User user) {
         DetailFoodFragment fragment = new DetailFoodFragment();
@@ -89,7 +92,6 @@ public class DetailFoodFragment extends Fragment {
         if (getArguments() != null) {
             baiDang = (BaiDang) getArguments().getSerializable("baiDang");
             user = (User) getArguments().getSerializable("user");
-            updatePostRecent(baiDang);
         }
     }
 
@@ -149,7 +151,7 @@ public class DetailFoodFragment extends Fragment {
                     Uri.parse("https://www.youtube.com/watch?v=" + videoId));
             startActivity(intent);
         });
-        btnBack = view.findViewById(R.id.btnBackF);
+        btnBack = view.findViewById(R.id.btnBack);
         btnBack.setOnClickListener(v -> getParentFragmentManager().popBackStack());
 
         btnFavorite = view.findViewById(R.id.btnFavorite);
@@ -295,9 +297,7 @@ public class DetailFoodFragment extends Fragment {
             youtubePlayerView.release();
         }
     }
-    public void updatePostRecent(BaiDang baiDang){
 
-    }
     public void sendRecommend(BaiDang baiDang) {
         String url = getString(R.string.backend_url) + "api/recommend/trackView";
         RequestQueue queue = Volley.newRequestQueue(requireContext());
