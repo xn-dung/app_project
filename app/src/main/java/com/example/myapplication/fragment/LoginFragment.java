@@ -121,12 +121,7 @@ public class LoginFragment extends Fragment {
                         String phone = response.getString("phone");
                         String userName = response.getString("username");
 //                        String passWord = response.getString("password");
-                        User logginUser = new User(id, userName,password,name,address,email,phone);
-                        if(response.has("avatar")){
-                            String avatar = response.getString("avatar");
-                            logginUser.setAvatar(avatar);
-                        }
-
+                        User logginUser= new User(id, userName,password,name,address,email,phone);
 
 
                         if (!logginUser.getFullname().isEmpty()) {
