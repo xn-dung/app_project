@@ -9,6 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
@@ -26,7 +27,7 @@ public final class FragmentUserReelBinding implements ViewBinding {
   public final ImageButton btnBack;
 
   @NonNull
-  public final ConstraintLayout headerLayout;
+  public final CardView headerLayout;
 
   @NonNull
   public final LinearLayout layoutEmptyReel;
@@ -38,7 +39,7 @@ public final class FragmentUserReelBinding implements ViewBinding {
   public final RecyclerView recyclerUserReels;
 
   private FragmentUserReelBinding(@NonNull ConstraintLayout rootView, @NonNull ImageButton btnBack,
-      @NonNull ConstraintLayout headerLayout, @NonNull LinearLayout layoutEmptyReel,
+      @NonNull CardView headerLayout, @NonNull LinearLayout layoutEmptyReel,
       @NonNull ProgressBar progressBarReel, @NonNull RecyclerView recyclerUserReels) {
     this.rootView = rootView;
     this.btnBack = btnBack;
@@ -82,7 +83,7 @@ public final class FragmentUserReelBinding implements ViewBinding {
       }
 
       id = R.id.headerLayout;
-      ConstraintLayout headerLayout = ViewBindings.findChildViewById(rootView, id);
+      CardView headerLayout = ViewBindings.findChildViewById(rootView, id);
       if (headerLayout == null) {
         break missingId;
       }

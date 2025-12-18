@@ -24,6 +24,10 @@
         "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\food_card_home.xml"
     },
     {
+        "merged": "com.example.myapplication.app-debug-42:/layout_fragment_user_reel.xml.flat",
+        "source": "com.example.myapplication.app-main-44:/layout/fragment_user_reel.xml"
+    },
+    {
         "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\layout_layout_huongdan.xml.flat",
         "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\layout_huongdan.xml"
     },
@@ -124,10 +128,6 @@
         "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\mipmap-anydpi\\ic_launcher.xml"
     },
     {
-        "merged": "com.example.myapplication.app-debug-42:/layout_table_layout.xml.flat",
-        "source": "com.example.myapplication.app-main-44:/layout/table_layout.xml"
-    },
-    {
         "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\drawable_ic_play_circle.png.flat",
         "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\drawable\\ic_play_circle.png"
     },
@@ -218,6 +218,10 @@
     {
         "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\layout_enter_otp.xml.flat",
         "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\enter_otp.xml"
+    },
+    {
+        "merged": "com.example.myapplication.app-debug-42:/layout_fragment_my_post.xml.flat",
+        "source": "com.example.myapplication.app-main-44:/layout/fragment_my_post.xml"
     },
     {
         "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\layout_add_food_post.xml.flat",
