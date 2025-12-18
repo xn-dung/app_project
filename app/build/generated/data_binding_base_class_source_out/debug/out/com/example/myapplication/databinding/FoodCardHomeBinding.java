@@ -9,6 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.myapplication.R;
@@ -18,10 +19,16 @@ import java.lang.String;
 
 public final class FoodCardHomeBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final CardView rootView;
+
+  @NonNull
+  public final CardView cardImage;
 
   @NonNull
   public final ImageView imgFood;
+
+  @NonNull
+  public final LinearLayout layoutStats;
 
   @NonNull
   public final TextView textViewNguyenLieu;
@@ -29,17 +36,29 @@ public final class FoodCardHomeBinding implements ViewBinding {
   @NonNull
   public final TextView textViewTen;
 
-  private FoodCardHomeBinding(@NonNull LinearLayout rootView, @NonNull ImageView imgFood,
-      @NonNull TextView textViewNguyenLieu, @NonNull TextView textViewTen) {
+  @NonNull
+  public final TextView tvLikes;
+
+  @NonNull
+  public final TextView tvViewCount;
+
+  private FoodCardHomeBinding(@NonNull CardView rootView, @NonNull CardView cardImage,
+      @NonNull ImageView imgFood, @NonNull LinearLayout layoutStats,
+      @NonNull TextView textViewNguyenLieu, @NonNull TextView textViewTen,
+      @NonNull TextView tvLikes, @NonNull TextView tvViewCount) {
     this.rootView = rootView;
+    this.cardImage = cardImage;
     this.imgFood = imgFood;
+    this.layoutStats = layoutStats;
     this.textViewNguyenLieu = textViewNguyenLieu;
     this.textViewTen = textViewTen;
+    this.tvLikes = tvLikes;
+    this.tvViewCount = tvViewCount;
   }
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public CardView getRoot() {
     return rootView;
   }
 
@@ -64,9 +83,21 @@ public final class FoodCardHomeBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.cardImage;
+      CardView cardImage = ViewBindings.findChildViewById(rootView, id);
+      if (cardImage == null) {
+        break missingId;
+      }
+
       id = R.id.imgFood;
       ImageView imgFood = ViewBindings.findChildViewById(rootView, id);
       if (imgFood == null) {
+        break missingId;
+      }
+
+      id = R.id.layoutStats;
+      LinearLayout layoutStats = ViewBindings.findChildViewById(rootView, id);
+      if (layoutStats == null) {
         break missingId;
       }
 
@@ -82,8 +113,20 @@ public final class FoodCardHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FoodCardHomeBinding((LinearLayout) rootView, imgFood, textViewNguyenLieu,
-          textViewTen);
+      id = R.id.tvLikes;
+      TextView tvLikes = ViewBindings.findChildViewById(rootView, id);
+      if (tvLikes == null) {
+        break missingId;
+      }
+
+      id = R.id.tvViewCount;
+      TextView tvViewCount = ViewBindings.findChildViewById(rootView, id);
+      if (tvViewCount == null) {
+        break missingId;
+      }
+
+      return new FoodCardHomeBinding((CardView) rootView, cardImage, imgFood, layoutStats,
+          textViewNguyenLieu, textViewTen, tvLikes, tvViewCount);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

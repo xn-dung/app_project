@@ -65,6 +65,7 @@ public class AddFoodFragment extends Fragment {
     private Button btnUpload;
     private Uri selectedVideoUri;
     private LinearLayout btnSelectVideo;
+    private TextView txtFullName;
 
     public static AddFoodFragment newInstance(User user) {
         AddFoodFragment fragment = new AddFoodFragment();
@@ -105,6 +106,9 @@ public class AddFoodFragment extends Fragment {
         description = view.findViewById(R.id.edtReelCaption);
         btnUpload = view.findViewById(R.id.btnPostReel);
         btnSelectVideo = view.findViewById(R.id.btnSelectVideo);
+        txtFullName = view.findViewById(R.id.textFullName);
+        txtFullName.setText(user.getFullname());
+
 
         changeTab.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override

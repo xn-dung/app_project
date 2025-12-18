@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -49,6 +50,9 @@ public final class HomeBinding implements ViewBinding {
   public final ConstraintLayout main;
 
   @NonNull
+  public final ProgressBar progressBar;
+
+  @NonNull
   public final TextView textFullName;
 
   @NonNull
@@ -61,8 +65,8 @@ public final class HomeBinding implements ViewBinding {
       @NonNull MaterialButton btnFavorite, @NonNull MaterialButton btnRecent,
       @NonNull MaterialButton btnRecommend, @NonNull GridView gridFoods,
       @NonNull ImageView imageAvatar, @NonNull CardView layoutHeader,
-      @NonNull ConstraintLayout main, @NonNull TextView textFullName, @NonNull TextView textHello,
-      @NonNull TextView tvEmptyState) {
+      @NonNull ConstraintLayout main, @NonNull ProgressBar progressBar,
+      @NonNull TextView textFullName, @NonNull TextView textHello, @NonNull TextView tvEmptyState) {
     this.rootView = rootView;
     this.ButtonsLayout = ButtonsLayout;
     this.btnFavorite = btnFavorite;
@@ -72,6 +76,7 @@ public final class HomeBinding implements ViewBinding {
     this.imageAvatar = imageAvatar;
     this.layoutHeader = layoutHeader;
     this.main = main;
+    this.progressBar = progressBar;
     this.textFullName = textFullName;
     this.textHello = textHello;
     this.tvEmptyState = tvEmptyState;
@@ -148,6 +153,12 @@ public final class HomeBinding implements ViewBinding {
 
       ConstraintLayout main = (ConstraintLayout) rootView;
 
+      id = R.id.progressBar;
+      ProgressBar progressBar = ViewBindings.findChildViewById(rootView, id);
+      if (progressBar == null) {
+        break missingId;
+      }
+
       id = R.id.textFullName;
       TextView textFullName = ViewBindings.findChildViewById(rootView, id);
       if (textFullName == null) {
@@ -167,8 +178,8 @@ public final class HomeBinding implements ViewBinding {
       }
 
       return new HomeBinding((ConstraintLayout) rootView, ButtonsLayout, btnFavorite, btnRecent,
-          btnRecommend, gridFoods, imageAvatar, layoutHeader, main, textFullName, textHello,
-          tvEmptyState);
+          btnRecommend, gridFoods, imageAvatar, layoutHeader, main, progressBar, textFullName,
+          textHello, tvEmptyState);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

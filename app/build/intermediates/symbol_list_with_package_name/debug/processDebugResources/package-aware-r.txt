@@ -3244,6 +3244,7 @@ drawable ic_call_decline
 drawable ic_call_decline_low
 drawable ic_clear_black_24
 drawable ic_clock_black_24dp
+drawable ic_eye
 drawable ic_favorite
 drawable ic_home
 drawable ic_keyboard_black_24dp
@@ -3261,6 +3262,7 @@ drawable ic_play_circle
 drawable ic_search
 drawable ic_search_black_24
 drawable ic_time
+drawable ic_upload
 drawable img
 drawable indeterminate_static
 drawable logo_app
@@ -3343,6 +3345,7 @@ drawable rounded_button_bg
 drawable rounded_top_khung
 drawable settings
 drawable tab_bar_bg
+drawable tab_divider
 drawable tabhost_bg_slt
 drawable tabhost_bg_unslt
 drawable test_level_drawable
@@ -3480,6 +3483,7 @@ id cache_measures
 id callMeasure
 id cancel_action
 id cancel_button
+id cardImage
 id cardVideoPreview
 id carryVelocity
 id center
@@ -3724,6 +3728,7 @@ id layoutHeader
 id layoutInteractive
 id layoutNL
 id layoutReelsForm
+id layoutStats
 id left
 id leftToRight
 id legacy
@@ -4037,7 +4042,10 @@ id triangle
 id tvCachLam
 id tvEmptyState
 id tvHuongDanTitle
+id tvLikeCount
+id tvLikes
 id tvTitle
+id tvViewCount
 id txtDinhLuong
 id txtFoodName
 id txtTenNguyenLieu

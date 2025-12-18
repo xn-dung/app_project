@@ -74,9 +74,7 @@ public class FoundFoodFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         lv = view.findViewById(R.id.outfood);
-        textname = view.findViewById(R.id.textFullName);
 
-        textname.setText(user.getFullname());
 
 
         bd = new ArrayList<>();
@@ -151,7 +149,7 @@ public class FoundFoodFragment extends Fragment {
                                 baiDang.setLinkYtb(obj.optString("linkYtb", ""));
                                 baiDang.setLuotThich(obj.optInt("luotThich", 0));
                                 baiDang.setImage(obj.optString("image", ""));
-
+                                baiDang.setViews(obj.optInt("views",0));
                                 JSONArray nlArray = obj.getJSONArray("nguyenLieu");
                                 nguyenLieu = new ArrayList<>();
                                 for (int j = 0; j < nlArray.length(); j++) {

@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -46,6 +47,7 @@ public class HomeFragment extends Fragment {
     private MaterialButton btnRecommend;
     private MaterialButton btnRecent;
     private MaterialButton currentSltBtn;
+    private ProgressBar pb;
 
 
     public static HomeFragment newInstance(User user) {
@@ -56,8 +58,7 @@ public class HomeFragment extends Fragment {
         return fragment;
     }
 
-    public HomeFragment() {
-    }
+    public HomeFragment() {}
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -94,6 +95,7 @@ public class HomeFragment extends Fragment {
         btnRecent = view.findViewById(R.id.btnRecent);
         fullname = view.findViewById(R.id.textFullName);
         fullname.setText(user.getFullname());
+        pb = view.findViewById(R.id.progressBar);
         myAdapter = new MyArrayAdapter(requireContext(), R.layout.layout_item, listBD);
         gv.setAdapter(myAdapter);
 
@@ -110,15 +112,13 @@ public class HomeFragment extends Fragment {
 
             listBD.clear();
             myAdapter.notifyDataSetChanged();
-            checkEmptyState();
 
             if (v.getId() == R.id.btnRecommend) {
                 takeBD();
             } else if (v.getId() == R.id.btnFavorite) {
                 takeFAV();
-            } else {
-                takeRecent();
             }
+            else takeRecent();
         };
 
         btnRecommend.setOnClickListener(buttonClickListener);
@@ -134,7 +134,7 @@ public class HomeFragment extends Fragment {
         });
     }
 
-    private void checkEmptyState() {
+    private void checkEmptyState(){
         if (listBD.isEmpty()) {
             gv.setVisibility(View.GONE);
             tvEmptyState.setVisibility(View.VISIBLE);
@@ -145,12 +145,24 @@ public class HomeFragment extends Fragment {
         }
     }
 
+    private void setLoading(boolean isLoading) {
+        if (isLoading) {
+            pb.setVisibility(View.VISIBLE);
+            gv.setVisibility(View.GONE);
+            tvEmptyState.setVisibility(View.GONE);
+        } else {
+            pb.setVisibility(View.GONE);
+        }
+    }
+
     private void takeBD() {
-        String url = getString(R.string.backend_url) + "api/baidang";
+        setLoading(true);
+        String url = "https://mobilenodejs.onrender.com/api/recommend/" + user.getId();
         RequestQueue queue = Volley.newRequestQueue(requireContext());
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(
                 Request.Method.GET, url, null,
                 response -> {
+                    setLoading(false);
                     try {
                         listBD.clear();
                         for (int i = 0; i < response.length(); i++) {
@@ -163,6 +175,7 @@ public class HomeFragment extends Fragment {
                             baiDang.setLinkYtb(obj.optString("linkYtb", ""));
                             baiDang.setLuotThich(obj.optInt("luotThich", 0));
                             baiDang.setImage(obj.optString("image", ""));
+                            baiDang.setViews(obj.optInt("views", 0));
                             JSONArray nlArray = obj.getJSONArray("nguyenLieu");
                             ArrayList<NguyenLieu> nguyenLieuList = new ArrayList<>();
                             for (int j = 0; j < nlArray.length(); j++) {
@@ -178,22 +191,24 @@ public class HomeFragment extends Fragment {
                     }
                 },
                 error -> {
+                    setLoading(false);
                     Toast.makeText(requireContext(), "Lỗi kết nối: " + error.toString(), Toast.LENGTH_SHORT).show();
                     checkEmptyState();
                 }
         );
         queue.add(jsonArrayRequest);
     }
-
     private void takeRecent() {
         if (user == null) {
             return;
         }
+        setLoading(true);
         String url = getString(R.string.backend_url) + "api/baidang/getRecent/" + user.getId();
         RequestQueue queue = Volley.newRequestQueue(requireContext());
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(
                 Request.Method.GET, url, null,
                 response -> {
+                    setLoading(false);
                     try {
                         listBD.clear();
                         for (int i = 0; i < response.length(); i++) {
@@ -206,6 +221,7 @@ public class HomeFragment extends Fragment {
                             baiDang.setLinkYtb(obj.optString("linkYtb", ""));
                             baiDang.setLuotThich(obj.optInt("luotThich", 0));
                             baiDang.setImage(obj.optString("image", ""));
+                            baiDang.setViews(obj.optInt("views", 0));
                             JSONArray nlArray = obj.getJSONArray("nguyenLieu");
                             ArrayList<NguyenLieu> nguyenLieuList = new ArrayList<>();
                             for (int j = 0; j < nlArray.length(); j++) {
@@ -217,7 +233,9 @@ public class HomeFragment extends Fragment {
                         myAdapter.notifyDataSetChanged();
                         checkEmptyState();
                     } catch (Exception e) {
+                        setLoading(false);
                         Toast.makeText(requireContext(), "Lỗi xử lý dữ liệu: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                        checkEmptyState();
                     }
                 },
                 error -> Toast.makeText(requireContext(), "Lỗi kết nối: " + error.toString(), Toast.LENGTH_SHORT).show()
@@ -225,15 +243,18 @@ public class HomeFragment extends Fragment {
         queue.add(jsonArrayRequest);
     }
 
+
     private void takeFAV() {
         if (user == null) {
             return;
         }
+        setLoading(true);
         String url = getString(R.string.backend_url) + "api/nguoidung/fav/" + user.getId();
         RequestQueue queue = Volley.newRequestQueue(requireContext());
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(
                 Request.Method.GET, url, null,
                 response -> {
+                    setLoading(false);
                     try {
                         listBD.clear();
                         for (int i = 0; i < response.length(); i++) {
@@ -246,6 +267,7 @@ public class HomeFragment extends Fragment {
                             baiDang.setLinkYtb(obj.optString("linkYtb", ""));
                             baiDang.setLuotThich(obj.optInt("luotThich", 0));
                             baiDang.setImage(obj.optString("image", ""));
+                            baiDang.setViews(obj.optInt("views", 0));
                             JSONArray nlArray = obj.getJSONArray("nguyenLieu");
                             ArrayList<NguyenLieu> nguyenLieuList = new ArrayList<>();
                             for (int j = 0; j < nlArray.length(); j++) {
@@ -260,7 +282,11 @@ public class HomeFragment extends Fragment {
                         Toast.makeText(requireContext(), "Lỗi xử lý dữ liệu: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 },
-                error -> Toast.makeText(requireContext(), "Lỗi kết nối: " + error.toString(), Toast.LENGTH_SHORT).show()
+                error -> {
+                    setLoading(false);
+                    Toast.makeText(requireContext(), "Lỗi kết nối: " + error.toString(), Toast.LENGTH_SHORT).show();
+                    checkEmptyState();
+                }
         );
         queue.add(jsonArrayRequest);
     }
@@ -272,16 +298,15 @@ public class HomeFragment extends Fragment {
     }
 
     @Override
-    public void onHiddenChanged(boolean hidden) {
+    public void onHiddenChanged(boolean hidden){
         super.onHiddenChanged(hidden);
-        if (!hidden) {
-            if (currentSltBtn != null && currentSltBtn.getId() == R.id.btnFavorite) {
+        if(!hidden){
+            if(currentSltBtn != null && currentSltBtn.getId() == R.id.btnFavorite){
                 listBD.clear();
                 myAdapter.notifyDataSetChanged();
                 takeFAV();
             }
         }
     }
+
 }
-
-

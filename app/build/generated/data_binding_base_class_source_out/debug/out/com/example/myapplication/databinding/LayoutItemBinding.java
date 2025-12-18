@@ -30,12 +30,21 @@ public final class LayoutItemBinding implements ViewBinding {
   @NonNull
   public final TextView textFoodName;
 
+  @NonNull
+  public final TextView tvLikeCount;
+
+  @NonNull
+  public final TextView tvViewCount;
+
   private LayoutItemBinding(@NonNull CardView rootView, @NonNull ImageView imageFood,
-      @NonNull LinearLayout itemLayout, @NonNull TextView textFoodName) {
+      @NonNull LinearLayout itemLayout, @NonNull TextView textFoodName,
+      @NonNull TextView tvLikeCount, @NonNull TextView tvViewCount) {
     this.rootView = rootView;
     this.imageFood = imageFood;
     this.itemLayout = itemLayout;
     this.textFoodName = textFoodName;
+    this.tvLikeCount = tvLikeCount;
+    this.tvViewCount = tvViewCount;
   }
 
   @Override
@@ -83,7 +92,20 @@ public final class LayoutItemBinding implements ViewBinding {
         break missingId;
       }
 
-      return new LayoutItemBinding((CardView) rootView, imageFood, itemLayout, textFoodName);
+      id = R.id.tvLikeCount;
+      TextView tvLikeCount = ViewBindings.findChildViewById(rootView, id);
+      if (tvLikeCount == null) {
+        break missingId;
+      }
+
+      id = R.id.tvViewCount;
+      TextView tvViewCount = ViewBindings.findChildViewById(rootView, id);
+      if (tvViewCount == null) {
+        break missingId;
+      }
+
+      return new LayoutItemBinding((CardView) rootView, imageFood, itemLayout, textFoodName,
+          tvLikeCount, tvViewCount);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

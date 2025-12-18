@@ -37,6 +37,7 @@ drawable header_background
 drawable ic_account_circle
 drawable ic_add_box_24
 drawable ic_back
+drawable ic_eye
 drawable ic_favorite
 drawable ic_home
 drawable ic_launcher_background
@@ -45,6 +46,7 @@ drawable ic_play_24
 drawable ic_play_circle
 drawable ic_search
 drawable ic_time
+drawable ic_upload
 drawable img
 drawable logo_app
 drawable love
@@ -54,6 +56,7 @@ drawable rounded_button_bg
 drawable rounded_top_khung
 drawable settings
 drawable tab_bar_bg
+drawable tab_divider
 drawable tabhost_bg_slt
 drawable tabhost_bg_unslt
 drawable top_bckgr
@@ -80,6 +83,7 @@ id button3
 id buttonCo
 id buttonPhotos
 id buttonTru
+id cardImage
 id cardVideoPreview
 id constraintLayout
 id editConfirmPassword
@@ -131,6 +135,7 @@ id layoutHeader
 id layoutInteractive
 id layoutNL
 id layoutReelsForm
+id layoutStats
 id listNL
 id logo
 id logoImage
@@ -187,7 +192,10 @@ id titleText
 id tvCachLam
 id tvEmptyState
 id tvHuongDanTitle
+id tvLikeCount
+id tvLikes
 id tvTitle
+id tvViewCount
 id txtDinhLuong
 id txtFoodName
 id txtTenNguyenLieu

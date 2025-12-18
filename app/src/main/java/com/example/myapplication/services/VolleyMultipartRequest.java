@@ -30,7 +30,7 @@ public class VolleyMultipartRequest extends Request<JSONObject> {
         super(method, url, errorListener);
         this.mListener = listener;
         this.mByteData = byteData;
-        this.mParams = new HashMap<>(); // ✅ TEXT PART
+        this.mParams = new HashMap<>();
     }
 
     public VolleyMultipartRequest(
@@ -57,7 +57,6 @@ public class VolleyMultipartRequest extends Request<JSONObject> {
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
 
         try {
-            // ===== TEXT PART =====
             if (mParams != null) {
                 for (Map.Entry<String, String> entry : mParams.entrySet()) {
                     bos.write(("--" + boundary + "\r\n").getBytes());
@@ -69,7 +68,6 @@ public class VolleyMultipartRequest extends Request<JSONObject> {
                 }
             }
 
-            // ===== FILE PART =====
             if (mByteData != null) {
                 for (Map.Entry<String, DataPart> entry : mByteData.entrySet()) {
                     DataPart dataPart = entry.getValue();
@@ -93,7 +91,6 @@ public class VolleyMultipartRequest extends Request<JSONObject> {
         return bos.toByteArray();
     }
 
-    // ✅ CHỈ GIỮ 1 setParams
     public void setParams(Map<String, String> params) {
         this.mParams = params;
     }
@@ -117,7 +114,6 @@ public class VolleyMultipartRequest extends Request<JSONObject> {
         mListener.onResponse(response);
     }
 
-    // ===== DATA PART =====
     public static class DataPart {
         private final String fileName;
         private final byte[] content;

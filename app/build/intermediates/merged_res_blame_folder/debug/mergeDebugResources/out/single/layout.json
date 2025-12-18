@@ -80,6 +80,10 @@
         "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\edit_profile.xml"
     },
     {
+        "merged": "com.example.myapplication.app-mergeDebugResources-41:/layout/food_card_home.xml",
+        "source": "com.example.myapplication.app-main-44:/layout/food_card_home.xml"
+    },
+    {
         "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-mergeDebugResources-41:\\layout\\activity_main.xml",
         "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\activity_main.xml"
     },

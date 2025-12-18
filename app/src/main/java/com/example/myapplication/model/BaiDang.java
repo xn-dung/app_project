@@ -12,6 +12,7 @@ public class BaiDang implements Serializable {
     private String linkYtb;
     private Integer luotThich;
     private String image;
+    private Integer views;
 
     public BaiDang() {
     }
@@ -29,6 +30,13 @@ public class BaiDang implements Serializable {
         this.image = image;
     }
 
+    public void setViews(Integer views) {
+        this.views = views;
+    }
+
+    public Integer getViews() {
+        return views;
+    }
 
     public String getId() {
         return id;

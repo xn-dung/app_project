@@ -5,20 +5,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient_main_bg"
     tools:context="com.example.myapplication.fragment.SearchFoodByNameFragment">
 
-    <!-- SearchView chuẩn AppCompat -->
     <androidx.appcompat.widget.SearchView
         android:id="@+id/searchname"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#B9EFBA"
+        android:background="@color/white"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:iconifiedByDefault="false" />
 
-    <!-- List hiển thị kết quả tìm kiếm -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintTop_toBottomOf="@id/searchname"/>
+
     <ListView
         android:id="@+id/outfood"
         android:layout_width="0dp"
@@ -28,12 +33,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Nút thực hiện tìm kiếm -->
     <Button
         android:id="@+id/startsearchbyname"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="#8BC34A"
+        android:backgroundTint="@color/colorPrimaryLight"
         android:text="Tìm"
         app:layout_constraintTop_toBottomOf="@id/outfood"
         app:layout_constraintStart_toStartOf="parent"

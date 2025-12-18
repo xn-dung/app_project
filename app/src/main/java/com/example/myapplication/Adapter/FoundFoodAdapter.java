@@ -39,8 +39,10 @@ public class FoundFoodAdapter extends ArrayAdapter<BaiDang>{
         BaiDang myBaiDang = myList.get(position);
         TextView txt_title = convertView.findViewById(R.id.textViewTen);
         TextView txt_nguyenlieu = convertView.findViewById(R.id.textViewNguyenLieu);
+        TextView txtViewCount = convertView.findViewById(R.id.tvViewCount);
         ImageView anh = convertView.findViewById(R.id.imgFood);
         txt_title.setText(myBaiDang.getTenMon());
+        TextView txtLikeCount = convertView.findViewById(R.id.tvLikes);
         StringBuilder tmp = new StringBuilder();
         for (int i = 0 ; i < myBaiDang.getNguyenLieu().size(); i++){
             tmp.append(myBaiDang.getNguyenLieu().get(i).getTen());
@@ -49,6 +51,8 @@ public class FoundFoodAdapter extends ArrayAdapter<BaiDang>{
             }
         }
         txt_nguyenlieu.setText(tmp.toString());
+        txtViewCount.setText(String.valueOf(myBaiDang.getViews()));
+        txtLikeCount.setText(String.valueOf(myBaiDang.getLuotThich()));
         Glide.with(this.getContext())
                 .load(myBaiDang.getImage())
                 .placeholder(R.drawable.logo_app)
