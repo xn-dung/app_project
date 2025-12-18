@@ -12,6 +12,7 @@ import com.example.myapplication.R;
 import com.example.myapplication.fragment.AddFoodFragment;
 import com.example.myapplication.fragment.DetailFoodFragment;
 import com.example.myapplication.fragment.HomeFragment;
+import com.example.myapplication.fragment.MyPostFragment;
 import com.example.myapplication.fragment.ProfileFragment;
 import com.example.myapplication.fragment.SearchFoodByNameFragment;
 import com.example.myapplication.fragment.SearchFragment;
@@ -23,7 +24,7 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 
 public class HomeActivity extends AppCompatActivity implements HomeFragment.OnFoodItemSelectedListener,
-        SearchFragment.OnSearchByNameClickedListener {
+        SearchFragment.OnSearchByNameClickedListener{
 
     private static final String TAG_HOME = "HomeFragment";
     private static final String TAG_SEARCH = "SearchFragment";

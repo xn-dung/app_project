@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TableLayout;
 import android.widget.TableRow;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
@@ -61,11 +62,18 @@ public final class SearchFoodByIngredientBinding implements ViewBinding {
   @NonNull
   public final TableLayout tablet;
 
+  @NonNull
+  public final TextView textFullName;
+
+  @NonNull
+  public final TextView textHello;
+
   private SearchFoodByIngredientBinding(@NonNull ConstraintLayout rootView,
       @NonNull LinearLayout barSearch, @NonNull Button button2, @NonNull Button button3,
       @NonNull Button buttonTru, @NonNull EditText editSoLuong1, @NonNull EditText editTen1,
       @NonNull LinearLayout hehe, @NonNull CardView layoutHeader, @NonNull ConstraintLayout main,
-      @NonNull Spinner spinnerDonVi1, @NonNull TableRow tableRowItem, @NonNull TableLayout tablet) {
+      @NonNull Spinner spinnerDonVi1, @NonNull TableRow tableRowItem, @NonNull TableLayout tablet,
+      @NonNull TextView textFullName, @NonNull TextView textHello) {
     this.rootView = rootView;
     this.barSearch = barSearch;
     this.button2 = button2;
@@ -79,6 +87,8 @@ public final class SearchFoodByIngredientBinding implements ViewBinding {
     this.spinnerDonVi1 = spinnerDonVi1;
     this.tableRowItem = tableRowItem;
     this.tablet = tablet;
+    this.textFullName = textFullName;
+    this.textHello = textHello;
   }
 
   @Override
@@ -176,9 +186,21 @@ public final class SearchFoodByIngredientBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.textFullName;
+      TextView textFullName = ViewBindings.findChildViewById(rootView, id);
+      if (textFullName == null) {
+        break missingId;
+      }
+
+      id = R.id.textHello;
+      TextView textHello = ViewBindings.findChildViewById(rootView, id);
+      if (textHello == null) {
+        break missingId;
+      }
+
       return new SearchFoodByIngredientBinding((ConstraintLayout) rootView, barSearch, button2,
           button3, buttonTru, editSoLuong1, editTen1, hehe, layoutHeader, main, spinnerDonVi1,
-          tableRowItem, tablet);
+          tableRowItem, tablet, textFullName, textHello);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

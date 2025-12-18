@@ -3082,6 +3082,7 @@ drawable ic_call_decline
 drawable ic_call_decline_low
 drawable ic_clear_black_24
 drawable ic_clock_black_24dp
+drawable ic_eye
 drawable ic_favorite
 drawable ic_home
 drawable ic_keyboard_black_24dp
@@ -3458,10 +3459,12 @@ id gone
 id graph
 id graph_wrap
 id gridFoods
+id gridUserPosts
 id group_divider
 id grouping
 id groups
 id headerFoodInfo
+id headerLayout
 id header_title
 id hehe
 id hide_ime_id
@@ -3501,6 +3504,7 @@ id jumpToStart
 id labelVideo
 id labeled
 id layout
+id layoutEmpty
 id layoutHD
 id layoutHeader
 id layoutNL
@@ -3813,6 +3817,7 @@ id tvLikeCount
 id tvMusic
 id tvTitle
 id tvUsername
+id tvViewCount
 id txtDinhLuong
 id txtFoodName
 id txtTenNguyenLieu
@@ -3996,6 +4001,7 @@ layout enter_otp
 layout food_card_home
 layout forget_password
 layout found_food
+layout fragment_my_post
 layout home
 layout home_host
 layout ime_base_split_test_activity
@@ -4141,6 +4147,7 @@ string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string fullname
+string hello_blank_fragment
 string hi
 string hide_bottom_view_on_scroll_behavior
 string home

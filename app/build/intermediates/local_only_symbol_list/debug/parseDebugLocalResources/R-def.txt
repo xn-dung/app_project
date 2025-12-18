@@ -38,6 +38,7 @@ drawable header_background
 drawable ic_account_circle
 drawable ic_add_box_24
 drawable ic_back
+drawable ic_eye
 drawable ic_favorite
 drawable ic_home
 drawable ic_launcher_background
@@ -114,7 +115,9 @@ id etUsername
 id favNum
 id fragment_container
 id gridFoods
+id gridUserPosts
 id headerFoodInfo
+id headerLayout
 id hehe
 id imageAvatar
 id imageFood
@@ -128,6 +131,7 @@ id imgYtbThumb
 id inputLayoutCaption
 id itemLayout
 id labelVideo
+id layoutEmpty
 id layoutHD
 id layoutHeader
 id layoutNL
@@ -191,6 +195,7 @@ id tvLikeCount
 id tvMusic
 id tvTitle
 id tvUsername
+id tvViewCount
 id txtDinhLuong
 id txtFoodName
 id txtTenNguyenLieu
@@ -212,6 +217,7 @@ layout enter_otp
 layout food_card_home
 layout forget_password
 layout found_food
+layout fragment_my_post
 layout home
 layout home_host
 layout item_reels
@@ -234,6 +240,7 @@ string apptitle
 string back
 string backend_url
 string fullname
+string hello_blank_fragment
 string hi
 string home
 string let_s_share

@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -46,6 +47,7 @@ public class HomeFragment extends Fragment {
     private MaterialButton btnRecommend;
     private MaterialButton btnRecent;
     private MaterialButton currentSltBtn;
+    private ProgressBar pb;
 
 
     public static HomeFragment newInstance(User user) {
@@ -93,6 +95,7 @@ public class HomeFragment extends Fragment {
         btnRecent = view.findViewById(R.id.btnRecent);
         fullname = view.findViewById(R.id.textFullName);
         fullname.setText(user.getFullname());
+        pb = view.findViewById(R.id.progressBar);
         myAdapter = new MyArrayAdapter(requireContext(), R.layout.layout_item, listBD);
         gv.setAdapter(myAdapter);
 
@@ -109,7 +112,6 @@ public class HomeFragment extends Fragment {
 
             listBD.clear();
             myAdapter.notifyDataSetChanged();
-            checkEmptyState();
 
             if (v.getId() == R.id.btnRecommend) {
                 takeBD();
@@ -142,12 +144,24 @@ public class HomeFragment extends Fragment {
         }
     }
 
+    private void setLoading(boolean isLoading) {
+        if (isLoading) {
+            pb.setVisibility(View.VISIBLE);
+            gv.setVisibility(View.GONE);
+            tvEmptyState.setVisibility(View.GONE);
+        } else {
+            pb.setVisibility(View.GONE);
+        }
+    }
+
     private void takeBD() {
+        setLoading(true);
         String url = "https://mobilenodejs.onrender.com/api/baidang";
         RequestQueue queue = Volley.newRequestQueue(requireContext());
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(
                 Request.Method.GET, url, null,
                 response -> {
+                    setLoading(false);
                     try {
                         listBD.clear();
                         for (int i = 0; i < response.length(); i++) {
@@ -175,6 +189,7 @@ public class HomeFragment extends Fragment {
                     }
                 },
                 error -> {
+                    setLoading(false);
                     Toast.makeText(requireContext(), "Lỗi kết nối: " + error.toString(), Toast.LENGTH_SHORT).show();
                     checkEmptyState();
                 }
@@ -186,11 +201,13 @@ public class HomeFragment extends Fragment {
         if (user == null) {
             return;
         }
+        setLoading(true);
         String url = getString(R.string.backend_url) + "api/nguoidung/fav/" + user.getId();
         RequestQueue queue = Volley.newRequestQueue(requireContext());
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(
                 Request.Method.GET, url, null,
                 response -> {
+                    setLoading(false);
                     try {
                         listBD.clear();
                         for (int i = 0; i < response.length(); i++) {
@@ -217,7 +234,11 @@ public class HomeFragment extends Fragment {
                         Toast.makeText(requireContext(), "Lỗi xử lý dữ liệu: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 },
-                error -> Toast.makeText(requireContext(), "Lỗi kết nối: " + error.toString(), Toast.LENGTH_SHORT).show()
+                error -> {
+                    setLoading(false);
+                    Toast.makeText(requireContext(), "Lỗi kết nối: " + error.toString(), Toast.LENGTH_SHORT).show();
+                    checkEmptyState();
+                }
         );
         queue.add(jsonArrayRequest);
     }

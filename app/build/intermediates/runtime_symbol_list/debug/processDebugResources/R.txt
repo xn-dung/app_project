@@ -3081,6 +3081,7 @@ int drawable ic_call_decline 0x7f0800a7
 int drawable ic_call_decline_low 0x7f0800a8
 int drawable ic_clear_black_24 0x7f0800a9
 int drawable ic_clock_black_24dp 0x7f0800aa
+int drawable ic_eye 0x7f080117
 int drawable ic_favorite 0x7f0800ab
 int drawable ic_home 0x7f0800ac
 int drawable ic_keyboard_black_24dp 0x7f0800ad
@@ -3457,10 +3458,12 @@ int id gone 0x7f090108
 int id graph 0x7f090109
 int id graph_wrap 0x7f09010a
 int id gridFoods 0x7f09010b
+int id gridUserPosts 0x7f090297
 int id group_divider 0x7f09010c
 int id grouping 0x7f09010d
 int id groups 0x7f09010e
 int id headerFoodInfo 0x7f09010f
+int id headerLayout 0x7f090298
 int id header_title 0x7f090110
 int id hehe 0x7f090111
 int id hide_ime_id 0x7f090112
@@ -3500,6 +3503,7 @@ int id jumpToStart 0x7f090133
 int id labelVideo 0x7f090134
 int id labeled 0x7f090135
 int id layout 0x7f090136
+int id layoutEmpty 0x7f090299
 int id layoutHD 0x7f090137
 int id layoutHeader 0x7f090138
 int id layoutNL 0x7f090139
@@ -3812,6 +3816,7 @@ int id tvLikeCount 0x7f09026b
 int id tvMusic 0x7f09026c
 int id tvTitle 0x7f09026d
 int id tvUsername 0x7f09026e
+int id tvViewCount 0x7f09029a
 int id txtDinhLuong 0x7f09026f
 int id txtFoodName 0x7f090270
 int id txtTenNguyenLieu 0x7f090271
@@ -3995,6 +4000,7 @@ int layout enter_otp 0x7f0c0035
 int layout food_card_home 0x7f0c0036
 int layout forget_password 0x7f0c0037
 int layout found_food 0x7f0c0038
+int layout fragment_my_post 0x7f0c0085
 int layout home 0x7f0c0039
 int layout home_host 0x7f0c003a
 int layout ime_base_split_test_activity 0x7f0c003b
@@ -4140,6 +4146,7 @@ int string exposed_dropdown_menu_content_description 0x7f12003c
 int string fab_transformation_scrim_behavior 0x7f12003d
 int string fab_transformation_sheet_behavior 0x7f12003e
 int string fullname 0x7f12003f
+int string hello_blank_fragment 0x7f1200ba
 int string hi 0x7f120040
 int string hide_bottom_view_on_scroll_behavior 0x7f120041
 int string home 0x7f120042

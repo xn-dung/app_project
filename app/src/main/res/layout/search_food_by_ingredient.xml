@@ -10,47 +10,85 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/layoutHeader"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:elevation="8dp"
-        app:cardCornerRadius="16dp"
-        app:cardBackgroundColor="@color/colorPrimary"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:elevation="4dp"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:cardElevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="120dp"
+            android:background="@drawable/card_header_background"
             android:padding="16dp">
 
-
             <LinearLayout
-                android:id="@+id/barSearch"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:background="@drawable/grey_bg"
-                android:padding="8dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:foreground="?attr/selectableItemBackground">
+                android:layout_height="100dp"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="12dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="33dp"
-                    android:layout_weight="1"
-                    android:background="@android:color/transparent"
-                    android:hint="Search dishes"
-                    android:padding="8dp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-                <ImageView
-                    android:layout_width="19dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/ic_search"
-                    app:tint="@android:color/darker_gray" />
+                    <TextView
+                        android:id="@+id/textHello"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/hi"
+                        android:paddingStart="10dp"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="20sp" />
 
+                    <TextView
+                        android:id="@+id/textFullName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="@string/fullname"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/barSearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal"
+                    android:background="@drawable/grey_bg"
+                    android:padding="8dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="33dp"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:hint="Search dishes"
+                        android:padding="8dp" />
+
+                    <ImageView
+                        android:layout_width="19dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_search"
+                        app:tint="@android:color/darker_gray" />
+
+                </LinearLayout>
 
             </LinearLayout>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 

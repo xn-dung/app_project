@@ -39,7 +39,7 @@ public class ProfileFragment extends Fragment {
     private LinearLayout textSettings;
     private ImageButton btnBack;
     private TextView tvPostNum, tvFavNum, tvRateNum;
-    // private LinearLayout viewPosts;
+    private LinearLayout viewPosts;
     private User user;
 
     public static ProfileFragment newInstance(User user) {
@@ -79,8 +79,7 @@ public class ProfileFragment extends Fragment {
         tvPostNum = view.findViewById(R.id.postNum);
         tvFavNum = view.findViewById(R.id.favNum);
         tvRateNum = view.findViewById(R.id.rateNum);
-
-        // viewPosts = view.findViewById(R.id.postsBtn);
+        viewPosts = view.findViewById(R.id.postsBtn);
 
         if (user != null) {
             userFullname.setText(user.getFullname());
@@ -105,6 +104,16 @@ public class ProfileFragment extends Fragment {
             Intent intent = new Intent(requireContext(), EditProfileActivity.class);
             intent.putExtra(ARG_USER, user);
             startActivity(intent);
+        });
+
+        viewPosts.setOnClickListener(v -> {
+            MyPostFragment fragment = MyPostFragment.newInstance(user);
+            requireActivity().getSupportFragmentManager()
+                    .beginTransaction()
+                    .hide(ProfileFragment.this)
+                    .add(R.id.fragment_container, fragment, MyPostFragment.TAG)
+                    .addToBackStack(MyPostFragment.TAG)
+                    .commit();
         });
 
     }
