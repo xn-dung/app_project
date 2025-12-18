@@ -1,6 +1,5 @@
 package com.example.myapplication.Adapter;
 
-import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +9,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
 
 import com.example.myapplication.R;
 import com.example.myapplication.model.BaiDang;
@@ -39,10 +37,12 @@ public class FoundFoodAdapter extends ArrayAdapter<BaiDang>{
         BaiDang myBaiDang = myList.get(position);
         TextView txt_title = convertView.findViewById(R.id.textViewTen);
         TextView txt_nguyenlieu = convertView.findViewById(R.id.textViewNguyenLieu);
-        TextView txtViewCount = convertView.findViewById(R.id.tvViewCount);
         ImageView anh = convertView.findViewById(R.id.imgFood);
+        TextView tv_likes = convertView.findViewById(R.id.tvLikes);
+        TextView tv_views = convertView.findViewById(R.id.tvViewCount);
+        tv_views.setText(String.valueOf(myBaiDang.getViews()));
         txt_title.setText(myBaiDang.getTenMon());
-        TextView txtLikeCount = convertView.findViewById(R.id.tvLikes);
+        tv_likes.setText(String.valueOf(myBaiDang.getLuotThich()));
         StringBuilder tmp = new StringBuilder();
         for (int i = 0 ; i < myBaiDang.getNguyenLieu().size(); i++){
             tmp.append(myBaiDang.getNguyenLieu().get(i).getTen());
@@ -51,8 +51,6 @@ public class FoundFoodAdapter extends ArrayAdapter<BaiDang>{
             }
         }
         txt_nguyenlieu.setText(tmp.toString());
-        txtViewCount.setText(String.valueOf(myBaiDang.getViews()));
-        txtLikeCount.setText(String.valueOf(myBaiDang.getLuotThich()));
         Glide.with(this.getContext())
                 .load(myBaiDang.getImage())
                 .placeholder(R.drawable.logo_app)

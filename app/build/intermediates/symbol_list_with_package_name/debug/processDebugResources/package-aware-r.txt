@@ -3229,6 +3229,7 @@ drawable exo_styled_controls_subtitle_on
 drawable exo_styled_controls_vr
 drawable food_card_bg
 drawable gradient_background
+drawable gradient_bottom
 drawable gradient_main_bg
 drawable grey_bg
 drawable header_background
@@ -3680,10 +3681,13 @@ id gone
 id graph
 id graph_wrap
 id gridFoods
+id gridUserPosts
+id gridUserReels
 id group_divider
 id grouping
 id groups
 id headerFoodInfo
+id headerLayout
 id header_title
 id hehe
 id hide_ime_id
@@ -3702,10 +3706,12 @@ id image
 id imageAvatar
 id imageFood
 id imagePost
+id imageReel
 id imageSettings
 id imageView5
 id imageView6
 id imgFood
+id imgReelThumb
 id imgYtbThumb
 id immediateStop
 id included
@@ -3723,6 +3729,8 @@ id jumpToStart
 id labelVideo
 id labeled
 id layout
+id layoutEmpty
+id layoutEmptyReel
 id layoutHD
 id layoutHeader
 id layoutInteractive
@@ -3875,6 +3883,7 @@ id postsBtn
 id pressed
 id progress
 id progressBar
+id progressBarReel
 id progress_circular
 id progress_horizontal
 id radio
@@ -3882,6 +3891,7 @@ id rateNum
 id ratio
 id rectangles
 id recycler_view
+id reelsBtn
 id report_drawn
 id reverseSawtooth
 id right
@@ -3988,6 +3998,7 @@ id textFullName
 id textHello
 id textLikeCount
 id textPost
+id textReel
 id textRegisterAddress
 id textRegisterEmail
 id textRegisterName
@@ -4044,6 +4055,7 @@ id tvEmptyState
 id tvHuongDanTitle
 id tvLikeCount
 id tvLikes
+id tvReelViews
 id tvTitle
 id tvViewCount
 id txtDinhLuong
@@ -4244,10 +4256,13 @@ layout exo_track_selection_dialog
 layout food_card_home
 layout forget_password
 layout found_food
+layout fragment_my_post
+layout fragment_user_reel
 layout home
 layout home_host
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
+layout item_reel
 layout layout_huongdan
 layout layout_item
 layout layout_itemnl
@@ -4454,6 +4469,7 @@ string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string fullname
+string hello_blank_fragment
 string hi
 string hide_bottom_view_on_scroll_behavior
 string home

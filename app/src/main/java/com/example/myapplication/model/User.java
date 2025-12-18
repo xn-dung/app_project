@@ -10,6 +10,7 @@ public class User implements Serializable {
     private String address;
     private String email;
     private String tel;
+    private String avatar;
 
 
 
@@ -20,6 +21,7 @@ public class User implements Serializable {
     public String getPassword() {
         return password;
     }
+    public User(){}
     public User(String username, String password) {
         this.username = username;
         this.password = password;
@@ -42,6 +44,29 @@ public class User implements Serializable {
         this.email = email;
         this.tel = tel;
     }
+    public User(String _id, String username, String password, String name, String address, String email, String tel, String avatar){
+        this.username = username;
+        this._id = _id;
+        this.password = password;
+        this.name = name;
+        this.address = address;
+        this.email = email;
+        this.tel = tel;
+        this.avatar = avatar;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void set_id(String _id) {
+        this._id = _id;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
     public void setPassword(String password) {
         this.password = password;
     }

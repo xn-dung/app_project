@@ -240,7 +240,13 @@ public class SearchFragment extends Fragment {
 
         btnSearch = view.findViewById(R.id.barSearch);
         btnSearch.setOnClickListener(v -> {
-            ((HomeActivity) requireActivity()).onSearchByNameClicked(user);
+            if (mListener != null) {
+                if (user != null) {
+                    mListener.onSearchByNameClicked(user);
+                } else {
+                    Toast.makeText(requireContext(), "Lỗi: Không tìm thấy thông tin người dùng", Toast.LENGTH_SHORT).show();
+                }
+            }
         });
     }
 
@@ -276,7 +282,7 @@ public class SearchFragment extends Fragment {
                                 baiDang.setLinkYtb(obj.optString("linkYtb", ""));
                                 baiDang.setLuotThich(obj.optInt("luotThich", 0));
                                 baiDang.setImage(obj.optString("image", ""));
-                                baiDang.setViews(obj.optInt("views",0));
+
                                 JSONArray nlArray = obj.getJSONArray("nguyenLieu");
                                 ArrayList<NguyenLieu> nguyenLieu = new ArrayList<>();
                                 for(int j = 0; j < nlArray.length(); j++){
@@ -380,7 +386,7 @@ public class SearchFragment extends Fragment {
                             for (int i = 0; i < nguyenLieuArray.length(); i++) {
                                 JSONObject obj = nguyenLieuArray.getJSONObject(i);
                                 NguyenLieu nl = new NguyenLieu();
-                                nl.setTen(obj.getString("ten"));
+                                nl.setTen(obj.optString("ten"));
                                 list.add(nl);
                             }
                             fillTableWithNguyenLieu(list);
@@ -436,7 +442,13 @@ public class SearchFragment extends Fragment {
                 etSoLuong.setText("");
 
                 btnXoa.setOnClickListener(v -> {
+                    if (tableLayout.getChildCount() > 1) {
                         tableLayout.removeView(newRow);
+                    } else {
+                        Toast.makeText(requireContext(),
+                                "Không thể xóa hết các dòng!",
+                                Toast.LENGTH_SHORT).show();
+                    }
                 });
 
                 tableLayout.addView(newRow);
@@ -444,6 +456,8 @@ public class SearchFragment extends Fragment {
             ingredientIndex++;
         }
     }
+
+
 
 
 }

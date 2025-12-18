@@ -1,15 +1,15 @@
 [
     {
-        "merged": "com.example.myapplication.app-mergeDebugResources-41:/layout/add_food_post.xml",
-        "source": "com.example.myapplication.app-main-44:/layout/add_food_post.xml"
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-mergeDebugResources-41:\\layout\\table_layout.xml",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\table_layout.xml"
     },
     {
         "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-mergeDebugResources-41:\\layout\\enter_otp.xml",
         "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\enter_otp.xml"
     },
     {
-        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-mergeDebugResources-41:\\layout\\table_layout.xml",
-        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\table_layout.xml"
+        "merged": "com.example.myapplication.app-mergeDebugResources-41:/layout/fragment_my_post.xml",
+        "source": "com.example.myapplication.app-main-44:/layout/fragment_my_post.xml"
     },
     {
         "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-mergeDebugResources-41:\\layout\\register.xml",
@@ -72,6 +72,10 @@
         "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\layout_huongdan.xml"
     },
     {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-mergeDebugResources-41:\\layout\\fragment_user_reel.xml",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\fragment_user_reel.xml"
+    },
+    {
         "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-mergeDebugResources-41:\\layout\\activity_food_detail.xml",
         "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\activity_food_detail.xml"
     },
@@ -80,8 +84,8 @@
         "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\edit_profile.xml"
     },
     {
-        "merged": "com.example.myapplication.app-mergeDebugResources-41:/layout/food_card_home.xml",
-        "source": "com.example.myapplication.app-main-44:/layout/food_card_home.xml"
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-mergeDebugResources-41:\\layout\\item_reel.xml",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\item_reel.xml"
     },
     {
         "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-mergeDebugResources-41:\\layout\\activity_main.xml",

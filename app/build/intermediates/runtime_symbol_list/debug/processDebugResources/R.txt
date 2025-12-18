@@ -3228,6 +3228,7 @@ int drawable exo_styled_controls_subtitle_on 0x7f0800e6
 int drawable exo_styled_controls_vr 0x7f0800e7
 int drawable food_card_bg 0x7f0800e8
 int drawable gradient_background 0x7f0800e9
+int drawable gradient_bottom 0x7f080166
 int drawable gradient_main_bg 0x7f0800ea
 int drawable grey_bg 0x7f0800eb
 int drawable header_background 0x7f0800ec
@@ -3679,10 +3680,13 @@ int id gone 0x7f0a0142
 int id graph 0x7f0a0143
 int id graph_wrap 0x7f0a0144
 int id gridFoods 0x7f0a0145
+int id gridUserPosts 0x7f0a02e8
+int id gridUserReels 0x7f0a02df
 int id group_divider 0x7f0a0146
 int id grouping 0x7f0a0147
 int id groups 0x7f0a0148
 int id headerFoodInfo 0x7f0a0149
+int id headerLayout 0x7f0a02e0
 int id header_title 0x7f0a014a
 int id hehe 0x7f0a014b
 int id hide_ime_id 0x7f0a014c
@@ -3701,10 +3705,12 @@ int id image 0x7f0a0158
 int id imageAvatar 0x7f0a0159
 int id imageFood 0x7f0a015a
 int id imagePost 0x7f0a015b
+int id imageReel 0x7f0a02e1
 int id imageSettings 0x7f0a015c
 int id imageView5 0x7f0a015d
 int id imageView6 0x7f0a015e
 int id imgFood 0x7f0a015f
+int id imgReelThumb 0x7f0a02e6
 int id imgYtbThumb 0x7f0a0160
 int id immediateStop 0x7f0a0161
 int id included 0x7f0a0162
@@ -3722,6 +3728,8 @@ int id jumpToStart 0x7f0a016d
 int id labelVideo 0x7f0a016e
 int id labeled 0x7f0a016f
 int id layout 0x7f0a0170
+int id layoutEmpty 0x7f0a02e9
+int id layoutEmptyReel 0x7f0a02e2
 int id layoutHD 0x7f0a0171
 int id layoutHeader 0x7f0a0172
 int id layoutInteractive 0x7f0a0173
@@ -3874,6 +3882,7 @@ int id postsBtn 0x7f0a0205
 int id pressed 0x7f0a0206
 int id progress 0x7f0a0207
 int id progressBar 0x7f0a0208
+int id progressBarReel 0x7f0a02e3
 int id progress_circular 0x7f0a0209
 int id progress_horizontal 0x7f0a020a
 int id radio 0x7f0a020b
@@ -3881,6 +3890,7 @@ int id rateNum 0x7f0a020c
 int id ratio 0x7f0a020d
 int id rectangles 0x7f0a020e
 int id recycler_view 0x7f0a020f
+int id reelsBtn 0x7f0a02e4
 int id report_drawn 0x7f0a0210
 int id reverseSawtooth 0x7f0a0211
 int id right 0x7f0a0212
@@ -3987,6 +3997,7 @@ int id textFullName 0x7f0a0276
 int id textHello 0x7f0a0277
 int id textLikeCount 0x7f0a0278
 int id textPost 0x7f0a0279
+int id textReel 0x7f0a02e5
 int id textRegisterAddress 0x7f0a027a
 int id textRegisterEmail 0x7f0a027b
 int id textRegisterName 0x7f0a027c
@@ -4043,6 +4054,7 @@ int id tvEmptyState 0x7f0a02ae
 int id tvHuongDanTitle 0x7f0a02af
 int id tvLikeCount 0x7f0a02b0
 int id tvLikes 0x7f0a02b1
+int id tvReelViews 0x7f0a02e7
 int id tvTitle 0x7f0a02b2
 int id tvViewCount 0x7f0a02b3
 int id txtDinhLuong 0x7f0a02b4
@@ -4243,10 +4255,13 @@ int layout exo_track_selection_dialog 0x7f0d003f
 int layout food_card_home 0x7f0d0040
 int layout forget_password 0x7f0d0041
 int layout found_food 0x7f0d0042
+int layout fragment_my_post 0x7f0d009b
+int layout fragment_user_reel 0x7f0d0099
 int layout home 0x7f0d0043
 int layout home_host 0x7f0d0044
 int layout ime_base_split_test_activity 0x7f0d0045
 int layout ime_secondary_split_test_activity 0x7f0d0046
+int layout item_reel 0x7f0d009a
 int layout layout_huongdan 0x7f0d0047
 int layout layout_item 0x7f0d0048
 int layout layout_itemnl 0x7f0d0049
@@ -4453,6 +4468,7 @@ int string exposed_dropdown_menu_content_description 0x7f130071
 int string fab_transformation_scrim_behavior 0x7f130072
 int string fab_transformation_sheet_behavior 0x7f130073
 int string fullname 0x7f130074
+int string hello_blank_fragment 0x7f1300ef
 int string hi 0x7f130075
 int string hide_bottom_view_on_scroll_behavior 0x7f130076
 int string home 0x7f130077

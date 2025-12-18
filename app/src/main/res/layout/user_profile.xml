@@ -160,48 +160,46 @@
                                     android:textStyle="bold" />
                             </LinearLayout>
 
-                            <!--                            <LinearLayout-->
-                            <!--                                android:id="@+id/favorsBtn"-->
-                            <!--                                android:layout_width="0dp"-->
-                            <!--                                android:layout_height="match_parent"-->
-                            <!--                                android:layout_margin="10dp"-->
-                            <!--                                android:layout_weight="0.333333"-->
-                            <!--                                android:background="@drawable/grey_bg"-->
-                            <!--                                android:clickable="true"-->
-                            <!--                                android:elevation="3dp"-->
-                            <!--                                android:focusable="true"-->
-                            <!--                                android:foreground="?attr/selectableItemBackground"-->
-                            <!--                                android:orientation="vertical">-->
+                            <LinearLayout
+                                android:id="@+id/reelsBtn"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_margin="10dp"
+                                android:layout_weight="0.333333"
+                                android:background="@drawable/grey_bg"
+                                android:clickable="true"
+                                android:elevation="3dp"
+                                android:focusable="true"
+                                android:foreground="?attr/selectableItemBackground"
+                                android:orientation="vertical">
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="68dp"
+                                    android:layout_height="68dp"
+                                    android:layout_gravity="center_horizontal"
+                                    android:layout_margin="16dp"
+                                    android:background="@drawable/circle_bg">
+                                    <ImageView
+                                        android:id="@+id/imageReel"
+                                        android:layout_width="46dp"
+                                        android:layout_height="46dp"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:srcCompat="@drawable/play_button" />
+                                </androidx.constraintlayout.widget.ConstraintLayout>
 
-                            <!--                                <androidx.constraintlayout.widget.ConstraintLayout-->
-                            <!--                                    android:layout_width="68dp"-->
-                            <!--                                    android:layout_height="68dp"-->
-                            <!--                                    android:layout_gravity="center_horizontal"-->
-                            <!--                                    android:layout_margin="16dp"-->
-                            <!--                                    android:background="@drawable/circle_bg">-->
-
-                            <!--                                    <ImageView-->
-                            <!--                                        android:id="@+id/imageFav"-->
-                            <!--                                        android:layout_width="46dp"-->
-                            <!--                                        android:layout_height="46dp"-->
-                            <!--                                        app:layout_constraintBottom_toBottomOf="parent"-->
-                            <!--                                        app:layout_constraintEnd_toEndOf="parent"-->
-                            <!--                                        app:layout_constraintStart_toStartOf="parent"-->
-                            <!--                                        app:layout_constraintTop_toTopOf="parent"-->
-                            <!--                                        app:srcCompat="@drawable/love" />-->
-                            <!--                                </androidx.constraintlayout.widget.ConstraintLayout>-->
-
-                            <!--                                <TextView-->
-                            <!--                                    android:id="@+id/textFav"-->
-                            <!--                                    android:layout_width="match_parent"-->
-                            <!--                                    android:layout_height="wrap_content"-->
-                            <!--                                    android:layout_marginBottom="5dp"-->
-                            <!--                                    android:text="Favorites"-->
-                            <!--                                    android:textAlignment="center"-->
-                            <!--                                    android:textColor="@color/colorAccent"-->
-                            <!--                                    android:textSize="16sp"-->
-                            <!--                                    android:textStyle="bold" />-->
-                            <!--                            </LinearLayout>-->
+                                <TextView
+                                    android:id="@+id/textReel"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="5dp"
+                                    android:text="Reels"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/colorAccent"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
 
                             <LinearLayout
                                 android:id="@+id/editProfileBtn"
