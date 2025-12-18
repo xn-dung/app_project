@@ -13,6 +13,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -31,7 +33,7 @@ import java.util.ArrayList;
 public class UserReelFragment extends Fragment {
 
     private User user;
-    private GridView gridView;
+    private RecyclerView recyclerView;
     private ArrayList<ShortVideo> listReels;
     private UserReelAdapter adapter;
     private ProgressBar progressBar;
@@ -63,7 +65,7 @@ public class UserReelFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        gridView = view.findViewById(R.id.gridUserReels);
+        recyclerView = view.findViewById(R.id.recyclerUserReels);
         progressBar = view.findViewById(R.id.progressBarReel);
         layoutEmpty = view.findViewById(R.id.layoutEmptyReel);
 
@@ -72,29 +74,37 @@ public class UserReelFragment extends Fragment {
             btnBack.setOnClickListener(v -> requireActivity().getOnBackPressedDispatcher().onBackPressed());
         }
 
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(requireContext(), 3);
+        recyclerView.setLayoutManager(gridLayoutManager);
+
         listReels = new ArrayList<>();
-        adapter = new UserReelAdapter(requireContext(), listReels);
-        gridView.setAdapter(adapter);
+        adapter = new UserReelAdapter(requireContext(), listReels, (video, position) -> {
+            // Xử lý khi bấm vào video
+            if (user == null) return;
+
+            // Mở màn hình xem chi tiết (Code logic cũ của bạn)
+            ReelFragment detailFragment = ReelFragment.newInstanceWithData(user, listReels, position);
+
+            requireActivity().getSupportFragmentManager()
+                    .beginTransaction()
+                    .add(R.id.fragment_container, detailFragment)
+                    .hide(UserReelFragment.this)
+                    .addToBackStack(null)
+                    .commit();
+        });
+
+        recyclerView.setAdapter(adapter);
 
         if (user != null) {
             loadSelfReels();
         } else {
             Toast.makeText(getContext(), "Lỗi thông tin User", Toast.LENGTH_SHORT).show();
         }
-
-        // Sự kiện click vào item
-        gridView.setOnItemClickListener((parent, v, position, id) -> {
-            // Chuyển sang màn hình xem chi tiết (ReelFragment full màn hình)
-            // ((HomeActivity) requireActivity()).openReelDetail(listReels, position);
-            Toast.makeText(getContext(), "Click video " + position, Toast.LENGTH_SHORT).show();
-        });
     }
 
     private void loadSelfReels() {
         progressBar.setVisibility(View.VISIBLE);
-
         String url = getString(R.string.backend_url) + "api/reel/getSelfReels/" + user.getId();
-        Log.d("API_REEL", "Calling: " + url);
 
         RequestQueue queue = Volley.newRequestQueue(requireContext());
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
@@ -102,8 +112,6 @@ public class UserReelFragment extends Fragment {
                     progressBar.setVisibility(View.GONE);
                     try {
                         listReels.clear();
-
-                        // JSON bạn gửi có dạng: { "reels": [...] }
                         JSONArray jsonArray = response.optJSONArray("reels");
 
                         if (jsonArray != null) {
@@ -113,25 +121,18 @@ public class UserReelFragment extends Fragment {
 
                                 ShortVideo video = new ShortVideo();
                                 video.setId(obj.optString("_id"));
-
                                 video.setUrl(obj.optString("videoUrl", "")); // Link video để Glide load thumbnail
-                                video.setTieuDe(obj.optString("tieude", ""));
+                                video.setDescription(obj.optString("description", ""));
                                 video.setViews(obj.optInt("views", 0));
-
+                                video.setLikes(obj.optInt("likes", 0));
+                                video.setAuthor(user.getFullname());
+                                video.setIdAuthor(user.getId());
                                 listReels.add(video);
                             }
                         }
 
                         adapter.notifyDataSetChanged();
 
-                        // Check trống
-                        if (listReels.isEmpty()) {
-                            if(layoutEmpty != null) layoutEmpty.setVisibility(View.VISIBLE);
-                            gridView.setVisibility(View.GONE);
-                        } else {
-                            if(layoutEmpty != null) layoutEmpty.setVisibility(View.GONE);
-                            gridView.setVisibility(View.VISIBLE);
-                        }
 
                     } catch (Exception e) {
                         Log.e("API_REEL", "Error parsing: " + e.getMessage());

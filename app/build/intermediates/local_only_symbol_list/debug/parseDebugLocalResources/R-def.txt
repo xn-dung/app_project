@@ -119,7 +119,6 @@ id favNum
 id fragment_container
 id gridFoods
 id gridUserPosts
-id gridUserReels
 id headerFoodInfo
 id headerLayout
 id hehe
@@ -161,6 +160,7 @@ id postsBtn
 id progressBar
 id progressBarReel
 id rateNum
+id recyclerUserReels
 id reelsBtn
 id scrollView
 id scrollViewContent

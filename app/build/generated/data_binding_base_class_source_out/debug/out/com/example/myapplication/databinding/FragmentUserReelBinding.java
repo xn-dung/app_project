@@ -4,13 +4,13 @@ package com.example.myapplication.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.myapplication.R;
@@ -26,9 +26,6 @@ public final class FragmentUserReelBinding implements ViewBinding {
   public final ImageButton btnBack;
 
   @NonNull
-  public final GridView gridUserReels;
-
-  @NonNull
   public final ConstraintLayout headerLayout;
 
   @NonNull
@@ -37,15 +34,18 @@ public final class FragmentUserReelBinding implements ViewBinding {
   @NonNull
   public final ProgressBar progressBarReel;
 
+  @NonNull
+  public final RecyclerView recyclerUserReels;
+
   private FragmentUserReelBinding(@NonNull ConstraintLayout rootView, @NonNull ImageButton btnBack,
-      @NonNull GridView gridUserReels, @NonNull ConstraintLayout headerLayout,
-      @NonNull LinearLayout layoutEmptyReel, @NonNull ProgressBar progressBarReel) {
+      @NonNull ConstraintLayout headerLayout, @NonNull LinearLayout layoutEmptyReel,
+      @NonNull ProgressBar progressBarReel, @NonNull RecyclerView recyclerUserReels) {
     this.rootView = rootView;
     this.btnBack = btnBack;
-    this.gridUserReels = gridUserReels;
     this.headerLayout = headerLayout;
     this.layoutEmptyReel = layoutEmptyReel;
     this.progressBarReel = progressBarReel;
+    this.recyclerUserReels = recyclerUserReels;
   }
 
   @Override
@@ -81,12 +81,6 @@ public final class FragmentUserReelBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.gridUserReels;
-      GridView gridUserReels = ViewBindings.findChildViewById(rootView, id);
-      if (gridUserReels == null) {
-        break missingId;
-      }
-
       id = R.id.headerLayout;
       ConstraintLayout headerLayout = ViewBindings.findChildViewById(rootView, id);
       if (headerLayout == null) {
@@ -105,8 +99,14 @@ public final class FragmentUserReelBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentUserReelBinding((ConstraintLayout) rootView, btnBack, gridUserReels,
-          headerLayout, layoutEmptyReel, progressBarReel);
+      id = R.id.recyclerUserReels;
+      RecyclerView recyclerUserReels = ViewBindings.findChildViewById(rootView, id);
+      if (recyclerUserReels == null) {
+        break missingId;
+      }
+
+      return new FragmentUserReelBinding((ConstraintLayout) rootView, btnBack, headerLayout,
+          layoutEmptyReel, progressBarReel, recyclerUserReels);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

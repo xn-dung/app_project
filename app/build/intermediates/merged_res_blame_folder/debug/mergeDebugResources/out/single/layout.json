@@ -92,16 +92,16 @@
         "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\activity_main.xml"
     },
     {
-        "merged": "com.example.myapplication.app-mergeDebugResources-41:/layout/user_profile.xml",
-        "source": "com.example.myapplication.app-main-44:/layout/user_profile.xml"
-    },
-    {
         "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-mergeDebugResources-41:\\layout\\layout_item.xml",
         "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\layout_item.xml"
     },
     {
         "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-mergeDebugResources-41:\\layout\\search_food_byname.xml",
         "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\search_food_byname.xml"
+    },
+    {
+        "merged": "com.example.myapplication.app-mergeDebugResources-41:/layout/table_layout.xml",
+        "source": "com.example.myapplication.app-main-44:/layout/table_layout.xml"
     },
     {
         "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-mergeDebugResources-41:\\layout\\found_food.xml",

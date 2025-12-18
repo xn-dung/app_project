@@ -25,6 +25,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
 import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
@@ -68,6 +69,7 @@ public class AddFoodFragment extends Fragment {
     private Uri selectedVideoUri;
     private LinearLayout btnSelectVideo;
     private TextView txtFullName;
+    private boolean check = false;
     private ImageView img;
 
     public static AddFoodFragment newInstance(User user) {
@@ -117,7 +119,6 @@ public class AddFoodFragment extends Fragment {
                 .placeholder(R.drawable.img)
                 .error(R.drawable.img)
                 .into(img);
-
 
         changeTab.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -217,6 +218,7 @@ public class AddFoodFragment extends Fragment {
         });
 
         btnUpload.setOnClickListener(v -> {
+            check = false;
             String descriptionText = description.getText().toString().trim();
             addReel(descriptionText);
         });
@@ -332,11 +334,71 @@ public class AddFoodFragment extends Fragment {
                 url,
                 textMap,      // params (MỚI)
                 fileMap,      // byteData
-                response -> Toast.makeText(getContext(), "Upload thành công", Toast.LENGTH_SHORT).show(),
-                error -> Toast.makeText(getContext(), "Lỗi: " + error.toString(), Toast.LENGTH_LONG).show()
-        );
+                response -> {
+                    Toast.makeText(getContext(), "Đăng reels thành công", Toast.LENGTH_SHORT).show();
+                    navigateToUserReels();
+                },
+                error -> {
+                    // TRƯỜNG HỢP 2: Có lỗi xảy ra, ta cần kiểm tra kỹ
+
+                    // A. Check nếu là lỗi ParseError (Server trả về 200 OK nhưng không phải JSON chuẩn)
+                    // -> Coi như là thành công!
+                    if (error instanceof com.android.volley.ParseError) {
+                        Toast.makeText(getContext(), "Đăng reels thành công!", Toast.LENGTH_SHORT).show();
+                        navigateToUserReels();
+                        return;
+                    }
+
+                    // B. Check nếu có phản hồi từ server (dù lỗi) để debug
+                    if (error.networkResponse != null) {
+                        int statusCode = error.networkResponse.statusCode;
+
+                        // Nếu Server trả về 200 hoặc 201 thì nghĩa là thành công,
+                        // bất chấp Volley đang kêu ca điều gì.
+                        if (statusCode == 200 || statusCode == 201) {
+                            Toast.makeText(getContext(), "Đăng reels thành công!", Toast.LENGTH_SHORT).show();
+                            navigateToUserReels();
+                            return;
+                        }
+
+                        // In lỗi thực sự ra log để xem
+                        try {
+                            String responseBody = new String(error.networkResponse.data, "utf-8");
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    // C. Lỗi Timeout hoặc lỗi khác
+                    Toast.makeText(getContext(), "Lỗi: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+                    error.printStackTrace();
+                }
+        ) {
+
+        };
+
+        // --- QUAN TRỌNG: TĂNG THỜI GIAN CHỜ (TIMEOUT) ---
+        // Video nặng cần thời gian lâu hơn request thường.
+        // 60000ms = 60 giây.
+        request.setRetryPolicy(new DefaultRetryPolicy(
+                60000,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 
         queue.add(request);
+    }
+
+    private void navigateToUserReels() {
+        if (user == null) return;
+
+        UserReelFragment nextFragment = UserReelFragment.newInstance(user);
+
+        requireActivity().getSupportFragmentManager()
+                .beginTransaction()
+                .hide(this)
+                .add(R.id.fragment_container, nextFragment, "UserReelFragment")
+                .addToBackStack(null)
+                .commit();
     }
 
 
