@@ -48,12 +48,12 @@
         "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\layout_item.xml"
     },
     {
-        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\color_selectable_button_background_color_selector.xml.flat",
-        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\color\\selectable_button_background_color_selector.xml"
-    },
-    {
         "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\drawable_ic_search.xml.flat",
         "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\drawable\\ic_search.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\color_selectable_button_background_color_selector.xml.flat",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\color\\selectable_button_background_color_selector.xml"
     },
     {
         "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\layout_activity_main.xml.flat",
@@ -168,10 +168,6 @@
         "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\home_host.xml"
     },
     {
-        "merged": "com.example.myapplication.app-debug-42:/layout_activity_food_detail.xml.flat",
-        "source": "com.example.myapplication.app-main-44:/layout/activity_food_detail.xml"
-    },
-    {
         "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\drawable_ic_back.xml.flat",
         "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\drawable\\ic_back.xml"
     },
@@ -242,6 +238,10 @@
     {
         "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\drawable_rounded_top_khung.xml.flat",
         "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\drawable\\rounded_top_khung.xml"
+    },
+    {
+        "merged": "com.example.myapplication.app-debug-42:/layout_add_food_post.xml.flat",
+        "source": "com.example.myapplication.app-main-44:/layout/add_food_post.xml"
     },
     {
         "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\drawable_circle_bg.xml.flat",

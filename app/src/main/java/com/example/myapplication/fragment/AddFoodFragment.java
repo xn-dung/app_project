@@ -1,35 +1,48 @@
 package com.example.myapplication.fragment;
-
+import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.VideoView;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.myapplication.R;
+import com.example.myapplication.model.ShortVideo;
 import com.example.myapplication.model.User;
 import com.example.myapplication.model.BaiDang;
 import com.example.myapplication.model.NguyenLieu;
+import com.example.myapplication.services.VolleyMultipartRequest;
 import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.textfield.TextInputEditText;
 
 
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -47,6 +60,12 @@ public class AddFoodFragment extends Fragment {
     private TabLayout changeTab;
     private ScrollView layoutRecipe;
     private ConstraintLayout layoutReels;
+    private VideoView chonVideo;
+    private TextInputEditText description;
+    private Button btnUpload;
+    private Uri selectedVideoUri;
+    private LinearLayout btnSelectVideo;
+
     public static AddFoodFragment newInstance(User user) {
         AddFoodFragment fragment = new AddFoodFragment();
         Bundle args = new Bundle();
@@ -82,6 +101,10 @@ public class AddFoodFragment extends Fragment {
         edtTenMon = view.findViewById(R.id.edtTenMon);
         edtCachLam = view.findViewById(R.id.edtCachLam);
         edtLinkYtb = view.findViewById(R.id.edtLinkYtb);
+        chonVideo = view.findViewById(R.id.videoPreview);
+        description = view.findViewById(R.id.edtReelCaption);
+        btnUpload = view.findViewById(R.id.btnPostReel);
+        btnSelectVideo = view.findViewById(R.id.btnSelectVideo);
 
         changeTab.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -176,10 +199,17 @@ public class AddFoodFragment extends Fragment {
                 addfoodpost(bd);
             }
         });
+        btnSelectVideo.setOnClickListener(v -> {
+            openVideoPicker();
+        });
 
-
+        btnUpload.setOnClickListener(v -> {
+            String descriptionText = description.getText().toString().trim();
+            addReel(descriptionText);
+        });
 
     }
+
     private void addfoodpost(BaiDang bd){
         String url = getString(R.string.backend_url) +"api/nguoidung/add/" + user.getId();
         RequestQueue requestQueue = Volley.newRequestQueue(requireContext());
@@ -228,4 +258,95 @@ public class AddFoodFragment extends Fragment {
         requestQueue.add(jsonObjectRequest);
 
     }
+    private byte[] readBytesFromUri(Uri uri) throws Exception {
+        InputStream inputStream =
+                requireContext().getContentResolver().openInputStream(uri);
+
+        ByteArrayOutputStream buffer = new ByteArrayOutputStream();
+        byte[] data = new byte[4096];
+        int nRead;
+
+        while ((nRead = inputStream.read(data)) != -1) {
+            buffer.write(data, 0, nRead);
+        }
+
+        return buffer.toByteArray();
+    }
+
+    private void addReel(String descr) {
+        if (selectedVideoUri == null) {
+            Toast.makeText(getContext(), "Chưa chọn video", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        String url = getString(R.string.backend_url) + "api/reel/upload";
+        RequestQueue queue = Volley.newRequestQueue(requireContext());
+
+        Map<String, VolleyMultipartRequest.DataPart> fileMap = new HashMap<>();
+        Map<String, String> textMap = new HashMap<>();
+
+        try {
+            byte[] videoBytes = readBytesFromUri(selectedVideoUri);
+            fileMap.put("video", new VolleyMultipartRequest.DataPart(
+                    "video.mp4",
+                    videoBytes,
+                    "video/mp4"
+            ));
+        } catch (Exception e) {
+            Toast.makeText(getContext(), "Lỗi đọc video", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // 1. Xử lý danh sách nguyên liệu thành chuỗi giống Postman
+        StringBuilder nlBuilder = new StringBuilder();
+        if (al != null) {
+            for (int i = 0; i < al.size(); i++) {
+                nlBuilder.append(al.get(i).getTen());
+                if (i < al.size() - 1) nlBuilder.append(", ");
+            }
+        }
+
+        // 2. Đổ dữ liệu vào textMap khớp chính xác với ảnh Postman
+        textMap.put("userId", String.valueOf(user.getId()));
+        textMap.put("tieude", "hehe");
+        textMap.put("description", descr);
+        textMap.put("tags", "food, recipe"); // Bạn có thể thêm tag tùy ý
+        textMap.put("nguyenLieu", ""); // Chuỗi sạch: "Thịt lợn, Bắp cải"
+
+        // 3. Gọi VolleyMultipartRequest với Constructor MỚI (6 tham số)
+        VolleyMultipartRequest request = new VolleyMultipartRequest(
+                Request.Method.POST,
+                url,
+                textMap,      // params (MỚI)
+                fileMap,      // byteData
+                response -> Toast.makeText(getContext(), "Upload thành công", Toast.LENGTH_SHORT).show(),
+                error -> Toast.makeText(getContext(), "Lỗi: " + error.toString(), Toast.LENGTH_LONG).show()
+        );
+
+        queue.add(request);
+    }
+
+
+
+    private final ActivityResultLauncher<Intent> videoPickerLauncher =
+            registerForActivityResult(
+                    new ActivityResultContracts.StartActivityForResult(),
+                    result -> {
+                        if (result.getResultCode() == Activity.RESULT_OK && result.getData() != null) {
+                            selectedVideoUri = result.getData().getData();
+
+                            chonVideo.setVisibility(View.VISIBLE);
+                            chonVideo.setVideoURI(selectedVideoUri);
+                            chonVideo.start();
+
+                            btnSelectVideo.setVisibility(View.GONE);
+                        }
+                    }
+            );
+    private void openVideoPicker() {
+        Intent intent = new Intent(Intent.ACTION_PICK);
+        intent.setType("video/*");
+        videoPickerLauncher.launch(intent);
+    }
+
 }

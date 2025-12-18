@@ -49,6 +49,8 @@ import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -332,12 +334,24 @@ public class SearchFragment extends Fragment {
         super.onDetach();
         mListener = null;
     }
-    private byte[] getBytesFromUri(Uri uri) throws Exception {
-        Bitmap bitmap = MediaStore.Images.Media.getBitmap(
-                requireContext().getContentResolver(), uri);
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 90, baos);
-        return baos.toByteArray();
+    private byte[] getBytesFromUri(Uri uri) throws IOException {
+        InputStream inputStream =
+                requireContext().getContentResolver().openInputStream(uri);
+
+        if (inputStream == null) {
+            throw new IOException("Không mở được InputStream");
+        }
+
+        ByteArrayOutputStream buffer = new ByteArrayOutputStream();
+        byte[] data = new byte[4096];
+        int nRead;
+
+        while ((nRead = inputStream.read(data)) != -1) {
+            buffer.write(data, 0, nRead);
+        }
+
+        inputStream.close();
+        return buffer.toByteArray();
     }
     private void uploadImageToBackend(Uri imageUri) {
         try {
@@ -348,7 +362,7 @@ public class SearchFragment extends Fragment {
                     "image/jpeg"
             ));
 
-            String url = getString(R.string.backend_url) + "/api/image/detect";
+            String url = getString(R.string.backend_url) + "api/image/detect";
 
             VolleyMultipartRequest request = new VolleyMultipartRequest(
                     Request.Method.POST,

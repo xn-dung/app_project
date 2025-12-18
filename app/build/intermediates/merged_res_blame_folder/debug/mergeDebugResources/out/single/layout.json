@@ -1,15 +1,15 @@
 [
     {
-        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-mergeDebugResources-41:\\layout\\table_layout.xml",
-        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\table_layout.xml"
+        "merged": "com.example.myapplication.app-mergeDebugResources-41:/layout/add_food_post.xml",
+        "source": "com.example.myapplication.app-main-44:/layout/add_food_post.xml"
     },
     {
         "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-mergeDebugResources-41:\\layout\\enter_otp.xml",
         "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\enter_otp.xml"
     },
     {
-        "merged": "com.example.myapplication.app-mergeDebugResources-41:/layout/activity_food_detail.xml",
-        "source": "com.example.myapplication.app-main-44:/layout/activity_food_detail.xml"
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-mergeDebugResources-41:\\layout\\table_layout.xml",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\table_layout.xml"
     },
     {
         "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-mergeDebugResources-41:\\layout\\register.xml",
@@ -60,12 +60,12 @@
         "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\short_video.xml"
     },
     {
-        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-mergeDebugResources-41:\\layout\\reset_password.xml",
-        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\reset_password.xml"
-    },
-    {
         "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-mergeDebugResources-41:\\layout\\forget_password.xml",
         "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\forget_password.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-mergeDebugResources-41:\\layout\\reset_password.xml",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\reset_password.xml"
     },
     {
         "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-mergeDebugResources-41:\\layout\\layout_huongdan.xml",

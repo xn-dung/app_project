@@ -1,20 +1,20 @@
 -- Merging decision tree log ---
 provider#androidx.core.content.FileProvider
-INJECTED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:22:9-30:20
+INJECTED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:24:9-32:20
 	android:grantUriPermissions
-		ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:26:13-47
+		ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:28:13-47
 	android:authorities
 		INJECTED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml
-		ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:24:13-60
+		ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:26:13-60
 	android:exported
-		ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:25:13-37
+		ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:27:13-37
 	android:name
-		ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:23:13-62
+		ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:25:13-62
 manifest
-ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:2:1-46:12
-INJECTED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:2:1-46:12
-INJECTED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:2:1-46:12
-INJECTED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:2:1-46:12
+ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:2:1-48:12
+INJECTED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:2:1-48:12
+INJECTED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:2:1-48:12
+INJECTED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:2:1-48:12
 MERGED from [androidx.databinding:viewbinding:8.12.3] C:\Users\PC\.gradle\caches\8.13\transforms\9f8443854c932eaf6aaf2cb174a38828\transformed\viewbinding-8.12.3\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\PC\.gradle\caches\8.13\transforms\dd08898040ff9e78efb0998c9e67120f\transformed\material-1.12.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.2.1] C:\Users\PC\.gradle\caches\8.13\transforms\ab347e0584fba781b14fc3b5e29f73e6\transformed\constraintlayout-2.2.1\AndroidManifest.xml:2:1-9:12
@@ -101,9 +101,17 @@ uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
 ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:8:5-80
 	android:name
 		ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:8:22-78
+uses-permission#android.permission.READ_MEDIA_IMAGES
+ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:9:5-76
+	android:name
+		ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:9:22-73
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:10:5-79
+	android:name
+		ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:10:22-77
 application
-ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:10:5-44:19
-INJECTED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:10:5-44:19
+ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:12:5-46:19
+INJECTED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:12:5-46:19
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\PC\.gradle\caches\8.13\transforms\dd08898040ff9e78efb0998c9e67120f\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\PC\.gradle\caches\8.13\transforms\dd08898040ff9e78efb0998c9e67120f\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.2.1] C:\Users\PC\.gradle\caches\8.13\transforms\ab347e0584fba781b14fc3b5e29f73e6\transformed\constraintlayout-2.2.1\AndroidManifest.xml:7:5-20
@@ -125,57 +133,57 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\PC
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.13.0] C:\Users\PC\.gradle\caches\8.13\transforms\9336da126240fc2cd97ee4ad984e76f2\transformed\core-1.13.0\AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:17:9-35
+		ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:19:9-35
 	android:label
-		ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:15:9-41
+		ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:17:9-41
 	android:hardwareAccelerated
-		ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:20:9-43
+		ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:22:9-43
 	android:fullBackupContent
-		ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:13:9-54
+		ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:15:9-54
 	android:roundIcon
-		ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:16:9-47
+		ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:18:9-47
 	android:icon
-		ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:14:9-42
+		ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:16:9-42
 	android:allowBackup
-		ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:11:9-35
+		ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:13:9-35
 	android:theme
-		ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:18:9-51
+		ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:20:9-51
 	android:dataExtractionRules
-		ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:12:9-65
+		ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:14:9-65
 activity#com.example.myapplication.UI.MainActivity
-ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:32:9-39:20
+ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:34:9-41:20
 	android:exported
-		ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:34:13-36
+		ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:36:13-36
 	android:name
-		ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:33:13-44
+		ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:35:13-44
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:35:13-38:29
+ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:37:13-40:29
 action#android.intent.action.MAIN
-ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:36:17-69
+ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:38:17-69
 	android:name
-		ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:36:25-66
+		ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:38:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:37:17-77
+ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:39:17-77
 	android:name
-		ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:37:27-74
+		ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:39:27-74
 activity#com.example.myapplication.UI.HomeActivity
-ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:41:9-76
+ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:43:9-76
 	android:exported
-		ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:41:51-74
+		ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:43:51-74
 	android:name
-		ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:41:19-50
+		ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:43:19-50
 activity#com.example.myapplication.UI.EditProfileActivity
-ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:42:9-83
+ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:44:9-83
 	android:exported
-		ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:42:58-81
+		ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:44:58-81
 	android:name
-		ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:42:19-57
+		ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:44:19-57
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:27:13-29:54
+ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:29:13-31:54
 	android:resource
-		ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:29:17-51
+		ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:31:17-51
 	android:name
-		ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:28:17-67
+		ADDED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml:30:17-67
 uses-sdk
 INJECTED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\AppMobileNauAnPTIT\app\src\main\AndroidManifest.xml

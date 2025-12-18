@@ -18,13 +18,33 @@ public class VolleyMultipartRequest extends Request<JSONObject> {
     private final String boundary = "volleyBoundary" + System.currentTimeMillis();
     private final Response.Listener<JSONObject> mListener;
     private final Map<String, DataPart> mByteData;
+    private Map<String, String> mParams;
 
-    public VolleyMultipartRequest(int method, String url, Map<String, DataPart> byteData,
-                                  Response.Listener<JSONObject> listener,
-                                  Response.ErrorListener errorListener) {
+    public VolleyMultipartRequest(
+            int method,
+            String url,
+            Map<String, DataPart> byteData,
+            Response.Listener<JSONObject> listener,
+            Response.ErrorListener errorListener
+    ) {
         super(method, url, errorListener);
         this.mListener = listener;
         this.mByteData = byteData;
+        this.mParams = new HashMap<>(); // ✅ TEXT PART
+    }
+
+    public VolleyMultipartRequest(
+            int method,
+            String url,
+            Map<String, String> params,
+            Map<String, DataPart> byteData,
+            Response.Listener<JSONObject> listener,
+            Response.ErrorListener errorListener
+    ) {
+        super(method, url, errorListener);
+        this.mListener = listener;
+        this.mByteData = byteData;
+        this.mParams = params;
     }
 
     @Override
@@ -35,30 +55,56 @@ public class VolleyMultipartRequest extends Request<JSONObject> {
     @Override
     public byte[] getBody() throws AuthFailureError {
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
+
         try {
-            for (Map.Entry<String, DataPart> entry : getByteData().entrySet()) {
-                DataPart dataPart = entry.getValue();
-                bos.write(("--" + boundary + "\r\n").getBytes());
-                bos.write(("Content-Disposition: form-data; name=\"" + entry.getKey() + "\"; filename=\"" + dataPart.getFileName() + "\"\r\n").getBytes());
-                bos.write(("Content-Type: " + dataPart.getType() + "\r\n\r\n").getBytes());
-                bos.write(dataPart.getContent());
-                bos.write("\r\n".getBytes());
+            // ===== TEXT PART =====
+            if (mParams != null) {
+                for (Map.Entry<String, String> entry : mParams.entrySet()) {
+                    bos.write(("--" + boundary + "\r\n").getBytes());
+                    bos.write(("Content-Disposition: form-data; name=\""
+                            + entry.getKey() + "\"\r\n").getBytes());
+                    bos.write(("Content-Type: text/plain; charset=UTF-8\r\n\r\n").getBytes());
+                    bos.write(entry.getValue().getBytes("UTF-8"));
+                    bos.write("\r\n".getBytes());
+                }
             }
+
+            // ===== FILE PART =====
+            if (mByteData != null) {
+                for (Map.Entry<String, DataPart> entry : mByteData.entrySet()) {
+                    DataPart dataPart = entry.getValue();
+                    bos.write(("--" + boundary + "\r\n").getBytes());
+                    bos.write(("Content-Disposition: form-data; name=\""
+                            + entry.getKey() + "\"; filename=\""
+                            + dataPart.getFileName() + "\"\r\n").getBytes());
+                    bos.write(("Content-Type: "
+                            + dataPart.getType() + "\r\n\r\n").getBytes());
+                    bos.write(dataPart.getContent());
+                    bos.write("\r\n".getBytes());
+                }
+            }
+
             bos.write(("--" + boundary + "--\r\n").getBytes());
+
         } catch (Exception e) {
             e.printStackTrace();
         }
+
         return bos.toByteArray();
     }
 
-    protected Map<String, DataPart> getByteData() {
-        return mByteData;
+    // ✅ CHỈ GIỮ 1 setParams
+    public void setParams(Map<String, String> params) {
+        this.mParams = params;
     }
 
     @Override
     protected Response<JSONObject> parseNetworkResponse(NetworkResponse response) {
         try {
-            String jsonString = new String(response.data, HttpHeaderParser.parseCharset(response.headers));
+            String jsonString = new String(
+                    response.data,
+                    HttpHeaderParser.parseCharset(response.headers)
+            );
             JSONObject jsonObject = new JSONObject(jsonString);
             return Response.success(jsonObject, HttpHeaderParser.parseCacheHeaders(response));
         } catch (Exception e) {
@@ -71,6 +117,7 @@ public class VolleyMultipartRequest extends Request<JSONObject> {
         mListener.onResponse(response);
     }
 
+    // ===== DATA PART =====
     public static class DataPart {
         private final String fileName;
         private final byte[] content;
