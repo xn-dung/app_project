@@ -39,6 +39,8 @@ public class FoundFoodAdapter extends ArrayAdapter<BaiDang>{
         TextView txt_nguyenlieu = convertView.findViewById(R.id.textViewNguyenLieu);
         ImageView anh = convertView.findViewById(R.id.imgFood);
         TextView tv_likes = convertView.findViewById(R.id.tvLikes);
+        TextView tv_views = convertView.findViewById(R.id.tvViewCount);
+        tv_views.setText(String.valueOf(myBaiDang.getViews()));
         txt_title.setText(myBaiDang.getTenMon());
         tv_likes.setText(String.valueOf(myBaiDang.getLuotThich()));
         StringBuilder tmp = new StringBuilder();

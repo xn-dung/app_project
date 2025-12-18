@@ -41,6 +41,7 @@ public class ProfileFragment extends Fragment {
     private TextView tvPostNum, tvFavNum, tvRateNum;
     private LinearLayout viewPosts;
     private User user;
+    private LinearLayout btnReels;
 
     public static ProfileFragment newInstance(User user) {
         ProfileFragment f = new ProfileFragment();
@@ -78,6 +79,7 @@ public class ProfileFragment extends Fragment {
         btnBack = view.findViewById(R.id.btnBack);
         tvPostNum = view.findViewById(R.id.postNum);
         tvFavNum = view.findViewById(R.id.favNum);
+        btnReels = view.findViewById(R.id.reelsBtn);
         tvRateNum = view.findViewById(R.id.rateNum);
         viewPosts = view.findViewById(R.id.postsBtn);
 
@@ -113,6 +115,17 @@ public class ProfileFragment extends Fragment {
                     .hide(ProfileFragment.this)
                     .add(R.id.fragment_container, fragment, MyPostFragment.TAG)
                     .addToBackStack(MyPostFragment.TAG)
+                    .commit();
+        });
+
+        btnReels.setOnClickListener(v -> {
+            if (user == null) return;
+            UserReelFragment reelFragment = UserReelFragment.newInstance(user);
+            requireActivity().getSupportFragmentManager()
+                    .beginTransaction()
+                    .hide(ProfileFragment.this)
+                    .add(R.id.fragment_container, reelFragment, "UserReelFragment")
+                    .addToBackStack("UserReelFragment")
                     .commit();
         });
 

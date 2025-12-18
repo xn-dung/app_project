@@ -12,7 +12,7 @@ import com.example.myapplication.R;
 import com.example.myapplication.fragment.LoginFragment;
 import com.example.myapplication.interfaces.NavigationHost;
 
-public class MainActivity extends AppCompatActivity implements NavigationHost {
+public class  MainActivity extends AppCompatActivity implements NavigationHost {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

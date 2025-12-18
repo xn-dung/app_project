@@ -240,7 +240,13 @@ public class SearchFragment extends Fragment {
 
         btnSearch = view.findViewById(R.id.barSearch);
         btnSearch.setOnClickListener(v -> {
-            ((HomeActivity) requireActivity()).onSearchByNameClicked(user);
+            if (mListener != null) {
+                if (user != null) {
+                    mListener.onSearchByNameClicked(user);
+                } else {
+                    Toast.makeText(requireContext(), "Lỗi: Không tìm thấy thông tin người dùng", Toast.LENGTH_SHORT).show();
+                }
+            }
         });
     }
 

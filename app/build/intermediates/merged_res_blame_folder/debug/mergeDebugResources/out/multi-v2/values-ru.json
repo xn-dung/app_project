@@ -4,24 +4,7 @@
             "outputFile": "com.example.myapplication.app-mergeDebugResources-40:/values-ru/values-ru.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\dungc\\.gradle\\caches\\8.13\\transforms\\7cdb19df1c8a5a6f56b98b86b6575ade\\transformed\\media3-exoplayer-1.2.0\\res\\values-ru\\values-ru.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10",
-                        "startColumns": "4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,127,188,253,319,397,471,559,645",
-                        "endColumns": "71,60,64,65,77,73,87,85,76",
-                        "endOffsets": "122,183,248,314,392,466,554,640,717"
-                    },
-                    "to": {
-                        "startLines": "97,98,99,100,101,102,103,104,105",
-                        "startColumns": "4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "7703,7775,7836,7901,7967,8045,8119,8207,8293",
-                        "endColumns": "71,60,64,65,77,73,87,85,76",
-                        "endOffsets": "7770,7831,7896,7962,8040,8114,8202,8288,8365"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\dungc\\.gradle\\caches\\8.13\\transforms\\9336da126240fc2cd97ee4ad984e76f2\\transformed\\core-1.13.0\\res\\values-ru\\values-ru.xml",
+                    "source": "/Users/macbook/.gradle/caches/8.13/transforms/9336da126240fc2cd97ee4ad984e76f2/transformed/core-1.13.0/res/values-ru/values-ru.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -38,7 +21,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\dungc\\.gradle\\caches\\8.13\\transforms\\dd08898040ff9e78efb0998c9e67120f\\transformed\\material-1.12.0\\res\\values-ru\\values-ru.xml",
+                    "source": "/Users/macbook/.gradle/caches/8.13/transforms/7cdb19df1c8a5a6f56b98b86b6575ade/transformed/media3-exoplayer-1.2.0/res/values-ru/values-ru.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,127,188,253,319,397,471,559,645",
+                        "endColumns": "71,60,64,65,77,73,87,85,76",
+                        "endOffsets": "122,183,248,314,392,466,554,640,717"
+                    },
+                    "to": {
+                        "startLines": "97,98,99,100,101,102,103,104,105",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "7703,7775,7836,7901,7967,8045,8119,8207,8293",
+                        "endColumns": "71,60,64,65,77,73,87,85,76",
+                        "endOffsets": "7770,7831,7896,7962,8040,8114,8202,8288,8365"
+                    }
+                },
+                {
+                    "source": "/Users/macbook/.gradle/caches/8.13/transforms/dd08898040ff9e78efb0998c9e67120f/transformed/material-1.12.0/res/values-ru/values-ru.xml",
                     "from": {
                         "startLines": "2,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -57,7 +57,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\dungc\\.gradle\\caches\\8.13\\transforms\\2164067bcd7e756f3f8795c795d19a87\\transformed\\appcompat-1.7.1\\res\\values-ru\\values-ru.xml",
+                    "source": "/Users/macbook/.gradle/caches/8.13/transforms/2164067bcd7e756f3f8795c795d19a87/transformed/appcompat-1.7.1/res/values-ru/values-ru.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -74,7 +74,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\dungc\\.gradle\\caches\\8.13\\transforms\\a84b40735a17485e2770d5926a40efec\\transformed\\media3-ui-1.2.0\\res\\values-ru\\values-ru.xml",
+                    "source": "/Users/macbook/.gradle/caches/8.13/transforms/a84b40735a17485e2770d5926a40efec/transformed/media3-ui-1.2.0/res/values-ru/values-ru.xml",
                     "from": {
                         "startLines": "2,11,17,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

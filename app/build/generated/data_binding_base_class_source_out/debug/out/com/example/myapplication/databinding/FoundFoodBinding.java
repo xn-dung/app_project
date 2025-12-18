@@ -30,19 +30,15 @@ public final class FoundFoodBinding implements ViewBinding {
   public final ListView outfood;
 
   @NonNull
-  public final TextView textFullName;
-
-  @NonNull
   public final TextView textHello;
 
   private FoundFoodBinding(@NonNull ConstraintLayout rootView,
       @NonNull ConstraintLayout layoutHeader, @NonNull ConstraintLayout main,
-      @NonNull ListView outfood, @NonNull TextView textFullName, @NonNull TextView textHello) {
+      @NonNull ListView outfood, @NonNull TextView textHello) {
     this.rootView = rootView;
     this.layoutHeader = layoutHeader;
     this.main = main;
     this.outfood = outfood;
-    this.textFullName = textFullName;
     this.textHello = textHello;
   }
 
@@ -87,12 +83,6 @@ public final class FoundFoodBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.textFullName;
-      TextView textFullName = ViewBindings.findChildViewById(rootView, id);
-      if (textFullName == null) {
-        break missingId;
-      }
-
       id = R.id.textHello;
       TextView textHello = ViewBindings.findChildViewById(rootView, id);
       if (textHello == null) {
@@ -100,7 +90,7 @@ public final class FoundFoodBinding implements ViewBinding {
       }
 
       return new FoundFoodBinding((ConstraintLayout) rootView, layoutHeader, main, outfood,
-          textFullName, textHello);
+          textHello);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -92,7 +92,23 @@
                 android:text="120"
                 android:textColor="#FF5252"
                 android:textSize="12sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:paddingEnd="16dp"/>
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_eye"
+                app:tint="#B0B0B0" />
+
+            <TextView
+                android:id="@+id/tvViewCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="1.5k"
+                android:textColor="#E0E0E0"
+                android:textSize="12sp" />
 
 
         </LinearLayout>

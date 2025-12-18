@@ -1,13 +1,13 @@
-#Thu Dec 18 16:10:24 ICT 2025
-base.0=D\:\\app_project\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
-base.1=D\:\\app_project\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
-base.2=D\:\\app_project\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\10\\classes.dex
-base.3=D\:\\app_project\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\12\\classes.dex
-base.4=D\:\\app_project\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\13\\classes.dex
-base.5=D\:\\app_project\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\2\\classes.dex
-base.6=D\:\\app_project\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\4\\classes.dex
-base.7=D\:\\app_project\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\8\\classes.dex
-base.8=D\:\\app_project\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
+#Thu Dec 18 21:04:56 ICT 2025
+base.0=/Users/macbook/AndroidStudioProjects/app_project/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
+base.1=/Users/macbook/AndroidStudioProjects/app_project/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
+base.2=/Users/macbook/AndroidStudioProjects/app_project/app/build/intermediates/dex/debug/mergeProjectDexDebug/10/classes.dex
+base.3=/Users/macbook/AndroidStudioProjects/app_project/app/build/intermediates/dex/debug/mergeProjectDexDebug/12/classes.dex
+base.4=/Users/macbook/AndroidStudioProjects/app_project/app/build/intermediates/dex/debug/mergeProjectDexDebug/13/classes.dex
+base.5=/Users/macbook/AndroidStudioProjects/app_project/app/build/intermediates/dex/debug/mergeProjectDexDebug/2/classes.dex
+base.6=/Users/macbook/AndroidStudioProjects/app_project/app/build/intermediates/dex/debug/mergeProjectDexDebug/4/classes.dex
+base.7=/Users/macbook/AndroidStudioProjects/app_project/app/build/intermediates/dex/debug/mergeProjectDexDebug/8/classes.dex
+base.8=/Users/macbook/AndroidStudioProjects/app_project/app/build/intermediates/dex/debug/mergeExtDexDebug/classes2.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=10/classes.dex

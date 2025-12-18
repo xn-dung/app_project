@@ -1,338 +1,358 @@
 [
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\layout_found_food.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\found_food.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/mipmap-hdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\mipmap-mdpi\\ic_launcher_round.webp"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/drawable_white_rectangle_background.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/drawable/white_rectangle_background.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\layout_user_profile.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\user_profile.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/drawable_button_background.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/drawable/button_background.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\menu_navigation_menu.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\menu\\navigation_menu.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/layout_add_food_post.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/layout/add_food_post.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\color_selectable_button_text_color_selector.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\color\\selectable_button_text_color_selector.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/color_selectable_button_background_color_selector.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/color/selectable_button_background_color_selector.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\drawable_ic_play_24.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\drawable\\ic_play_24.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/drawable_tab_divider.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/drawable/tab_divider.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\drawable_logo_app.jpg.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\drawable\\logo_app.jpg"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/drawable_ic_upload.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/drawable/ic_upload.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\layout_reset_password.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\reset_password.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/drawable_rounded_button_bg.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/drawable/rounded_button_bg.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\drawable_play.png.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\drawable\\play.png"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/xml_data_extraction_rules.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/xml/data_extraction_rules.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/drawable_top_bckgr.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/drawable/top_bckgr.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\drawable_ic_home.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\drawable\\ic_home.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/color_selectable_button_text_color_selector.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/color/selectable_button_text_color_selector.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\drawable_circles.png.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\drawable\\circles.png"
+        "merged": "com.example.myapplication.app-debug-42:/layout_item_reel.xml.flat",
+        "source": "com.example.myapplication.app-main-44:/layout/item_reel.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\layout_food_card_home.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\food_card_home.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/layout_fragment_user_reel.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/layout/fragment_user_reel.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\drawable_gradient_main_bg.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\drawable\\gradient_main_bg.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/layout_layout_nl.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/layout/layout_nl.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\drawable_circle_bg.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\drawable\\circle_bg.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/layout_layout_item.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/layout/layout_item.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\drawable_ic_account_circle.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\drawable\\ic_account_circle.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/drawable_food_card_bg.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/drawable/food_card_bg.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\xml_data_extraction_rules.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\xml\\data_extraction_rules.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/layout_activity_food_detail.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/layout/activity_food_detail.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\drawable_rounded_top_khung.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\drawable\\rounded_top_khung.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/layout_forget_password.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/layout/forget_password.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\color_selectable_button_background_color_selector.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\color\\selectable_button_background_color_selector.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/drawable_img.png.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/drawable/img.png"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\layout_video_one.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\video_one.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/layout_home_host.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/layout/home_host.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\layout_register.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\register.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/drawable_ic_favorite.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/drawable/ic_favorite.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/xml_file_paths.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/xml/file_paths.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\mipmap-xhdpi\\ic_launcher.webp"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/drawable/ic_launcher_foreground.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\drawable_rounded_button_bg.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\drawable\\rounded_button_bg.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/drawable_ic_search.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/drawable/ic_search.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\mipmap-anydpi_ic_launcher.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\mipmap-anydpi\\ic_launcher.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/layout_register.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/layout/register.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\drawable_gradient_background.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\drawable\\gradient_background.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/mipmap-xxxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\drawable_ic_launcher_foreground.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\drawable\\ic_launcher_foreground.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/drawable_card_header_background.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/drawable/card_header_background.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\drawable_back_rectangle_background.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\drawable\\back_rectangle_background.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/layout_found_food.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/layout/found_food.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\mipmap-mdpi\\ic_launcher.webp"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/drawable_circle_bg.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/drawable/circle_bg.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\xml_search_food_byname_scene.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\xml\\search_food_byname_scene.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/layout_item_reel.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/layout/item_reel.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\layout_fragment_my_post.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\fragment_my_post.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/mipmap-xxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\layout_activity_food_detail.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\activity_food_detail.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/drawable_ic_time.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/drawable/ic_time.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\drawable_ic_play_circle.png.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\drawable\\ic_play_circle.png"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/drawable_ic_play_24.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/drawable/ic_play_24.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\drawable_ic_search.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\drawable\\ic_search.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/layout_table_layout.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/layout/table_layout.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\layout_activity_host.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\activity_host.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/drawable_dinner.png.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/drawable/dinner.png"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\drawable_ic_time.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\drawable\\ic_time.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/layout_edit_profile.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/layout/edit_profile.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\drawable_chef.png.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\drawable\\chef.png"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/mipmap-anydpi_ic_launcher.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/mipmap-anydpi/ic_launcher.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\layout_search_food_byname.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\search_food_byname.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/xml_network_security_config.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/xml/network_security_config.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\drawable_button_background.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\drawable\\button_background.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/drawable_header_background.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/drawable/header_background.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\layout_table_layout.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\table_layout.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/drawable_ic_back.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/drawable/ic_back.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\layout_home.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\home.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/mipmap-anydpi_ic_launcher_round.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/mipmap-anydpi/ic_launcher_round.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\drawable_white_rectangle_background.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\drawable\\white_rectangle_background.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/drawable_tab_bar_bg.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/drawable/tab_bar_bg.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\drawable_love.png.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\drawable\\love.png"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/layout_home.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/layout/home.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\layout_forget_password.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\forget_password.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/layout_search_food_byname.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/layout/search_food_byname.xml"
     },
     {
-        "merged": "com.example.myapplication.app-debug-42:/drawable_tab_divider.xml.flat",
-        "source": "com.example.myapplication.app-main-44:/drawable/tab_divider.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/menu_navigation_menu.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/menu/navigation_menu.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\drawable_edit_text_background.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\drawable\\edit_text_background.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/layout_video_one.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/layout/video_one.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\mipmap-xxxhdpi\\ic_launcher.webp"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/layout_layout_huongdan.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/layout/layout_huongdan.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\layout_home_host.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\home_host.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/mipmap-xhdpi/ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\color_bottom_nav_icon_color_selector.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\color\\bottom_nav_icon_color_selector.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/drawable_ic_home.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/drawable/ic_home.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\layout_add_food_post.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\add_food_post.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/drawable_tabhost_bg_slt.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/drawable/tabhost_bg_slt.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\mipmap-anydpi_ic_launcher_round.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\mipmap-anydpi\\ic_launcher_round.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/color_bottom_nav_icon_color_selector.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/color/bottom_nav_icon_color_selector.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\drawable_ic_favorite.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\drawable\\ic_favorite.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/drawable_circles.png.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/drawable/circles.png"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\mipmap-hdpi\\ic_launcher_round.webp"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/layout_short_video.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/layout/short_video.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\layout_short_video.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\short_video.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/layout_activity_main.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/layout/activity_main.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\layout_layout_item.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\layout_item.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/drawable_play.png.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/drawable/play.png"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\xml_backup_rules.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\xml\\backup_rules.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/drawable_ic_eye.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/drawable/ic_eye.xml"
     },
     {
-        "merged": "com.example.myapplication.app-debug-42:/drawable_ic_upload.xml.flat",
-        "source": "com.example.myapplication.app-main-44:/drawable/ic_upload.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/drawable_ic_play_circle.png.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/drawable/ic_play_circle.png"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\drawable_settings.png.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\drawable\\settings.png"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/drawable_love.png.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/drawable/love.png"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\drawable_ic_add_box_24.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\drawable\\ic_add_box_24.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/drawable_ic_launcher_background.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/drawable/ic_launcher_background.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\drawable_play_button.png.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\drawable\\play_button.png"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/mipmap-mdpi/ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\xml_file_paths.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\xml\\file_paths.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/drawable_edit_text_background.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/drawable/edit_text_background.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\layout_layout_itemnl.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\layout_itemnl.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/drawable_chef.png.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/drawable/chef.png"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\xml_network_security_config.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\xml\\network_security_config.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/drawable_gradient_main_bg.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/drawable/gradient_main_bg.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\mipmap-xhdpi\\ic_launcher_round.webp"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/drawable_grey_bg.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/drawable/grey_bg.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\drawable_img.png.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\drawable\\img.png"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/drawable_rounded_top_khung.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/drawable/rounded_top_khung.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\drawable_header_background.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\drawable\\header_background.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/mipmap-xhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\drawable_tabhost_bg_unslt.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\drawable\\tabhost_bg_unslt.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/drawable_logo_app.jpg.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/drawable/logo_app.jpg"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\layout_layout_huongdan.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\layout_huongdan.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/layout_activity_host.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/layout/activity_host.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\drawable_tab_bar_bg.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\drawable\\tab_bar_bg.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/mipmap-xxxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\layout_activity_main.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\activity_main.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/layout_layout_itemnl.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/layout/layout_itemnl.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\drawable_food_card_bg.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\drawable\\food_card_bg.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/drawable_play_button.png.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/drawable/play_button.png"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\layout_enter_otp.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\enter_otp.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/layout_enter_otp.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/layout/enter_otp.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\mipmap-xxhdpi\\ic_launcher.webp"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/drawable_settings.png.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/drawable/settings.png"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\drawable_ic_back.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\drawable\\ic_back.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/xml_search_food_byname_scene.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/xml/search_food_byname_scene.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\mipmap-hdpi\\ic_launcher.webp"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/layout_food_card_home.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/layout/food_card_home.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\layout_edit_profile.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\edit_profile.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/drawable_gradient_bottom.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/drawable/gradient_bottom.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\drawable_top_bckgr.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\drawable\\top_bckgr.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/drawable_ic_account_circle.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/drawable/ic_account_circle.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\drawable_ic_launcher_background.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\drawable\\ic_launcher_background.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/drawable_ic_add_box_24.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/drawable/ic_add_box_24.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\drawable_dinner.png.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\drawable\\dinner.png"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/mipmap-mdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\drawable_card_header_background.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\drawable\\card_header_background.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/drawable_back_rectangle_background.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/drawable/back_rectangle_background.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\drawable_grey_bg.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\drawable\\grey_bg.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/mipmap-hdpi/ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\drawable_tabhost_bg_slt.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\drawable\\tabhost_bg_slt.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/layout_search_food_by_ingredient.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/layout/search_food_by_ingredient.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\layout_layout_nl.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\layout_nl.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/layout_reset_password.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/layout/reset_password.xml"
     },
     {
-        "merged": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-debug-42:\\layout_search_food_by_ingredient.xml.flat",
-        "source": "C:\\Users\\dungc\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\search_food_by_ingredient.xml"
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/layout_fragment_my_post.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/layout/fragment_my_post.xml"
+    },
+    {
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/drawable_tabhost_bg_unslt.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/drawable/tabhost_bg_unslt.xml"
+    },
+    {
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/xml_backup_rules.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/layout_user_profile.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/layout/user_profile.xml"
+    },
+    {
+        "merged": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-debug-42:/drawable_gradient_background.xml.flat",
+        "source": "/Users/macbook/.gradle/daemon/8.13/com.example.myapplication.app-main-44:/drawable/gradient_background.xml"
     }
 ]

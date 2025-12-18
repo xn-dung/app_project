@@ -4,7 +4,24 @@
             "outputFile": "com.example.myapplication.app-mergeDebugResources-40:/values-tr/values-tr.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\dungc\\.gradle\\caches\\8.13\\transforms\\a84b40735a17485e2770d5926a40efec\\transformed\\media3-ui-1.2.0\\res\\values-tr\\values-tr.xml",
+                    "source": "/Users/macbook/.gradle/caches/8.13/transforms/7cdb19df1c8a5a6f56b98b86b6575ade/transformed/media3-exoplayer-1.2.0/res/values-tr/values-tr.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,132,191,256,317,397,469,559,655",
+                        "endColumns": "76,58,64,60,79,71,89,95,75",
+                        "endOffsets": "127,186,251,312,392,464,554,650,726"
+                    },
+                    "to": {
+                        "startLines": "91,92,93,94,95,96,97,98,99",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "7115,7192,7251,7316,7377,7457,7529,7619,7715",
+                        "endColumns": "76,58,64,60,79,71,89,95,75",
+                        "endOffsets": "7187,7246,7311,7372,7452,7524,7614,7710,7786"
+                    }
+                },
+                {
+                    "source": "/Users/macbook/.gradle/caches/8.13/transforms/a84b40735a17485e2770d5926a40efec/transformed/media3-ui-1.2.0/res/values-tr/values-tr.xml",
                     "from": {
                         "startLines": "2,11,15,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -23,7 +40,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\dungc\\.gradle\\caches\\8.13\\transforms\\2164067bcd7e756f3f8795c795d19a87\\transformed\\appcompat-1.7.1\\res\\values-tr\\values-tr.xml",
+                    "source": "/Users/macbook/.gradle/caches/8.13/transforms/2164067bcd7e756f3f8795c795d19a87/transformed/appcompat-1.7.1/res/values-tr/values-tr.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -40,24 +57,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\dungc\\.gradle\\caches\\8.13\\transforms\\7cdb19df1c8a5a6f56b98b86b6575ade\\transformed\\media3-exoplayer-1.2.0\\res\\values-tr\\values-tr.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10",
-                        "startColumns": "4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,132,191,256,317,397,469,559,655",
-                        "endColumns": "76,58,64,60,79,71,89,95,75",
-                        "endOffsets": "127,186,251,312,392,464,554,650,726"
-                    },
-                    "to": {
-                        "startLines": "91,92,93,94,95,96,97,98,99",
-                        "startColumns": "4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "7115,7192,7251,7316,7377,7457,7529,7619,7715",
-                        "endColumns": "76,58,64,60,79,71,89,95,75",
-                        "endOffsets": "7187,7246,7311,7372,7452,7524,7614,7710,7786"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\dungc\\.gradle\\caches\\8.13\\transforms\\dd08898040ff9e78efb0998c9e67120f\\transformed\\material-1.12.0\\res\\values-tr\\values-tr.xml",
+                    "source": "/Users/macbook/.gradle/caches/8.13/transforms/dd08898040ff9e78efb0998c9e67120f/transformed/material-1.12.0/res/values-tr/values-tr.xml",
                     "from": {
                         "startLines": "2,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -76,7 +76,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\dungc\\.gradle\\caches\\8.13\\transforms\\9336da126240fc2cd97ee4ad984e76f2\\transformed\\core-1.13.0\\res\\values-tr\\values-tr.xml",
+                    "source": "/Users/macbook/.gradle/caches/8.13/transforms/9336da126240fc2cd97ee4ad984e76f2/transformed/core-1.13.0/res/values-tr/values-tr.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",

@@ -157,7 +157,7 @@ public class HomeFragment extends Fragment {
 
     private void takeBD() {
         setLoading(true);
-        String url = "https://mobilenodejs.onrender.com/api/baidang";
+        String url = "https://mobilenodejs.onrender.com/api/recommend/" + user.getId();
         RequestQueue queue = Volley.newRequestQueue(requireContext());
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(
                 Request.Method.GET, url, null,

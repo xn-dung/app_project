@@ -43,6 +43,7 @@ public class HomeActivity extends AppCompatActivity implements HomeFragment.OnFo
     private int currentTabId = R.id.menuHome;
 
     private User user;
+    private boolean isBackNavigation = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,8 +59,13 @@ public class HomeActivity extends AppCompatActivity implements HomeFragment.OnFo
             int newTabId = item.getItemId();
             if (newTabId == currentTabId) return true;
 
-            if (tabHistory.peekFirst() == null || tabHistory.peekFirst() != currentTabId) {
-                tabHistory.offerFirst(currentTabId);
+            if (!isBackNavigation) {
+                if (tabHistory.isEmpty() || tabHistory.peekFirst() != currentTabId) {
+                    tabHistory.push(currentTabId);
+                }
+            }
+            if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
+                getSupportFragmentManager().popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
             }
             switchFragment(newTabId, true);
             currentTabId = newTabId;
@@ -73,19 +79,24 @@ public class HomeActivity extends AppCompatActivity implements HomeFragment.OnFo
         getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
             @Override
             public void handleOnBackPressed() {
-                // 1. Pop fragments from the internal back stack first (e.g., DetailFoodFragment, SearchFoodByNameFragment)
                 if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
                     getSupportFragmentManager().popBackStack();
+                    activeFragment = getFragmentByTabId(currentTabId);
                     return;
                 }
 
-                // 2. Navigate through the tab history
-                Integer previousTab = tabHistory.pollFirst();
-                if (previousTab != null) {
-                    bottomNav.setSelectedItemId(previousTab);
-                    switchFragment(previousTab, false);
-                    currentTabId = previousTab;
-                    return;
+                if (!tabHistory.isEmpty()) {
+                    Integer previousTab = tabHistory.pop();
+                    while (previousTab != null && previousTab == bottomNav.getSelectedItemId() && !tabHistory.isEmpty()) {
+                        previousTab = tabHistory.pop();
+                    }
+
+                    if (previousTab != null && previousTab != bottomNav.getSelectedItemId()) {
+                        isBackNavigation = true;
+                        bottomNav.setSelectedItemId(previousTab);
+                        isBackNavigation = false;
+                        return;
+                    }
                 }
                 finish();
             }
@@ -100,20 +111,30 @@ public class HomeActivity extends AppCompatActivity implements HomeFragment.OnFo
         profileFragment = fm.findFragmentByTag(TAG_PROFILE);
         reelFragment = fm.findFragmentByTag(TAG_REEL);
 
+        FragmentTransaction tx = fm.beginTransaction();
 
-        if (homeFragment == null) homeFragment = HomeFragment.newInstance(user);
-        if (searchFragment == null) searchFragment = SearchFragment.newInstance(user);
-        if (addFragment == null) addFragment = AddFoodFragment.newInstance(user);
-        if (profileFragment == null) profileFragment = ProfileFragment.newInstance(user);
-        if (reelFragment == null) reelFragment = ReelFragment.newInstance(user);
+        if (homeFragment == null) {
+            homeFragment = HomeFragment.newInstance(user);
+            tx.add(R.id.fragment_container, homeFragment, TAG_HOME);
+        }
+        if (searchFragment == null) {
+            searchFragment = SearchFragment.newInstance(user);
+            tx.add(R.id.fragment_container, searchFragment, TAG_SEARCH).hide(searchFragment);
+        }
+        if (addFragment == null) {
+            addFragment = AddFoodFragment.newInstance(user);
+            tx.add(R.id.fragment_container, addFragment, TAG_ADD).hide(addFragment);
+        }
+        if (profileFragment == null) {
+            profileFragment = ProfileFragment.newInstance(user);
+            tx.add(R.id.fragment_container, profileFragment, TAG_PROFILE).hide(profileFragment);
+        }
+        if (reelFragment == null) {
+            reelFragment = ReelFragment.newInstance(user);
+            tx.add(R.id.fragment_container, reelFragment, TAG_REEL).hide(reelFragment);
+        }
 
-        fm.beginTransaction()
-                .add(R.id.fragment_container, homeFragment, TAG_HOME)
-                .add(R.id.fragment_container, searchFragment, TAG_SEARCH).hide(searchFragment)
-                .add(R.id.fragment_container, addFragment, TAG_ADD).hide(addFragment)
-                .add(R.id.fragment_container, profileFragment, TAG_PROFILE).hide(profileFragment)
-                .add(R.id.fragment_container,reelFragment,TAG_REEL).hide(reelFragment)
-                .commit();
+        tx.commit();
 
         activeFragment = homeFragment;
         currentTabId = R.id.menuHome;
@@ -123,13 +144,7 @@ public class HomeActivity extends AppCompatActivity implements HomeFragment.OnFo
         Fragment target = getFragmentByTabId(tabId);
         if (target == null || target == activeFragment) return;
 
-        FragmentManager fm = getSupportFragmentManager();
-        // Clear back stack before switching to a new root tab fragment
-        if (fm.getBackStackEntryCount() > 0) {
-            fm.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
-        }
-
-        FragmentTransaction tx = fm.beginTransaction();
+        FragmentTransaction tx = getSupportFragmentManager().beginTransaction();
         tx.hide(activeFragment).show(target).commit();
         activeFragment = target;
     }
@@ -166,11 +181,13 @@ public class HomeActivity extends AppCompatActivity implements HomeFragment.OnFo
         SearchFoodByNameFragment searchFoodByNameFragment = SearchFoodByNameFragment.newInstance(user);
         FragmentTransaction tx = getSupportFragmentManager().beginTransaction();
 
-        tx.hide(activeFragment)
-                .add(R.id.fragment_container, searchFoodByNameFragment, SearchFoodByNameFragment.TAG)
-                .show(searchFoodByNameFragment)
+        tx.add(R.id.fragment_container, searchFoodByNameFragment, SearchFoodByNameFragment.TAG)
+                .hide(activeFragment)
                 .addToBackStack(SearchFoodByNameFragment.TAG)
                 .commit();
+
+        activeFragment = searchFoodByNameFragment;
+
     }
 
     public void navigateTo(Fragment fragment, boolean addToBackstack) {

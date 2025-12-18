@@ -42,6 +42,9 @@ public final class UserProfileBinding implements ViewBinding {
   public final ImageView imagePost;
 
   @NonNull
+  public final ImageView imageReel;
+
+  @NonNull
   public final ImageView imageSettings;
 
   @NonNull
@@ -63,7 +66,13 @@ public final class UserProfileBinding implements ViewBinding {
   public final TextView rateNum;
 
   @NonNull
+  public final LinearLayout reelsBtn;
+
+  @NonNull
   public final TextView textPost;
+
+  @NonNull
+  public final TextView textReel;
 
   @NonNull
   public final TextView textSettings;
@@ -92,12 +101,13 @@ public final class UserProfileBinding implements ViewBinding {
   private UserProfileBinding(@NonNull ConstraintLayout rootView, @NonNull ImageButton btnBack,
       @NonNull MaterialButton btnLogout, @NonNull ConstraintLayout constraintLayout,
       @NonNull LinearLayout editProfileBtn, @NonNull TextView favNum, @NonNull ImageView imagePost,
-      @NonNull ImageView imageSettings, @NonNull ImageView imageView5,
+      @NonNull ImageView imageReel, @NonNull ImageView imageSettings, @NonNull ImageView imageView5,
       @NonNull ImageView imageView6, @NonNull ConstraintLayout main, @NonNull TextView postNum,
-      @NonNull LinearLayout postsBtn, @NonNull TextView rateNum, @NonNull TextView textPost,
-      @NonNull TextView textSettings, @NonNull TextView textView4, @NonNull TextView textView6,
-      @NonNull TextView textView8, @NonNull TextView userEmail, @NonNull TextView userFullName,
-      @NonNull View view, @NonNull View view2) {
+      @NonNull LinearLayout postsBtn, @NonNull TextView rateNum, @NonNull LinearLayout reelsBtn,
+      @NonNull TextView textPost, @NonNull TextView textReel, @NonNull TextView textSettings,
+      @NonNull TextView textView4, @NonNull TextView textView6, @NonNull TextView textView8,
+      @NonNull TextView userEmail, @NonNull TextView userFullName, @NonNull View view,
+      @NonNull View view2) {
     this.rootView = rootView;
     this.btnBack = btnBack;
     this.btnLogout = btnLogout;
@@ -105,6 +115,7 @@ public final class UserProfileBinding implements ViewBinding {
     this.editProfileBtn = editProfileBtn;
     this.favNum = favNum;
     this.imagePost = imagePost;
+    this.imageReel = imageReel;
     this.imageSettings = imageSettings;
     this.imageView5 = imageView5;
     this.imageView6 = imageView6;
@@ -112,7 +123,9 @@ public final class UserProfileBinding implements ViewBinding {
     this.postNum = postNum;
     this.postsBtn = postsBtn;
     this.rateNum = rateNum;
+    this.reelsBtn = reelsBtn;
     this.textPost = textPost;
+    this.textReel = textReel;
     this.textSettings = textSettings;
     this.textView4 = textView4;
     this.textView6 = textView6;
@@ -186,6 +199,12 @@ public final class UserProfileBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.imageReel;
+      ImageView imageReel = ViewBindings.findChildViewById(rootView, id);
+      if (imageReel == null) {
+        break missingId;
+      }
+
       id = R.id.imageSettings;
       ImageView imageSettings = ViewBindings.findChildViewById(rootView, id);
       if (imageSettings == null) {
@@ -224,9 +243,21 @@ public final class UserProfileBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.reelsBtn;
+      LinearLayout reelsBtn = ViewBindings.findChildViewById(rootView, id);
+      if (reelsBtn == null) {
+        break missingId;
+      }
+
       id = R.id.textPost;
       TextView textPost = ViewBindings.findChildViewById(rootView, id);
       if (textPost == null) {
+        break missingId;
+      }
+
+      id = R.id.textReel;
+      TextView textReel = ViewBindings.findChildViewById(rootView, id);
+      if (textReel == null) {
         break missingId;
       }
 
@@ -279,9 +310,9 @@ public final class UserProfileBinding implements ViewBinding {
       }
 
       return new UserProfileBinding((ConstraintLayout) rootView, btnBack, btnLogout,
-          constraintLayout, editProfileBtn, favNum, imagePost, imageSettings, imageView5,
-          imageView6, main, postNum, postsBtn, rateNum, textPost, textSettings, textView4,
-          textView6, textView8, userEmail, userFullName, view, view2);
+          constraintLayout, editProfileBtn, favNum, imagePost, imageReel, imageSettings, imageView5,
+          imageView6, main, postNum, postsBtn, rateNum, reelsBtn, textPost, textReel, textSettings,
+          textView4, textView6, textView8, userEmail, userFullName, view, view2);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
