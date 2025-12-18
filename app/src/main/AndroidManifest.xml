@@ -18,6 +18,7 @@
         android:roundIcon="@drawable/logo_app"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
+        android:usesCleartextTraffic="true"
 
         android:hardwareAccelerated="true">
 

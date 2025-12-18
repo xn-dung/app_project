@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="donvi_array">
+        <item>gram</item>
+        <item>ml</item>
+        <item>cái</item>
+        <item>kg</item>
+        <item>lít</item>
+    </string-array>
+    <color name="black">#FF000000</color>
+    <color name="colorAccent">#1B1B1B</color>
+    <color name="colorBackground">#F8B640</color>
+    <color name="colorDivider">#D6D6D6</color>
+    <color name="colorLogout">#ED6E6E</color>
+    <color name="colorLogoutDark">#DB4D4D</color>
+    <color name="colorOrange">#F4781D</color>
+    <color name="colorPrimary">#4A2B21</color>
+    <color name="colorPrimaryDark">#2BCC6F</color>
+    <color name="colorPrimaryLight">#F6B173</color>
+    <color name="colorTrendingEnd">#96C93D</color>
+    <color name="colorTrendingStart">#00B09B</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="green_pastel">#00BFFF</color>
+    <color name="white">#FFFFFFFF</color>
+    <dimen name="fragment_horizontal_margin">16dp</dimen>
+    <dimen name="fragment_vertical_margin">16dp</dimen>
+    <string name="add">Add</string>
+    <string name="app_name">Cook By Ingredients</string>
+    <string name="apptitle">Welcome</string>
+    <string name="back">Back</string>
+    <string name="backend_url">https://sg87k2rd-3000.asse.devtunnels.ms/</string>
+    <string name="fullname">Username</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hi">Let\'s cook, </string>
+    <string name="home">Home</string>
+    <string name="let_s_share">Let\'s share, </string>
+    <string name="profile">Profile</string>
+    <string name="reels">Reels</string>
+    <string name="search">Search</string>
+    <string name="username_hint">Type your username</string>
+    <style name="Base.Theme.MyApplication" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="Theme.MyApplication" parent="Base.Theme.MyApplication"/>
+</resources>

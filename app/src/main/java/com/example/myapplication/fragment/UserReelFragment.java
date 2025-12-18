@@ -93,9 +93,8 @@ public class UserReelFragment extends Fragment {
     private void loadSelfReels() {
         progressBar.setVisibility(View.VISIBLE);
 
-        // URL API
         String url = getString(R.string.backend_url) + "api/reel/getSelfReels/" + user.getId();
-        Log.d("API_REEL", "Calling: " + url); // Log để check link
+        Log.d("API_REEL", "Calling: " + url);
 
         RequestQueue queue = Volley.newRequestQueue(requireContext());
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
@@ -115,8 +114,6 @@ public class UserReelFragment extends Fragment {
                                 ShortVideo video = new ShortVideo();
                                 video.setId(obj.optString("_id"));
 
-                                // QUAN TRỌNG: API của bạn đang thiếu các trường này
-                                // Nên mình để giá trị mặc định để app không bị crash
                                 video.setUrl(obj.optString("videoUrl", "")); // Link video để Glide load thumbnail
                                 video.setTieuDe(obj.optString("tieude", ""));
                                 video.setViews(obj.optInt("views", 0));

@@ -8,10 +8,6 @@
         "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\enter_otp.xml"
     },
     {
-        "merged": "com.example.myapplication.app-mergeDebugResources-41:/layout/fragment_my_post.xml",
-        "source": "com.example.myapplication.app-main-44:/layout/fragment_my_post.xml"
-    },
-    {
         "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-mergeDebugResources-41:\\layout\\register.xml",
         "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\register.xml"
     },
@@ -26,6 +22,10 @@
     {
         "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-mergeDebugResources-41:\\layout\\add_food_post.xml",
         "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\add_food_post.xml"
+    },
+    {
+        "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-mergeDebugResources-41:\\layout\\fragment_my_post.xml",
+        "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\fragment_my_post.xml"
     },
     {
         "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-mergeDebugResources-41:\\layout\\search_food_by_ingredient.xml",
@@ -90,6 +90,10 @@
     {
         "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-mergeDebugResources-41:\\layout\\activity_main.xml",
         "source": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-main-44:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "com.example.myapplication.app-mergeDebugResources-41:/layout/user_profile.xml",
+        "source": "com.example.myapplication.app-main-44:/layout/user_profile.xml"
     },
     {
         "merged": "C:\\Users\\PC\\.gradle\\daemon\\8.13\\com.example.myapplication.app-mergeDebugResources-41:\\layout\\layout_item.xml",

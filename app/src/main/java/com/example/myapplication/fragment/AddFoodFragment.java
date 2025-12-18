@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TableLayout;
@@ -28,6 +29,7 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.bumptech.glide.Glide;
 import com.example.myapplication.R;
 import com.example.myapplication.model.ShortVideo;
 import com.example.myapplication.model.User;
@@ -66,6 +68,7 @@ public class AddFoodFragment extends Fragment {
     private Uri selectedVideoUri;
     private LinearLayout btnSelectVideo;
     private TextView txtFullName;
+    private ImageView img;
 
     public static AddFoodFragment newInstance(User user) {
         AddFoodFragment fragment = new AddFoodFragment();
@@ -108,6 +111,12 @@ public class AddFoodFragment extends Fragment {
         btnSelectVideo = view.findViewById(R.id.btnSelectVideo);
         txtFullName = view.findViewById(R.id.textFullName);
         txtFullName.setText(user.getFullname());
+        img = view.findViewById(R.id.imageAvatar);
+        Glide.with(requireContext())
+                .load(user.getAvatar())
+                .placeholder(R.drawable.img)
+                .error(R.drawable.img)
+                .into(img);
 
 
         changeTab.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {

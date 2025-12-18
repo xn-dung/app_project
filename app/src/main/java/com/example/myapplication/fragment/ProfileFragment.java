@@ -1,9 +1,13 @@
 package com.example.myapplication.fragment;
+import android.app.Activity;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.content.Intent;
@@ -15,19 +19,32 @@ import androidx.fragment.app.Fragment;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.JsonRequest;
 import com.android.volley.toolbox.Volley;
+import com.bumptech.glide.Glide;
 import com.example.myapplication.UI.EditProfileActivity;
 import com.example.myapplication.UI.MainActivity;
+import com.example.myapplication.model.NguyenLieu;
 import com.example.myapplication.model.User;
 import com.example.myapplication.R;
+import com.example.myapplication.services.VolleyMultipartRequest;
 import com.google.android.material.button.MaterialButton;
 
+import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ProfileFragment extends Fragment {
 
@@ -42,6 +59,9 @@ public class ProfileFragment extends Fragment {
     private LinearLayout viewPosts;
     private User user;
     private LinearLayout btnReels;
+
+    private ImageView img;
+
 
     public static ProfileFragment newInstance(User user) {
         ProfileFragment f = new ProfileFragment();
@@ -82,7 +102,17 @@ public class ProfileFragment extends Fragment {
         btnReels = view.findViewById(R.id.reelsBtn);
         tvRateNum = view.findViewById(R.id.rateNum);
         viewPosts = view.findViewById(R.id.postsBtn);
-
+        img = view.findViewById(R.id.imageView5);
+        Glide.with(requireContext())
+                .load(user.getAvatar())
+                .placeholder(R.drawable.img)
+                .error(R.drawable.img)
+                .into(img);
+        img.setOnClickListener(v -> {
+            Intent intent = new Intent(Intent.ACTION_PICK);
+            intent.setType("image/*");
+            startActivityForResult(intent, 100);
+        });
         if (user != null) {
             userFullname.setText(user.getFullname());
             userEmail.setText(user.getEmail());
@@ -130,7 +160,20 @@ public class ProfileFragment extends Fragment {
         });
 
     }
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
 
+        if (requestCode == 100 &&
+                resultCode == Activity.RESULT_OK &&
+                data != null &&
+                data.getData() != null) {
+
+            Uri imageUri = data.getData();
+
+            uploadImageToBackend(imageUri);
+        }
+    }
     private void loadUserStats(){
         if(user == null) return;
         RequestQueue queue = Volley.newRequestQueue(requireContext());
@@ -175,5 +218,66 @@ public class ProfileFragment extends Fragment {
     public void onResume() {
         super.onResume();
         loadUserStats();
+    }
+
+    private byte[] getBytesFromUri(Uri uri) throws IOException {
+        try (InputStream inputStream = requireContext().getContentResolver().openInputStream(uri);
+             ByteArrayOutputStream buffer = new ByteArrayOutputStream()) {
+
+            if (inputStream == null) throw new IOException();
+
+            byte[] data = new byte[4096];
+            int nRead;
+            while ((nRead = inputStream.read(data)) != -1) {
+                buffer.write(data, 0, nRead);
+            }
+            return buffer.toByteArray();
+        }
+    }
+
+    private void uploadImageToBackend(Uri imageUri) {
+        try {
+            Map<String, VolleyMultipartRequest.DataPart> byteData = new HashMap<>();
+            byteData.put("image", new VolleyMultipartRequest.DataPart(
+                    "avatar.jpg",
+                    getBytesFromUri(imageUri),
+                    "image/jpeg"
+            ));
+
+            String url = getString(R.string.backend_url) + "api/nguoidung/avatar/" + user.getId();
+
+            VolleyMultipartRequest request = new VolleyMultipartRequest(
+                    Request.Method.POST,
+                    url,
+                    byteData,
+                    response -> {
+                        try {
+                            if(response.has("avatar")){
+                                String avatar = response.getString("avatar");
+                                user.setAvatar(avatar);
+                                Glide.with(requireContext())
+                                        .load(avatar)
+                                        .placeholder(R.drawable.img)
+                                        .error(R.drawable.img)
+                                        .into(img);
+                            }
+                        } catch (Exception e) {
+                            Toast.makeText(requireContext(), "Lỗi xử lý dữ liệu", Toast.LENGTH_SHORT).show();
+                            Glide.with(requireContext())
+                                    .load(user.getAvatar())
+                                    .placeholder(R.drawable.img)
+                                    .error(R.drawable.img)
+                                    .into(img);
+                        }
+                    },
+                    error -> Toast.makeText(requireContext(), "Lỗi kết nối", Toast.LENGTH_SHORT).show()
+            );
+
+            Volley.newRequestQueue(requireContext()).add(request);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            Toast.makeText(requireContext(), "Lỗi đọc file ảnh", Toast.LENGTH_SHORT).show();
+        }
     }
 }

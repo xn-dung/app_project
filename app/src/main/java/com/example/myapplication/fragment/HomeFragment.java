@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,6 +19,7 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
+import com.bumptech.glide.Glide;
 import com.example.myapplication.Adapter.MyArrayAdapter;
 import com.example.myapplication.R;
 import com.example.myapplication.model.BaiDang;
@@ -48,6 +50,7 @@ public class HomeFragment extends Fragment {
     private MaterialButton btnRecent;
     private MaterialButton currentSltBtn;
     private ProgressBar pb;
+    private ImageView img;
 
 
     public static HomeFragment newInstance(User user) {
@@ -98,7 +101,12 @@ public class HomeFragment extends Fragment {
         pb = view.findViewById(R.id.progressBar);
         myAdapter = new MyArrayAdapter(requireContext(), R.layout.layout_item, listBD);
         gv.setAdapter(myAdapter);
-
+        img = view.findViewById(R.id.imageAvatar);
+        Glide.with(requireContext())
+                .load(user.getAvatar())
+                .placeholder(R.drawable.img)
+                .error(R.drawable.img)
+                .into(img);
         btnRecommend.setSelected(true);
         currentSltBtn = btnRecommend;
         takeBD();
