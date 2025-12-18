@@ -45,7 +45,15 @@ public class MyArrayAdapter extends ArrayAdapter<BaiDang> {
                 .into(imgItem);
 
         TextView nameItem = convertView.findViewById(R.id.textFoodName);
+        TextView tvLikeCount = convertView.findViewById(R.id.tvLikeCount);
+        TextView tvViewCount = convertView.findViewById(R.id.tvViewCount);
+
+
         nameItem.setText(myBaiDang.getTenMon());
+        tvLikeCount.setText(String.valueOf(myBaiDang.getLuotThich()));
+        tvViewCount.setText(String.valueOf(myBaiDang.getViews()));
+
+
 
         return convertView;
     }

@@ -45,6 +45,7 @@ drawable ic_play_24
 drawable ic_play_circle
 drawable ic_search
 drawable ic_time
+drawable ic_upload
 drawable img
 drawable logo_app
 drawable love
@@ -54,6 +55,7 @@ drawable rounded_button_bg
 drawable rounded_top_khung
 drawable settings
 drawable tab_bar_bg
+drawable tab_divider
 drawable tabhost_bg_slt
 drawable tabhost_bg_unslt
 drawable top_bckgr
@@ -113,7 +115,9 @@ id etUsername
 id favNum
 id fragment_container
 id gridFoods
+id gridUserPosts
 id headerFoodInfo
+id headerLayout
 id hehe
 id imageAvatar
 id imageFood
@@ -126,6 +130,7 @@ id imgYtbThumb
 id inputLayoutCaption
 id itemLayout
 id labelVideo
+id layoutEmpty
 id layoutHD
 id layoutHeader
 id layoutInteractive
@@ -209,6 +214,7 @@ layout enter_otp
 layout food_card_home
 layout forget_password
 layout found_food
+layout fragment_my_post
 layout home
 layout home_host
 layout layout_huongdan
@@ -232,6 +238,7 @@ string apptitle
 string back
 string backend_url
 string fullname
+string hello_blank_fragment
 string hi
 string home
 string let_s_share

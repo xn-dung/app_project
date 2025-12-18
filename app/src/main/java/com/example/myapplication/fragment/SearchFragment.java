@@ -29,6 +29,7 @@ import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonArrayRequest;
@@ -379,7 +380,7 @@ public class SearchFragment extends Fragment {
                             for (int i = 0; i < nguyenLieuArray.length(); i++) {
                                 JSONObject obj = nguyenLieuArray.getJSONObject(i);
                                 NguyenLieu nl = new NguyenLieu();
-                                nl.setTen(obj.getString("ten"));
+                                nl.setTen(obj.optString("ten"));
                                 list.add(nl);
                             }
                             fillTableWithNguyenLieu(list);
@@ -389,6 +390,11 @@ public class SearchFragment extends Fragment {
                     },
                     error -> Toast.makeText(requireContext(), "Lỗi kết nối", Toast.LENGTH_SHORT).show()
             );
+            request.setRetryPolicy(new DefaultRetryPolicy(
+                    60000,
+                    0,
+                    DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
+            ));
 
             Volley.newRequestQueue(requireContext()).add(request);
 
@@ -403,27 +409,44 @@ public class SearchFragment extends Fragment {
         int ingredientIndex = 0;
 
         while (ingredientIndex < list.size()) {
-            TableRow newRow = (TableRow) LayoutInflater.from(requireContext())
-                    .inflate(R.layout.table_layout, tableLayout, false);
-
-            EditText etTen = newRow.findViewById(R.id.textTen);
-            EditText etSoLuong = newRow.findViewById(R.id.editDinhLuong);
-            Button btnXoa = newRow.findViewById(R.id.btnRemoveRow1);
-
-            etTen.setText(list.get(ingredientIndex).getTen());
-            etSoLuong.setText("");
-
-            btnXoa.setOnClickListener(v -> {
-                if (tableLayout.getChildCount() > 1) {
-                    tableLayout.removeView(newRow);
-                } else {
+            if(ingredientIndex == 0){
+                TableRow firstRow = (TableRow) tableLayout.getChildAt(0);
+                EditText etTen = firstRow.findViewById(R.id.editTen1);
+                EditText etSoLuong = firstRow.findViewById(R.id.editSoLuong1);
+                Button btnXoa = firstRow.findViewById(R.id.btnRemoveRow);
+                etTen.setText(list.get(ingredientIndex).getTen());
+                etSoLuong.setText("");
+                btnXoa.setOnClickListener(v -> {
                     Toast.makeText(requireContext(),
                             "Không thể xóa hết các dòng!",
                             Toast.LENGTH_SHORT).show();
-                }
-            });
 
-            tableLayout.addView(newRow);
+                });
+
+            }
+            else {
+                TableRow newRow = (TableRow) LayoutInflater.from(requireContext())
+                        .inflate(R.layout.table_layout, tableLayout, false);
+
+                EditText etTen = newRow.findViewById(R.id.textTen);
+                EditText etSoLuong = newRow.findViewById(R.id.editDinhLuong);
+                Button btnXoa = newRow.findViewById(R.id.btnRemoveRow1);
+
+                etTen.setText(list.get(ingredientIndex).getTen());
+                etSoLuong.setText("");
+
+                btnXoa.setOnClickListener(v -> {
+                    if (tableLayout.getChildCount() > 1) {
+                        tableLayout.removeView(newRow);
+                    } else {
+                        Toast.makeText(requireContext(),
+                                "Không thể xóa hết các dòng!",
+                                Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+                tableLayout.addView(newRow);
+            }
             ingredientIndex++;
         }
     }

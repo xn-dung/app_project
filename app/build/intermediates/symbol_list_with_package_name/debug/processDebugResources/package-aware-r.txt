@@ -3261,6 +3261,7 @@ drawable ic_play_circle
 drawable ic_search
 drawable ic_search_black_24
 drawable ic_time
+drawable ic_upload
 drawable img
 drawable indeterminate_static
 drawable logo_app
@@ -3343,6 +3344,7 @@ drawable rounded_button_bg
 drawable rounded_top_khung
 drawable settings
 drawable tab_bar_bg
+drawable tab_divider
 drawable tabhost_bg_slt
 drawable tabhost_bg_unslt
 drawable test_level_drawable
@@ -3676,10 +3678,12 @@ id gone
 id graph
 id graph_wrap
 id gridFoods
+id gridUserPosts
 id group_divider
 id grouping
 id groups
 id headerFoodInfo
+id headerLayout
 id header_title
 id hehe
 id hide_ime_id
@@ -3719,6 +3723,7 @@ id jumpToStart
 id labelVideo
 id labeled
 id layout
+id layoutEmpty
 id layoutHD
 id layoutHeader
 id layoutInteractive
@@ -4236,6 +4241,7 @@ layout exo_track_selection_dialog
 layout food_card_home
 layout forget_password
 layout found_food
+layout fragment_my_post
 layout home
 layout home_host
 layout ime_base_split_test_activity
@@ -4446,6 +4452,7 @@ string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string fullname
+string hello_blank_fragment
 string hi
 string hide_bottom_view_on_scroll_behavior
 string home

@@ -99,6 +99,9 @@ public final class AddFoodPostBinding implements ViewBinding {
   public final TableLayout tablet;
 
   @NonNull
+  public final TextView textFullName;
+
+  @NonNull
   public final TextView textHello;
 
   @NonNull
@@ -113,7 +116,8 @@ public final class AddFoodPostBinding implements ViewBinding {
       @NonNull CardView layoutHeader, @NonNull ConstraintLayout layoutReelsForm,
       @NonNull ConstraintLayout main, @NonNull ScrollView scrollViewContent,
       @NonNull Spinner spinnerDonVi1, @NonNull TabLayout tabLayout, @NonNull TableRow tableRowItem,
-      @NonNull TableLayout tablet, @NonNull TextView textHello, @NonNull VideoView videoPreview) {
+      @NonNull TableLayout tablet, @NonNull TextView textFullName, @NonNull TextView textHello,
+      @NonNull VideoView videoPreview) {
     this.rootView = rootView;
     this.btnPostReel = btnPostReel;
     this.btnSave = btnSave;
@@ -137,6 +141,7 @@ public final class AddFoodPostBinding implements ViewBinding {
     this.tabLayout = tabLayout;
     this.tableRowItem = tableRowItem;
     this.tablet = tablet;
+    this.textFullName = textFullName;
     this.textHello = textHello;
     this.videoPreview = videoPreview;
   }
@@ -296,6 +301,12 @@ public final class AddFoodPostBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.textFullName;
+      TextView textFullName = ViewBindings.findChildViewById(rootView, id);
+      if (textFullName == null) {
+        break missingId;
+      }
+
       id = R.id.textHello;
       TextView textHello = ViewBindings.findChildViewById(rootView, id);
       if (textHello == null) {
@@ -312,7 +323,7 @@ public final class AddFoodPostBinding implements ViewBinding {
           btnSelectVideo, buttonCo, buttonTru, cardVideoPreview, editSoLuong1, editTen1, edtCachLam,
           edtLinkYtb, edtReelCaption, edtTenMon, imageAvatar, inputLayoutCaption, layoutHeader,
           layoutReelsForm, main, scrollViewContent, spinnerDonVi1, tabLayout, tableRowItem, tablet,
-          textHello, videoPreview);
+          textFullName, textHello, videoPreview);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

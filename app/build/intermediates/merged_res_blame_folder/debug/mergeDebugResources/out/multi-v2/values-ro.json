@@ -4,7 +4,7 @@
             "outputFile": "com.example.myapplication.app-mergeDebugResources-40:/values-ro/values-ro.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\PC\\.gradle\\caches\\8.13\\transforms\\a84b40735a17485e2770d5926a40efec\\transformed\\media3-ui-1.2.0\\res\\values-ro\\values-ro.xml",
+                    "source": "C:\\Users\\dungc\\.gradle\\caches\\8.13\\transforms\\a84b40735a17485e2770d5926a40efec\\transformed\\media3-ui-1.2.0\\res\\values-ro\\values-ro.xml",
                     "from": {
                         "startLines": "2,11,16,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -23,24 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\PC\\.gradle\\caches\\8.13\\transforms\\9336da126240fc2cd97ee4ad984e76f2\\transformed\\core-1.13.0\\res\\values-ro\\values-ro.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,153,255,355,454,556,665,782",
-                        "endColumns": "97,101,99,98,101,108,116,100",
-                        "endOffsets": "148,250,350,449,551,660,777,878"
-                    },
-                    "to": {
-                        "startLines": "58,59,60,61,62,63,64,187",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "4356,4454,4556,4656,4755,4857,4966,14691",
-                        "endColumns": "97,101,99,98,101,108,116,100",
-                        "endOffsets": "4449,4551,4651,4750,4852,4961,5078,14787"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\PC\\.gradle\\caches\\8.13\\transforms\\dd08898040ff9e78efb0998c9e67120f\\transformed\\material-1.12.0\\res\\values-ro\\values-ro.xml",
+                    "source": "C:\\Users\\dungc\\.gradle\\caches\\8.13\\transforms\\dd08898040ff9e78efb0998c9e67120f\\transformed\\material-1.12.0\\res\\values-ro\\values-ro.xml",
                     "from": {
                         "startLines": "2,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -59,7 +42,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\PC\\.gradle\\caches\\8.13\\transforms\\2164067bcd7e756f3f8795c795d19a87\\transformed\\appcompat-1.7.1\\res\\values-ro\\values-ro.xml",
+                    "source": "C:\\Users\\dungc\\.gradle\\caches\\8.13\\transforms\\2164067bcd7e756f3f8795c795d19a87\\transformed\\appcompat-1.7.1\\res\\values-ro\\values-ro.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -76,7 +59,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\PC\\.gradle\\caches\\8.13\\transforms\\7cdb19df1c8a5a6f56b98b86b6575ade\\transformed\\media3-exoplayer-1.2.0\\res\\values-ro\\values-ro.xml",
+                    "source": "C:\\Users\\dungc\\.gradle\\caches\\8.13\\transforms\\7cdb19df1c8a5a6f56b98b86b6575ade\\transformed\\media3-exoplayer-1.2.0\\res\\values-ro\\values-ro.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",
@@ -90,6 +73,23 @@
                         "startOffsets": "7547,7628,7690,7755,7827,7905,7985,8075,8168",
                         "endColumns": "80,61,64,71,77,79,89,92,73",
                         "endOffsets": "7623,7685,7750,7822,7900,7980,8070,8163,8237"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\dungc\\.gradle\\caches\\8.13\\transforms\\9336da126240fc2cd97ee4ad984e76f2\\transformed\\core-1.13.0\\res\\values-ro\\values-ro.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,153,255,355,454,556,665,782",
+                        "endColumns": "97,101,99,98,101,108,116,100",
+                        "endOffsets": "148,250,350,449,551,660,777,878"
+                    },
+                    "to": {
+                        "startLines": "58,59,60,61,62,63,64,187",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "4356,4454,4556,4656,4755,4857,4966,14691",
+                        "endColumns": "97,101,99,98,101,108,116,100",
+                        "endOffsets": "4449,4551,4651,4750,4852,4961,5078,14787"
                     }
                 }
             ]

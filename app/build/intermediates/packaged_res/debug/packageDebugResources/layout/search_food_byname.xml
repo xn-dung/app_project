@@ -1,24 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.myapplication.fragment.SearchFoodByNameFragment">
+    tools:context="fragment.SearchFoodByNameFragment"
+    android:background="@drawable/gradient_main_bg">
 
-    <!-- SearchView chuẩn AppCompat -->
-    <androidx.appcompat.widget.SearchView
+    <Button
+        android:id="@+id/startsearchbyname"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="Tìm"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchname"
+        app:layout_constraintVertical_bias="0.615" />
+
+    <SearchView
         android:id="@+id/searchname"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#B9EFBA"
+        android:background="@color/colorPrimaryLight"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:iconifiedByDefault="false" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- List hiển thị kết quả tìm kiếm -->
     <ListView
         android:id="@+id/outfood"
         android:layout_width="0dp"
@@ -27,18 +37,5 @@
         app:layout_constraintBottom_toTopOf="@id/startsearchbyname"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
-    <!-- Nút thực hiện tìm kiếm -->
-    <Button
-        android:id="@+id/startsearchbyname"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#8BC34A"
-        android:text="Tìm"
-        app:layout_constraintTop_toBottomOf="@id/outfood"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.615" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
