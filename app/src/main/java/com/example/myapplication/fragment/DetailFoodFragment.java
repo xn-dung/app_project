@@ -126,7 +126,7 @@ public class DetailFoodFragment extends Fragment {
         View layoutNL = view.findViewById(R.id.layoutNL);
         ListView lvNL = layoutNL.findViewById(R.id.listNL);
         List<NguyenLieu> nlList = baiDang.getNguyenLieu();
-        adapterNL = new ArrayNLAdapter((Activity) requireContext(), R.layout.layout_itemnl, nlList);
+        adapterNL = new ArrayNLAdapter(requireContext(), R.layout.layout_itemnl, nlList);
         lvNL.setAdapter(adapterNL);
 
         TextView tvCachLam = view.findViewById(R.id.tvCachLam);
