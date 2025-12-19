@@ -37,7 +37,6 @@ public class ReelFragment extends Fragment {
     private ShortVideoAdapter adapter;
     private ExoPlayer exoPlayer;
 
-    // Lưu trạng thái like theo từng video (KHÔNG nhét vào model)
     private HashSet<String> likedVideoIds = new HashSet<>();
 
     public static ReelFragment newInstance(User user) {
@@ -52,8 +51,8 @@ public class ReelFragment extends Fragment {
         ReelFragment fragment = new ReelFragment();
         Bundle args = new Bundle();
         args.putSerializable("user", user);
-        args.putSerializable("list_video", list); // Truyền danh sách video
-        args.putInt("position", position);        // Truyền vị trí video được bấm
+        args.putSerializable("list_video", list);
+        args.putInt("position", position);
         fragment.setArguments(args);
         return fragment;
     }
@@ -87,26 +86,24 @@ public class ReelFragment extends Fragment {
 
         viewPager2 = view.findViewById(R.id.viewPagerVideo);
         if (getArguments() != null && getArguments().containsKey("list_video")) {
-            // TRƯỜNG HỢP 1: Xem từ Profile (Có danh sách sẵn)
             listBaiDang = (ArrayList<ShortVideo>) getArguments().getSerializable("list_video");
             int startPosition = getArguments().getInt("position", 0);
 
-            // Khởi tạo Adapter với list có sẵn
             adapter = new ShortVideoAdapter(listBaiDang, (video, pos) -> likeDislike(video, pos));
             viewPager2.setAdapter(adapter);
 
-            // Quan trọng: Nhảy ngay tới video vừa bấm (false để không có hiệu ứng cuộn lướt qua các video trước)
+
             viewPager2.setCurrentItem(startPosition, false);
 
-            // Phát video ngay lập tức
+
             viewPager2.post(() -> playVideoAt(startPosition));
 
         } else {
-            // TRƯỜNG HỢP 2: Vào Tab Reels bình thường (Tự gọi API)
+
             listBaiDang = new ArrayList<>();
             adapter = new ShortVideoAdapter(listBaiDang, (video, pos) -> likeDislike(video, pos));
             viewPager2.setAdapter(adapter);
-            takeBD(); // Gọi API lấy video ngẫu nhiên
+            takeBD();
         }
 
         viewPager2.registerOnPageChangeCallback(
@@ -147,7 +144,6 @@ public class ReelFragment extends Fragment {
                             video.setAuthor(nguoidung.getString("name"));
                             video.setIdAuthor(nguoidung.getString("_id"));
 
-                            // Nếu backend có trả trạng thái like
                             if (obj.optBoolean("likedByMe", false)) {
                                 likedVideoIds.add(video.getId());
                             }
@@ -159,18 +155,12 @@ public class ReelFragment extends Fragment {
                         viewPager2.post(() -> playVideoAt(0));
 
                     } catch (Exception e) {
-                        Toast.makeText(
-                                requireContext(),
-                                "Lỗi xử lý dữ liệu: " + e.getMessage(),
-                                Toast.LENGTH_SHORT
-                        ).show();
+                        e.printStackTrace();
                     }
                 },
-                error -> Toast.makeText(
-                        requireContext(),
-                        "Lỗi kết nối",
-                        Toast.LENGTH_SHORT
-                ).show()
+                error ->{
+                    error.printStackTrace();
+                }
         );
 
         queue.add(request);
@@ -239,11 +229,9 @@ public class ReelFragment extends Fragment {
 
                     adapter.notifyItemChanged(position);
                 },
-                error -> Toast.makeText(
-                        requireContext(),
-                        "Lỗi kết nối",
-                        Toast.LENGTH_SHORT
-                ).show()
+                error -> {
+                    error.printStackTrace();
+                }
         );
 
         queue.add(request);
@@ -253,21 +241,19 @@ public class ReelFragment extends Fragment {
     @Override
     public void onHiddenChanged(boolean hidden) {
         super.onHiddenChanged(hidden);
-        // hidden = true -> Fragment bị ẩn (người dùng sang tab khác)
-        // hidden = false -> Fragment hiện lại (người dùng quay về tab Reel)
+
 
         if (hidden) {
             if (exoPlayer != null) {
-                exoPlayer.pause(); // Dừng video ngay
+                exoPlayer.pause();
             }
         } else {
             if (exoPlayer != null) {
-                exoPlayer.play(); // Phát tiếp
+                exoPlayer.play();
             }
         }
     }
 
-    // 2. Xử lý khi người dùng ấn nút Home hoặc tắt màn hình
     @Override
     public void onPause() {
         super.onPause();
@@ -276,19 +262,14 @@ public class ReelFragment extends Fragment {
         }
     }
 
-    // 3. Xử lý khi mở lại App từ background
     @Override
     public void onResume() {
         super.onResume();
-        // CỰC KỲ QUAN TRỌNG:
-        // Chỉ phát video nếu Fragment này KHÔNG BỊ ẨN (!isHidden())
-        // Nếu không có dòng này: Bạn đang ở tab Home, tắt màn hình rồi bật lại, Reel sẽ tự chạy ngầm.
         if (exoPlayer != null && !isHidden()) {
             exoPlayer.play();
         }
     }
 
-    // 4. Dọn dẹp khi Fragment bị hủy hoàn toàn (ví dụ đăng xuất)
     @Override
     public void onDestroy() {
         super.onDestroy();

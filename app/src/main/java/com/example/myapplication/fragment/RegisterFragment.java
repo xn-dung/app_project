@@ -129,23 +129,16 @@ public class RegisterFragment extends Fragment {
                     try {
                         String name = response.getString("name");
                         if (!name.isEmpty()) {
-                            Toast.makeText(getContext(), "Đăng kí thành công", Toast.LENGTH_SHORT).show();
                             if (getActivity() instanceof NavigationHost) {
                                 ((NavigationHost) getActivity()).navigateTo(new LoginFragment(), false);
                             }
-                        } else {
-                            Toast.makeText(getContext(), "", Toast.LENGTH_SHORT).show();
                         }
                     } catch (Exception e) {
-                        Toast.makeText(getContext(), "Lỗi parse JSON: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                      e.printStackTrace();
                     }
                 },
                 error -> {
-                    if (error.networkResponse != null && (error.networkResponse.statusCode == 409 || error.networkResponse.statusCode == 400)) {
-                        Toast.makeText(getContext(), "Username này đã tồn tại, vui lòng chọn tên khác.", Toast.LENGTH_LONG).show();
-                    } else {
-                        Toast.makeText(getContext(), "Lỗi kết nối hoặc server có vấn đề: " + error.toString(), Toast.LENGTH_LONG).show();
-                    }
+                    error.printStackTrace();
                 }
         );
 

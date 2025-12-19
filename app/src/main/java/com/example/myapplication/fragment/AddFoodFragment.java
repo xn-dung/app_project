@@ -247,7 +247,7 @@ public class AddFoodFragment extends Fragment {
             jsonBody.put("nguyenlieu",nguyenLieuArray);
 
         } catch(Exception e) {
-            Toast.makeText(requireContext(), "Lỗi khi tạo dữ liệu JSON: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+            e.printStackTrace();
             return;
         }
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
@@ -260,14 +260,14 @@ public class AddFoodFragment extends Fragment {
                         if (status.equals("success")) {
                             Toast.makeText(requireContext(), "Đăng bài thành công", Toast.LENGTH_SHORT).show();
                             ((HomeFragment.OnFoodItemSelectedListener) requireActivity()).onFoodItemSelected(bd);
-                        } else {
-                            Toast.makeText(requireContext(), "Lỗi thông tin đăng kí", Toast.LENGTH_SHORT).show();
                         }
                     } catch (Exception e) {
-                        Toast.makeText(requireContext(), "Lỗi parse JSON: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                       e.printStackTrace();
                     }
                 },
-                error -> Toast.makeText(requireContext(), "Lỗi kết nối: " + error.toString(), Toast.LENGTH_SHORT).show()
+                error -> {
+                    error.printStackTrace();
+                }
         );
 
         requestQueue.add(jsonObjectRequest);
@@ -308,11 +308,10 @@ public class AddFoodFragment extends Fragment {
                     "video/mp4"
             ));
         } catch (Exception e) {
-            Toast.makeText(getContext(), "Lỗi đọc video", Toast.LENGTH_SHORT).show();
+            e.printStackTrace();
             return;
         }
 
-        // 1. Xử lý danh sách nguyên liệu thành chuỗi giống Postman
         StringBuilder nlBuilder = new StringBuilder();
         if (al != null) {
             for (int i = 0; i < al.size(); i++) {
@@ -321,65 +320,28 @@ public class AddFoodFragment extends Fragment {
             }
         }
 
-        // 2. Đổ dữ liệu vào textMap khớp chính xác với ảnh Postman
         textMap.put("userId", String.valueOf(user.getId()));
         textMap.put("tieude", "hehe");
         textMap.put("description", descr);
-        textMap.put("tags", "food, recipe"); // Bạn có thể thêm tag tùy ý
-        textMap.put("nguyenLieu", ""); // Chuỗi sạch: "Thịt lợn, Bắp cải"
+        textMap.put("tags", "food, recipe");
+        textMap.put("nguyenLieu", "");
 
-        // 3. Gọi VolleyMultipartRequest với Constructor MỚI (6 tham số)
         VolleyMultipartRequest request = new VolleyMultipartRequest(
                 Request.Method.POST,
                 url,
-                textMap,      // params (MỚI)
-                fileMap,      // byteData
+                textMap,
+                fileMap,
                 response -> {
                     Toast.makeText(getContext(), "Đăng reels thành công", Toast.LENGTH_SHORT).show();
                     navigateToUserReels();
                 },
                 error -> {
-                    // TRƯỜNG HỢP 2: Có lỗi xảy ra, ta cần kiểm tra kỹ
-
-                    // A. Check nếu là lỗi ParseError (Server trả về 200 OK nhưng không phải JSON chuẩn)
-                    // -> Coi như là thành công!
-                    if (error instanceof com.android.volley.ParseError) {
-                        Toast.makeText(getContext(), "Đăng reels thành công!", Toast.LENGTH_SHORT).show();
-                        navigateToUserReels();
-                        return;
-                    }
-
-                    // B. Check nếu có phản hồi từ server (dù lỗi) để debug
-                    if (error.networkResponse != null) {
-                        int statusCode = error.networkResponse.statusCode;
-
-                        // Nếu Server trả về 200 hoặc 201 thì nghĩa là thành công,
-                        // bất chấp Volley đang kêu ca điều gì.
-                        if (statusCode == 200 || statusCode == 201) {
-                            Toast.makeText(getContext(), "Đăng reels thành công!", Toast.LENGTH_SHORT).show();
-                            navigateToUserReels();
-                            return;
-                        }
-
-                        // In lỗi thực sự ra log để xem
-                        try {
-                            String responseBody = new String(error.networkResponse.data, "utf-8");
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                    }
-
-                    // C. Lỗi Timeout hoặc lỗi khác
-                    Toast.makeText(getContext(), "Lỗi: " + error.getMessage(), Toast.LENGTH_SHORT).show();
                     error.printStackTrace();
                 }
         ) {
 
         };
 
-        // --- QUAN TRỌNG: TĂNG THỜI GIAN CHỜ (TIMEOUT) ---
-        // Video nặng cần thời gian lâu hơn request thường.
-        // 60000ms = 60 giây.
         request.setRetryPolicy(new DefaultRetryPolicy(
                 60000,
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,

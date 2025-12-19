@@ -165,25 +165,12 @@ public class FoundFoodFragment extends Fragment {
                             }
 
                             setupAdapter();
-                            Toast.makeText(
-                                    requireContext(),
-                                    "Tìm thấy " + bd.size() + " món",
-                                    Toast.LENGTH_SHORT
-                            ).show();
 
                         } catch (Exception e) {
-                            Toast.makeText(
-                                    requireContext(),
-                                    "Lỗi xử lý dữ liệu",
-                                    Toast.LENGTH_SHORT
-                            ).show();
+                            e.printStackTrace();
                         }
                     },
-                    error -> Toast.makeText(
-                            requireContext(),
-                            "Lỗi kết nối",
-                            Toast.LENGTH_SHORT
-                    ).show()
+                    error -> {error.printStackTrace();}
             ) {
                 @Override
                 public byte[] getBody() {
@@ -199,11 +186,7 @@ public class FoundFoodFragment extends Fragment {
             queue.add(request);
 
         } catch (Exception e) {
-            Toast.makeText(
-                    requireContext(),
-                    "Lỗi tạo request",
-                    Toast.LENGTH_SHORT
-            ).show();
+            e.printStackTrace();
         }
     }
 }

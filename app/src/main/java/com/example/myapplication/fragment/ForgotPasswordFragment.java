@@ -94,12 +94,10 @@ public class ForgotPasswordFragment extends Fragment {
                             bundle.putString("email", email);
                             fragment.setArguments(bundle);
                             ((NavigationHost) requireActivity()).navigateTo(fragment, true);
-                        }else{
-                            Toast.makeText(getContext(), "Email không tồn tại",Toast.LENGTH_SHORT).show();
                         }
 
                     }catch (Exception e) {
-                        Toast.makeText(getContext(), "Lỗi parse JSON: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                        e.printStackTrace();
                     }
                 },
                 error -> displayError("Email không tồn tại")

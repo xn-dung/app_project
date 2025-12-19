@@ -262,7 +262,6 @@ public class ProfileFragment extends Fragment {
                                         .into(img);
                             }
                         } catch (Exception e) {
-                            Toast.makeText(requireContext(), "Lỗi xử lý dữ liệu", Toast.LENGTH_SHORT).show();
                             Glide.with(requireContext())
                                     .load(user.getAvatar())
                                     .placeholder(R.drawable.img)
@@ -270,14 +269,15 @@ public class ProfileFragment extends Fragment {
                                     .into(img);
                         }
                     },
-                    error -> Toast.makeText(requireContext(), "Lỗi kết nối", Toast.LENGTH_SHORT).show()
+                    error ->{
+                        error.printStackTrace();
+                    }
             );
 
             Volley.newRequestQueue(requireContext()).add(request);
 
         } catch (Exception e) {
             e.printStackTrace();
-            Toast.makeText(requireContext(), "Lỗi đọc file ảnh", Toast.LENGTH_SHORT).show();
         }
     }
 }

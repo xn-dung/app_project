@@ -97,12 +97,10 @@ public class EnterOTPFragment extends Fragment {
                             fragment.setArguments(bundle);
                             ((NavigationHost) requireActivity()).navigateTo(fragment, true);
 
-                        }else{
-                            Toast.makeText(getContext(), "OTP không hợp lệ",Toast.LENGTH_SHORT).show();
                         }
 
                     }catch(Exception e){
-                        Toast.makeText(getContext(), "Lỗi parse JSON: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                        e.printStackTrace();
                     }
                 },
                 error -> displayError("OTP không hợp lệ")

@@ -134,11 +134,9 @@ public class LoginFragment extends Fragment {
                             if (getActivity() != null) {
                                 getActivity().finish();
                             }
-                        } else {
-                            Toast.makeText(getContext(),"Sai tài khoản hoặc mật khẩu",Toast.LENGTH_SHORT).show();
                         }
                     } catch (Exception e) {
-                        Toast.makeText(getContext(),"Lỗi parse JSON: " + e.getMessage(),Toast.LENGTH_SHORT).show();
+                       e.printStackTrace();
                     }
                 },
                 error -> displayError("Sai tài khoản hoặc mật khẩu")

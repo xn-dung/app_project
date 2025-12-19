@@ -189,7 +189,6 @@ public class DetailFoodFragment extends Fragment {
                         }
                     },
                     error -> {
-                        Toast.makeText(requireContext(), "Thao tác thất bại", Toast.LENGTH_SHORT).show();
                         Log.e("DetailFood", "Lỗi Toggle Fav: " + error.toString());
                     }
             );
@@ -316,10 +315,12 @@ public class DetailFoodFragment extends Fragment {
                         }
 
                     } catch (Exception e) {
-                        Toast.makeText(getContext(), "Lỗi parse JSON: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                        e.printStackTrace();
                     }
                 },
-                error -> Toast.makeText(getContext(), "Lỗi kết nối", Toast.LENGTH_SHORT).show()
+                error -> {
+                    error.printStackTrace();
+                }
         );
         queue.add(jsonObjectRequest);
     }
@@ -341,10 +342,12 @@ public class DetailFoodFragment extends Fragment {
                         }
 
                     } catch (Exception e) {
-                        Toast.makeText(getContext(), "Lỗi parse JSON: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                        e.printStackTrace();
                     }
                 },
-                error -> Toast.makeText(getContext(), "Lỗi kết nối", Toast.LENGTH_SHORT).show()
+                error -> {
+                    error.printStackTrace();
+                }
         );
         queue.add(jsonObjectRequest);
     }

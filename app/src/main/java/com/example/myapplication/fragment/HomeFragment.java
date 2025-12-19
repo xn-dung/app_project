@@ -195,12 +195,11 @@ public class HomeFragment extends Fragment {
                         myAdapter.notifyDataSetChanged();
                         checkEmptyState();
                     } catch (Exception e) {
-                        Toast.makeText(requireContext(), "Lỗi xử lý dữ liệu: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                        e.printStackTrace();
                     }
                 },
                 error -> {
                     setLoading(false);
-                    Toast.makeText(requireContext(), "Lỗi kết nối: " + error.toString(), Toast.LENGTH_SHORT).show();
                     checkEmptyState();
                 }
         );
@@ -242,11 +241,13 @@ public class HomeFragment extends Fragment {
                         checkEmptyState();
                     } catch (Exception e) {
                         setLoading(false);
-                        Toast.makeText(requireContext(), "Lỗi xử lý dữ liệu: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                         checkEmptyState();
                     }
                 },
-                error -> Toast.makeText(requireContext(), "Lỗi kết nối: " + error.toString(), Toast.LENGTH_SHORT).show()
+                error -> {
+                    setLoading(false);
+                    checkEmptyState();
+                }
         );
         queue.add(jsonArrayRequest);
     }
@@ -287,12 +288,12 @@ public class HomeFragment extends Fragment {
                         myAdapter.notifyDataSetChanged();
                         checkEmptyState();
                     } catch (Exception e) {
-                        Toast.makeText(requireContext(), "Lỗi xử lý dữ liệu: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                        setLoading(false);
+                        checkEmptyState();
                     }
                 },
                 error -> {
                     setLoading(false);
-                    Toast.makeText(requireContext(), "Lỗi kết nối: " + error.toString(), Toast.LENGTH_SHORT).show();
                     checkEmptyState();
                 }
         );

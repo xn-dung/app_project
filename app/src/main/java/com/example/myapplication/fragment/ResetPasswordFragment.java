@@ -108,7 +108,7 @@ public class ResetPasswordFragment extends Fragment{
                         }
 
                     }catch (Exception e) {
-                        Toast.makeText(getContext(), "Lỗi parse JSON: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                        e.printStackTrace();
                     }
 
                 },error -> displayError("Không thể thay đổi mật khẩu")

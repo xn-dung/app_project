@@ -293,15 +293,13 @@ public class SearchFragment extends Fragment {
                             }
                             if (bd.size() > 0) {
                                 ((HomeActivity) requireActivity()).openFoundFoodFragment(bd, user, 1);
-                            } else {
-                                Toast.makeText(requireContext(), "Không tìm thấy món ăn nào phù hợp!", Toast.LENGTH_SHORT).show();
                             }
                         } catch (Exception e) {
-                            Toast.makeText(requireContext(), "Lỗi xử lý dữ liệu: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                           e.printStackTrace();
                         }
                     },
                     error -> {
-                        Toast.makeText(requireContext(), "Lỗi kết nối", Toast.LENGTH_SHORT).show();
+                        error.printStackTrace();
                     }) {
                 public byte[] getBody() {
                     return requestBody.toString().getBytes();
@@ -314,7 +312,7 @@ public class SearchFragment extends Fragment {
             };
             queue.add(jsonArrayRequest);
         } catch (Exception e) {
-            Toast.makeText(requireContext(), "Lỗi tạo request", Toast.LENGTH_SHORT).show();
+           e.printStackTrace();
         }
     }
     private void openCamera() {
@@ -391,10 +389,12 @@ public class SearchFragment extends Fragment {
                             }
                             fillTableWithNguyenLieu(list);
                         } catch (Exception e) {
-                            Toast.makeText(requireContext(), "Lỗi xử lý dữ liệu", Toast.LENGTH_SHORT).show();
+                           e.printStackTrace();
                         }
                     },
-                    error -> Toast.makeText(requireContext(), "Lỗi kết nối", Toast.LENGTH_SHORT).show()
+                    error -> {
+                        error.printStackTrace();
+                    }
             );
             request.setRetryPolicy(new DefaultRetryPolicy(
                     60000,
@@ -406,7 +406,6 @@ public class SearchFragment extends Fragment {
 
         } catch (Exception e) {
             e.printStackTrace();
-            Toast.makeText(requireContext(), "Lỗi đọc file ảnh", Toast.LENGTH_SHORT).show();
         }
     }
 

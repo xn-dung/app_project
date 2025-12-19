@@ -1,13 +1,13 @@
-#Fri Dec 19 00:42:50 ICT 2025
-base.0=D\:\\AppMobileNauAnPTIT\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
-base.1=D\:\\AppMobileNauAnPTIT\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
-base.2=D\:\\AppMobileNauAnPTIT\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\10\\classes.dex
-base.3=D\:\\AppMobileNauAnPTIT\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\12\\classes.dex
-base.4=D\:\\AppMobileNauAnPTIT\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\13\\classes.dex
-base.5=D\:\\AppMobileNauAnPTIT\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\2\\classes.dex
-base.6=D\:\\AppMobileNauAnPTIT\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\4\\classes.dex
-base.7=D\:\\AppMobileNauAnPTIT\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
-base.8=D\:\\AppMobileNauAnPTIT\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\8\\classes.dex
+#Fri Dec 19 09:11:32 ICT 2025
+base.0=D\:\\app_project\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.1=D\:\\app_project\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.2=D\:\\app_project\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\10\\classes.dex
+base.3=D\:\\app_project\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\12\\classes.dex
+base.4=D\:\\app_project\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\13\\classes.dex
+base.5=D\:\\app_project\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\2\\classes.dex
+base.6=D\:\\app_project\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\4\\classes.dex
+base.7=D\:\\app_project\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\8\\classes.dex
+base.8=D\:\\app_project\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=10/classes.dex
@@ -15,8 +15,8 @@ path.3=12/classes.dex
 path.4=13/classes.dex
 path.5=2/classes.dex
 path.6=4/classes.dex
-path.7=classes2.dex
-path.8=8/classes.dex
+path.7=8/classes.dex
+path.8=classes2.dex
 renamed.0=classes.dex
 renamed.1=classes2.dex
 renamed.2=classes3.dex

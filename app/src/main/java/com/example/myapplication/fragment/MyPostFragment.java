@@ -155,12 +155,10 @@ public class MyPostFragment extends Fragment {
 
                     } catch (Exception e) {
                         e.printStackTrace();
-                        Toast.makeText(requireContext(), "Lỗi xử lý dữ liệu", Toast.LENGTH_SHORT).show();
                     }
                 },
                 error -> {
                     progressBar.setVisibility(View.GONE);
-                    Toast.makeText(requireContext(), "Lỗi tải bài viết", Toast.LENGTH_SHORT).show();
                 }
         );
         queue.add(request);

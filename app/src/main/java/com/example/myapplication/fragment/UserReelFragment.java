@@ -79,10 +79,8 @@ public class UserReelFragment extends Fragment {
 
         listReels = new ArrayList<>();
         adapter = new UserReelAdapter(requireContext(), listReels, (video, position) -> {
-            // Xử lý khi bấm vào video
             if (user == null) return;
 
-            // Mở màn hình xem chi tiết (Code logic cũ của bạn)
             ReelFragment detailFragment = ReelFragment.newInstanceWithData(user, listReels, position);
 
             requireActivity().getSupportFragmentManager()
@@ -97,9 +95,10 @@ public class UserReelFragment extends Fragment {
 
         if (user != null) {
             loadSelfReels();
-        } else {
-            Toast.makeText(getContext(), "Lỗi thông tin User", Toast.LENGTH_SHORT).show();
         }
+//      else {
+//            Toast.makeText(getContext(), "Lỗi thông tin User", Toast.LENGTH_SHORT).show();
+//        }
     }
 
     private void loadSelfReels() {
@@ -135,14 +134,15 @@ public class UserReelFragment extends Fragment {
 
 
                     } catch (Exception e) {
-                        Log.e("API_REEL", "Error parsing: " + e.getMessage());
-                        Toast.makeText(requireContext(), "Lỗi xử lý dữ liệu", Toast.LENGTH_SHORT).show();
+                            e.printStackTrace();
+//                        Log.e("API_REEL", "Error parsing: " + e.getMessage());
+//                        Toast.makeText(requireContext(), "Lỗi xử lý dữ liệu", Toast.LENGTH_SHORT).show();
                     }
                 },
                 error -> {
                     progressBar.setVisibility(View.GONE);
-                    Log.e("API_REEL", "Volley Error: " + error.toString());
-                    Toast.makeText(requireContext(), "Lỗi tải danh sách", Toast.LENGTH_SHORT).show();
+//                    Log.e("API_REEL", "Volley Error: " + error.toString());
+//                    Toast.makeText(requireContext(), "Lỗi tải danh sách", Toast.LENGTH_SHORT).show();
                 }
         );
         queue.add(request);
